@@ -12,8 +12,31 @@ get_header(); ?>
 
 	YO HOMEPAGE.
 
+	<header>
 
-	<h2>En ce moment...</h2>
+	<?php
+
+		/**
+		 *	Slideshow 
+		 */
+		$gallery = get_post_gallery_images();
+		$image_list = '<div class="homeslideshow">';
+
+		foreach( $gallery as $image_url ) {
+			$image_list .= '<div>' . '<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="' . $image_url . '" alt="">' . '</div>';
+		}
+		$image_list .= '</div>';
+
+		echo $image_list;
+
+	?>
+
+	</header>
+
+
+	<main id="main" class="site-main" role="main">
+
+	<h2><?php _e('En ce moment...', 'artcorpus'); ?></h2>
 	<?php
 
 		/**
@@ -42,11 +65,11 @@ get_header(); ?>
 		}
 		wp_reset_postdata();
 
-		?>
+	?>
 
-		<hr />
+	<hr />
 
-		<?php
+	<?php
 
 
 
@@ -55,13 +78,13 @@ get_header(); ?>
 		 */
 		get_template_part( 'template-parts/bych');
 
-		?>
+	?>
 
-		<hr />
+	<hr />
 
 
-		<h2>Les artistes</h2>
-		<?php
+	<h2><?php _e('Les artistes', 'artcorpus'); ?></h2>
+	<?php
 
 
 
@@ -93,14 +116,14 @@ get_header(); ?>
 
 		wp_reset_postdata();
 
-		?>
+	?>
 
-		<hr />
+	<hr />
 
 
 
-		<h2>Les guests</h2>
-		<?php
+	<h2><?php _e('Les guests', 'artcorpus'); ?></h2>
+	<?php
 
 
 		/**
@@ -132,52 +155,95 @@ get_header(); ?>
 		wp_reset_postdata();
 
 
-		?>
+	?>
 
-		<hr />
+	<hr />
 
 
-		<div id="primary" class="content-area">
-			<main id="main" class="site-main" role="main">
+	<h2><?php _e('Les news du shop', 'artcorpus'); ?></h2>
+	<?php
 
+		/**
+		 *	Add 10 latest news
+		 */
+		$sticky = get_option( 'sticky_posts' );
+		$args = array(
+			'posts_per_page' => 5,
+			'post__not_in' => $sticky,
+			'ignore_sticky_posts' => 1
+		);
+		$latest_query = new WP_Query( $args );
+
+		while ( $latest_query->have_posts() ) : $latest_query->the_post();
+			?>
+			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+				<?php the_content(); ?>
+
+			</div>
+			<?php
+		endwhile;
+
+		wp_reset_postdata();
+
+	?>
+
+	<hr />
+
+	
+	</main><!-- #main -->
+
+	<?php
+
+	/*
+
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+
+		<?php
+
+		/**
+		 * Loop alongs the News posts (articles)
+		 *
+		if ( have_posts() ) :
+
+			if ( is_home() && ! is_front_page() ) : ?>
+				<header>
+					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				</header>
 
 			<?php
+			endif;
 
-			/**
-			 * Loop alongs the News posts (articles)
-			 */
-			if ( have_posts() ) :
+			/* Start the Loop *
+			while ( have_posts() ) : the_post();
 
-				if ( is_home() && ! is_front_page() ) : ?>
-					<header>
-						<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-					</header>
+				/*
+				 * Include the Post-Format-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+				 *
+				get_template_part( 'template-parts/content', get_post_format() );
 
-				<?php
-				endif;
+			endwhile;
 
-				/* Start the Loop */
-				while ( have_posts() ) : the_post();
+			the_posts_navigation();
 
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'template-parts/content', get_post_format() );
+		else :
 
-				endwhile;
+			get_template_part( 'template-parts/content', 'none' );
 
-				the_posts_navigation();
+		endif; ?>
 
-			else :
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
-				get_template_part( 'template-parts/content', 'none' );
+	*/
 
-			endif; ?>
-
-			</main><!-- #main -->
-		</div><!-- #primary -->
+	?>
 
 <?php
 get_sidebar();
