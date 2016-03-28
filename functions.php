@@ -131,9 +131,10 @@ function artcorpus_scripts() {
 	  
 	  wp_deregister_script('jquery');
 	  wp_enqueue_script('jquery', get_template_directory_uri() . "/vendors/jquery-2.2.2.min.js", array(), "2.2.2", true);
+	  wp_enqueue_script('masonry', get_template_directory_uri() . "/vendors/masonry.pkdg.min.js", array('jquery'), "4.0.0", true);
 	  wp_enqueue_script('slick', get_template_directory_uri() . "/vendors/slick/slick.min.js", array('jquery'), false, true);
 	  wp_enqueue_style('slick_style', get_template_directory_uri() . "/vendors/slick/slick.css", array(), false, "all");
-	  wp_enqueue_script('main', get_template_directory_uri() . "/js/main.js", array('jquery', 'slick'), false, true);
+	  wp_enqueue_script('main', get_template_directory_uri() . "/js/main.js", array('jquery', 'masonry', 'slick'), false, true);
 	  
 	}
 

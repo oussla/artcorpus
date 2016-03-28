@@ -15,5 +15,10 @@ $(document).ready(function(){
   		'dots': true
 	});
 
+	// Masonry grids 
+	$('.grid').masonry({
+		// options...
+	});
+
 
 });
