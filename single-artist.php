@@ -11,26 +11,91 @@ get_header(); ?>
 
 	YO L'ARTISTE.
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<main id="main" class="site-main" role="main">
+
+		<?php
+		while ( have_posts() ) : the_post();
+
+			?>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<header class="entry-header">
+					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+
+					<?php
+
+						/**
+						 * The Artist's portrait
+						 */
+						the_post_thumbnail();
+
+						/**
+						 * The Artist's special work 
+						 *
+						 * TODO: to be replaced with simple ID, and img srcset ? 
+						 * // see https://make.wordpress.org/core/2015/11/10/responsive-images-in-wordpress-4-4/
+						 */
+						$special = get_field('special_work_thumbnail');
+						// var_dump($special);
+						?>
+						<img src="<?php echo $special['sizes']['medium']; ?>" 
+							 alt="<?php echo $special['title']; ?>"
+							 title="<?php echo $special['title']; ?>" />
+						<?php
+
+					?>
+				</header><!-- .entry-header -->
+
+			
+				<div class="entry-content">
+					<?php
+
+						/**
+		 				 * The classic page content
+		 				 */
+						the_content();
+
+						wp_link_pages( array(
+							'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'artcorpus' ),
+							'after'  => '</div>',
+						) );
+
+					?>
+				</div><!-- .entry-content -->
+
+				<section>
+					<?php
+
+						/**
+						 * TODO: artist's gallery. 
+						 * Masonry + PhotoSwipe
+		 				 */
+		 				
+	 				?>
+
+	 				<h2>GALLERY</h2>
+
+		 			
+				</section>
+
+
+				<?php
+
+					/**
+	 				 * Artist's availability. 
+	 				 */
+					get_template_part( 'template-parts/artist', 'availability' );
+
+				?>
+
+
+			</article><!-- #post-## -->
 
 			<?php
-			while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'page' );
+		endwhile; // End of the loop.
+		?>
 
-				get_template_part( 'template-parts/artist', 'availability' );
-
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-
-			endwhile; // End of the loop.
-			?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	</main><!-- #main -->
 
 <?php
 get_sidebar();
