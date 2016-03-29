@@ -134,7 +134,9 @@ function artcorpus_scripts() {
 	  wp_enqueue_script('masonry', get_template_directory_uri() . "/vendors/masonry.pkdg.min.js", array('jquery'), "4.0.0", true);
 	  wp_enqueue_script('slick', get_template_directory_uri() . "/vendors/slick/slick.min.js", array('jquery'), false, true);
 	  wp_enqueue_style('slick_style', get_template_directory_uri() . "/vendors/slick/slick.css", array(), false, "all");
-	  wp_enqueue_script('main', get_template_directory_uri() . "/js/main.js", array('jquery', 'masonry', 'slick'), false, true);
+	  wp_enqueue_script('lightgallery', get_template_directory_uri() . "/vendors/lightgallery/js/lightgallery.min.js", array('jquery'), false, true);
+	  wp_enqueue_style('lightgallery_style', get_template_directory_uri() . "/vendors/lightgallery/css/lightgallery.min.css", array(), false, "all");
+	  wp_enqueue_script('main', get_template_directory_uri() . "/js/main.js", array('jquery', 'masonry', 'slick', 'lightgallery'), false, true);
 	  
 	}
 
@@ -144,6 +146,17 @@ function artcorpus_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'artcorpus_scripts' );
+
+
+/**
+ * TEST FILTER 
+ * for post overriding post thumbnails
+ */
+function artcorpus_post_thumbnail_html($html) {
+	return "YOYO".$html."OYOY";
+
+}
+add_filter( 'post_thumbnail_html', 'artcorpus_post_thumbnail_html', 11 );
 
 /**
  * Implement the Custom Header feature.

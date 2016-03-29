@@ -26,7 +26,7 @@ get_header(); ?>
 						/**
 						 * The Artist's portrait
 						 */
-						the_post_thumbnail();
+						// the_post_thumbnail(); 
 
 						/**
 						 * The Artist's special work 
@@ -63,6 +63,9 @@ get_header(); ?>
 				</div><!-- .entry-content -->
 
 				<section>
+
+	 				<h2>GALLERY</h2>
+
 					<?php
 
 						/**
@@ -70,10 +73,18 @@ get_header(); ?>
 						 * Masonry + PhotoSwipe
 		 				 */
 		 				
-	 				?>
+		 				$gallery = get_field('gallery');
+		 				// var_dump($gallery);
 
-	 				<h2>GALLERY</h2>
-
+		 				if( $gallery ): ?>
+						    <div class="grid">
+						        <?php foreach( $gallery as $image ): ?>
+					                <a href="<?php echo $image['url']; ?>" class="grid-item">
+					                     <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
+					                </a>
+						        <?php endforeach; ?>
+						    </div>
+						<?php endif; ?>
 		 			
 				</section>
 
