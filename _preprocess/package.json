@@ -1,0 +1,27 @@
+{
+  "name": "artcorpus",
+  "version": "0.1.0",
+  "description": "Art Corpus Wordpress theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oussla/artcorpus.git"
+  },
+  "author": "Nicolas Lagarde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oussla/artcorpus/issues"
+  },
+  "homepage": "https://github.com/oussla/artcorpus",
+  "dependencies": {},
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "gulp": "^3.9.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-util": "^3.0.7"
+  }
+}

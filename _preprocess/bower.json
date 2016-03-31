@@ -1,0 +1,7 @@
+{
+  "name": "artcorpus",
+  "dependencies": {
+    "masonry": "^4.0.0",
+    "lightgallery": "^1.2.16"
+  }
+}
