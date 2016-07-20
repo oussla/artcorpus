@@ -14,3 +14,34 @@
 ## Comments
 --------------------------------------------------------------*/
 @import "primary/comments";
+
+
+
+
+body {
+	font-size: 100%;
+}
+
+
+
+/**
+ * HEADER
+ */
+
+.site-header {
+	text-align: center;
+	background: url(./img/background-black.jpg) repeat;
+}
+
+.site-branding {
+
+	.site-title {
+		display: block;
+        margin: 20px auto;
+        text-indent: -9999px;
+        width: 300px;
+        height: 255px;
+        background: url(./img/artcorpus-logo.png) transparent no-repeat;  
+	}
+
+}

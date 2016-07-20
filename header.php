@@ -25,6 +25,11 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'artcorpus' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
+
+		<div id="subhead" class="site-subhead">
+			<?php wp_nav_menu( array( 'theme_location' => 'subhead', 'menu_id' => 'subhead-menu', 'menu_class' => 'subhead-menu' ) ); ?>
+		</div>
+
 		<div class="site-branding">
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
