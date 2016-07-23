@@ -4,6 +4,8 @@
 	float: left;
 	width: 100%;
 
+	@include font-size(1.25); // 20px font size
+
 	ul {
 		display: none;
 		list-style: none;
@@ -11,10 +13,9 @@
 		padding-left: 0;
 
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
 			position: absolute;
-			top: 1.5em;
+			top: 2.5em;
 			left: -999em;
 			z-index: 99999;
 
@@ -24,6 +25,9 @@
 			}
 
 			li {
+				padding-left: 0;
+    			padding-bottom: 0px;
+
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
@@ -32,6 +36,7 @@
 
 			a {
 				width: 200px;
+				color: #000;
 			}
 
 			:hover > a,
@@ -49,18 +54,34 @@
 		}
 	}
 	
+	// all levels li
 	li {
-		float: left;
+		display: inline-block;
 		position: relative;
+		padding: 0 40px 20px 25px;
+		text-align: left;
 
 		&:hover > a,
 		&.focus > a {
 		}
 	}
+
+	// first level only
+	.nav-menu > li {
+		background: url('./img/2x/check-white.png') no-repeat right 10px;
+		background-size: 12px 12px;
+	}
+
+	.nav-menu > li:last-child {
+		background: none;
+	}
 	
+	// all links
 	a {
 		display: block;
 		text-decoration: none;
+		text-transform: lowercase;
+		color: #fff;
 	}
 
 	.current_page_item > a,
