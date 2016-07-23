@@ -45,7 +45,8 @@ function artcorpus_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'artcorpus' ),
-		'subhead' => esc_html__( 'Subhead Menu', 'artcorpus')
+		'subhead' => esc_html__( 'Subhead Menu', 'artcorpus'),
+		'footer' => esc_html__( 'Footer Menu', 'artcorpus')
 	) );
 
 	/*
@@ -114,6 +115,18 @@ function artcorpus_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Identity', 'artcorpus' ),
+		'id'            => 'footer-identity',
+		'description'   => '',
+		'before_widget' => '<address>',
+		'after_widget'  => '</address>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+
 }
 add_action( 'widgets_init', 'artcorpus_widgets_init' );
 
@@ -133,11 +146,12 @@ function artcorpus_scripts() {
 	  wp_deregister_script('jquery');
 	  wp_enqueue_script('jquery', get_template_directory_uri() . "/vendors/jquery-2.2.2.min.js", array(), "2.2.2", true);
 	  wp_enqueue_script('masonry', get_template_directory_uri() . "/vendors/masonry.pkdg.min.js", array('jquery'), "4.0.0", true);
+	  wp_enqueue_script('googlemap', "https://maps.googleapis.com/maps/api/js?key=AIzaSyCsh1aWAM2_fdE4KYghJ-yLry9qWQGhLOI", array(), "1", true);
 	  wp_enqueue_script('slick', get_template_directory_uri() . "/vendors/slick/slick.min.js", array('jquery'), false, true);
 	  wp_enqueue_style('slick_style', get_template_directory_uri() . "/vendors/slick/slick.css", array(), false, "all");
 	  wp_enqueue_script('lightgallery', get_template_directory_uri() . "/vendors/lightgallery/js/lightgallery.min.js", array('jquery'), false, true);
 	  wp_enqueue_style('lightgallery_style', get_template_directory_uri() . "/vendors/lightgallery/css/lightgallery.min.css", array(), false, "all");
-	  wp_enqueue_script('main', get_template_directory_uri() . "/js/main.js", array('jquery', 'masonry', 'slick', 'lightgallery'), false, true);
+	  wp_enqueue_script('main', get_template_directory_uri() . "/js/main.js", array('jquery', 'masonry', 'googlemap', 'slick', 'lightgallery'), false, true);
 	  
 	}
 

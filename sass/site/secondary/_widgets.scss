@@ -6,3 +6,39 @@
 		max-width: 100%;
 	}
 }
+
+
+/**
+ * Footer Identity
+ */
+
+.footer-identity {
+	padding: 40px 0 40px 0;
+	text-align: center;
+	background: url('./img/background-white.jpg') repeat;
+
+	p {
+		margin: 0;
+	}
+
+	h3 {
+		display: block;
+        margin: 0 auto 20px auto;
+        text-indent: -9999px;
+        width: 150px;
+        height: 127px;
+        background: url(./img/artcorpus-logo-black.png) transparent no-repeat;  
+	}
+
+	address {
+		margin: 0;
+		@include font-size(1.5); // 24px font size
+
+		.small {
+			display: block;
+			@include font-size(0.875); // 24px font size
+			line-height: 0.875em;
+		}
+	}
+
+}

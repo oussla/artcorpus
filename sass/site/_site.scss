@@ -57,3 +57,34 @@ body {
 	}
 
 }
+
+
+/**
+ * 
+ * FOOTERS
+ * 
+ */
+
+
+.footer-map {
+
+	.map {
+		width: 100%;
+		height: 300px;
+		background-color: #000;
+	}
+
+}
+
+.site-footer {
+	text-align: center;
+	padding: 20px 0 20px 0;
+	color: #818181;
+	background-color: #252525;
+	@include font-size(0.6875); // 11px font size
+}
+
+// Remove some remaining element from "Instagram Feed" plugin. 
+#sbi_load {
+	display: none;
+}

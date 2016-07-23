@@ -319,6 +319,7 @@ blockquote {
 
 address {
   margin: 0 0 1.5em;
+  font-style: normal;
 }
 
 pre {
@@ -799,6 +800,37 @@ a:hover, a:active {
   max-width: 100%;
 }
 
+/**
+ * Footer Identity
+ */
+.footer-identity {
+  padding: 40px 0 40px 0;
+  text-align: center;
+  background: url("./img/background-white.jpg") repeat;
+}
+.footer-identity p {
+  margin: 0;
+}
+.footer-identity h3 {
+  display: block;
+  margin: 0 auto 20px auto;
+  text-indent: -9999px;
+  width: 150px;
+  height: 127px;
+  background: url(./img/artcorpus-logo-black.png) transparent no-repeat;
+}
+.footer-identity address {
+  margin: 0;
+  font-size: 24px;
+  font-size: 1.5rem;
+}
+.footer-identity address .small {
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 0.875em;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -883,6 +915,30 @@ body {
   font-weight: bold;
   font-size: 15px;
   font-size: 0.9375rem;
+}
+
+/**
+ * 
+ * FOOTERS
+ * 
+ */
+.footer-map .map {
+  width: 100%;
+  height: 300px;
+  background-color: #000;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 20px 0 20px 0;
+  color: #818181;
+  background-color: #252525;
+  font-size: 11px;
+  font-size: 0.6875rem;
+}
+
+#sbi_load {
+  display: none;
 }
 
 /*--------------------------------------------------------------
@@ -981,6 +1037,6 @@ object {
   display: block;
 }
 
-.site-content, .site-footer {
+.site-content {
   display: none;
 }

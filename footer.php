@@ -13,11 +13,51 @@
 
 	</div><!-- #content -->
 
+	<?php
+
+	/**
+	 * Widget area: footer-identity.
+	 * Built as a widget area to allow contributing text from admin area
+	 */
+	if ( is_active_sidebar( 'footer-identity' ) ) : ?>
+		<section class="footer-identity">
+			<h3>Art Corpus</h3>
+			<?php dynamic_sidebar( 'footer-identity' ); ?>
+		</section>
+	<?php endif; ?>
+
+
+	<?php
+	/**
+	 * Map.
+	 */
+	?>
+	<section class="footer-map">
+		<div id="footermap" class="map"></div>
+	</section>
+
+
+	<?php
+	/**
+	 * Instagram feed plugin
+	 */
+	?>
+	<section class="footer-instagram">
+		<?php echo do_shortcode('[instagram-feed]'); ?>
+	</section>
+
+
+
+	<?php
+	/**
+	 * Bottom footer.
+	 */
+	?>
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'artcorpus' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'artcorpus' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'artcorpus' ), 'artcorpus', '<a href="http://www.nicolaslagarde.com" rel="designer">Nicolas Lagarde</a>' ); ?>
+		<div class="site-info">			
+			<?php echo __( 'Toutes les images copyright Art Corpus, sauf mention contraire.', 'artcorpus' ); ?>
+
+			<?php printf( esc_html__( 'Theme %1$s by %2$s.', 'artcorpus' ), 'artcorpus', '<a href="http://www.nicolaslagarde.com" rel="designer">Nicolas Lagarde</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
