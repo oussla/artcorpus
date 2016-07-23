@@ -43,6 +43,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+/**
+ * Transition mixin
+ * Usage:  
+ * 		@include transition(color .3s ease);
+ * 		
+ */
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -604,6 +610,11 @@ a:hover, a:active {
   text-decoration: none;
   text-transform: lowercase;
   color: #fff;
+  -webkit-transition: box-shadow, 0.3s, easeOut;
+  -moz-transition: box-shadow, 0.3s, easeOut;
+  -ms-transition: box-shadow, 0.3s, easeOut;
+  -o-transition: box-shadow, 0.3s, easeOut;
+  transition: box-shadow, 0.3s, easeOut;
 }
 
 /* Small menu. */
@@ -642,8 +653,9 @@ a:hover, a:active {
 }
 
 .subhead-menu {
+  width: 50%;
+  float: right;
   color: #FFF;
-  background-color: rgba(255, 255, 255, 0.1);
   list-style: none;
   text-transform: uppercase;
   text-align: right;
@@ -667,6 +679,25 @@ a:hover, a:active {
 .subhead-menu li:last-child::after {
   content: none;
   padding-right: 0;
+}
+
+.polylang-menu {
+  width: 50%;
+  float: left;
+  margin: 0;
+  list-style: none;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 17px 20px 17px 20px;
+  font-size: 11px;
+  font-size: 0.6875rem;
+}
+.polylang-menu li {
+  display: inline;
+}
+.polylang-menu li a, .polylang-menu li a:active, .polylang-menu li a:visited {
+  color: #FFF;
+  text-decoration: none;
 }
 
 /*--------------------------------------------------------------
@@ -834,8 +865,12 @@ body {
   text-align: center;
   background: url(./img/background-black.jpg) repeat;
 }
+.site-header .site-subhead {
+  overflow: auto;
+  background-color: rgba(255, 255, 255, 0.1);
+}
 
-.site-branding .site-title {
+.site-branding .site-title a {
   display: block;
   margin: 20px auto;
   text-indent: -9999px;

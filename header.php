@@ -27,7 +27,29 @@
 	<header id="masthead" class="site-header" role="banner">
 
 		<div id="subhead" class="site-subhead">
-			<?php wp_nav_menu( array( 'theme_location' => 'subhead', 'menu_id' => 'subhead-menu', 'menu_class' => 'subhead-menu' ) ); ?>
+			<?php 
+				if(function_exists('pll_the_languages')):
+				?>
+					<ul class="polylang-menu">
+						<?php 
+						
+							/**
+							 * Custom Polylang language switcher. 
+							 */
+							$translations = pll_the_languages( array( 'raw' => 1 ) );
+
+							foreach ($translations as $lang => $value) {
+								?>
+								<li<?php if($value['current_lang'] == 1) echo ' class="current-lang"'; ?>><a href="<?php echo $value['url']; ?>"><?php echo $value['slug']; ?></a></li>
+								<?php
+							}
+
+						?>
+					</ul>
+				<?php
+				endif;
+			?>
+			<?php wp_nav_menu( array( 'theme_location' => 'subhead', 'menu_id' => 'subhead-menu', 'container' => '', 'menu_class' => 'subhead-menu' ) ); ?>
 		</div>
 
 		<div class="site-branding">

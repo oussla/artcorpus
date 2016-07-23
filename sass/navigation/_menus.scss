@@ -63,6 +63,8 @@
 
 		&:hover > a,
 		&.focus > a {
+			// border-bottom: 1px solid #888;
+			// box-shadow: inset 0 -8px 0 #888;
 		}
 	}
 
@@ -82,6 +84,7 @@
 		text-decoration: none;
 		text-transform: lowercase;
 		color: #fff;
+		@include transition(box-shadow, 0.3s, easeOut);
 	}
 
 	.current_page_item > a,
@@ -130,8 +133,9 @@
 
 .subhead-menu {
 
+	width: 50%;
+	float: right;
 	color: #FFF;
-	background-color: rgba(255, 255, 255, .1);
 	list-style: none;
 	text-transform: uppercase;
 	text-align: right;	
@@ -161,3 +165,24 @@
 
 }
 
+.polylang-menu {
+
+	width: 50%;
+	float: left;
+	margin: 0;
+	list-style: none;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 17px 20px 17px 20px;
+	@include font-size(0.6875);
+
+
+	li {
+		display: inline;
+
+		a, a:active, a:visited {
+			color: #FFF;
+			text-decoration: none;
+		}
+	}
+}
