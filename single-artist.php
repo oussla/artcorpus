@@ -10,6 +10,7 @@
 get_header(); ?>
 
 	YO L'ARTISTE.
+	<!-- TEMPLATE : single-artist.php -->
 
 	<main id="main" class="site-main" role="main">
 
@@ -105,6 +106,22 @@ get_header(); ?>
 
 		endwhile; // End of the loop.
 		?>
+
+
+
+	<?php
+
+
+		/**
+		 *	Add BYCH: Before You Come Here
+		 */
+		get_template_part( 'template-parts/bych');
+
+
+	?>
+
+
+
 
 	</main><!-- #main -->
 
