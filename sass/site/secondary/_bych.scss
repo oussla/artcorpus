@@ -1,0 +1,25 @@
+/**
+ * "Before you come here"
+ */
+
+.bych {
+	padding: 40px 5% 40px 5%;
+	text-align: center;
+	background-color: #b2b2b2;
+
+	.pointing {
+		width: 20%;
+		max-width: 219px;
+		height: 135px;
+		background: url(./img/pointingfinger-right.png) no-repeat center left;
+		background-size: 100%;
+		float: left;
+	}
+
+	.pointing.pointing-right {
+		background-image: url(./img/pointingfinger-left.png);
+		float: right;
+	}
+
+}
+

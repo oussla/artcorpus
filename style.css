@@ -806,7 +806,7 @@ a:hover, a:active {
 .footer-identity {
   padding: 40px 0 40px 0;
   text-align: center;
-  background: url("./img/background-white.jpg") repeat;
+  background: url("./img/background-white.jpg") repeat fixed;
 }
 .footer-identity p {
   margin: 0;
@@ -885,6 +885,30 @@ a:hover, a:active {
   display: block;
 }
 
+/*--------------------------------------------------------------
+## BYCH
+--------------------------------------------------------------*/
+/**
+ * "Before you come here"
+ */
+.bych {
+  padding: 40px 5% 40px 5%;
+  text-align: center;
+  background-color: #b2b2b2;
+}
+.bych .pointing {
+  width: 20%;
+  max-width: 219px;
+  height: 135px;
+  background: url(./img/pointingfinger-right.png) no-repeat center left;
+  background-size: 100%;
+  float: left;
+}
+.bych .pointing.pointing-right {
+  background-image: url(./img/pointingfinger-left.png);
+  float: right;
+}
+
 body {
   font-size: 100%;
 }
@@ -930,7 +954,7 @@ body {
 
 .site-footer {
   text-align: center;
-  padding: 20px 0 20px 0;
+  padding: 25px 0 25px 0;
   color: #818181;
   background-color: #252525;
   font-size: 11px;
@@ -1035,8 +1059,4 @@ object {
 
 .gallery-caption {
   display: block;
-}
-
-.site-content {
-  display: none;
 }
