@@ -9,6 +9,21 @@
  * @package Art_Corpus
  */
 
+
+/**
+ * Define PHP locale
+ */
+switch(get_locale()) {
+	case 'fr_FR': 
+		$alternateLocale = 'fra';
+		break;
+	default: 
+		$alternateLocale = 'eng';
+		break;
+}
+setlocale(LC_TIME , get_locale().'.utf-8', $alternateLocale);
+
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
