@@ -909,6 +909,45 @@ a:hover, a:active {
   float: right;
 }
 
+/*--------------------------------------------------------------
+## Artist
+--------------------------------------------------------------*/
+.artist-availability {
+  text-align: center;
+  margin: 4em 0 4em 0;
+}
+
+.available-today {
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+.available-today .small {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+table.availability {
+  margin: 1em auto 0 auto;
+  width: 80%;
+}
+table.availability td {
+  width: 14.28%;
+  font-size: 14px;
+  font-size: 0.875rem;
+  height: 1.25em;
+  text-align: center;
+}
+table.availability .weekdays td.available-false {
+  color: #b3b3b3;
+}
+table.availability .avails td.available-true {
+  background: url(./img/availability.jpg) repeat-x;
+  background-color: #dc3b17;
+}
+table.availability .avails td.available-false {
+  background-color: #f1f1f1;
+}
+
 body {
   font-size: 100%;
 }

@@ -1,0 +1,51 @@
+
+
+
+.artist-availability {
+	text-align: center;
+	margin:4em 0 4em 0;
+}
+
+.available-today {
+	@include font-size(1.25);
+
+	.small {
+		@include font-size(0.875);
+	}
+
+}
+
+table.availability {
+
+	margin: 1em auto 0 auto;
+	width: 80%;
+
+	td {
+		width: 14.28%; // 1/7
+		@include font-size(0.875);
+		height: 1.25em;
+		text-align: center;
+	}
+
+	.weekdays {
+
+		td.available-false {
+			color: $color__text-disabled;
+		}
+
+	}
+
+	.avails {
+
+		td.available-true {
+			background: url(./img/availability.jpg) repeat-x;
+			background-color: $color__tonic;
+		}
+
+		td.available-false {
+			background-color: #f1f1f1;
+		}
+
+	}
+
+}
