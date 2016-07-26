@@ -67,21 +67,17 @@ get_header(); ?>
 
 	?>
 
-	<hr />
-
 	<?php
 
 
-
 		/**
-		 *	Add beforeYouComeHere: BYCH
+		 *	Add BYCH: Before You Come Here
 		 */
 		get_template_part( 'template-parts/bych');
 
+
 	?>
-
-	<hr />
-
+	
 
 	<h2><?php _e('Les artistes', 'artcorpus'); ?></h2>
 	<?php

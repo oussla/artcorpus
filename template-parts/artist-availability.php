@@ -98,30 +98,38 @@
 
 
 	<?php
+	$availSpecial = get_field('availability_special');
+	if($availSpecial != ''):
+	?>
+		<span class="availability-special"><?php echo $availSpecial; ?></span>
+	<?php
+	endif;
 
-		/**
-		 * Static template 
-		 */
-		
-		/*
-		<table class="availability">
-			<tr class="weekdays">
-				<td>lundi</td>
-				<td>mardi</td>
-				<td class="available-false">mercredi</td>
-				<td>jeudi</td>
-				<td>vendredi</td>
-				<td>samedi</td>
-				<td>dimanche</td>
-			</tr>
-			<tr class="avails">
-				<td class="available-true" colspan="2"></td>
-				<td class="available-false"></td>
-				<td class="available-true" colspan="3"></td>
-				<td class="available-false"></td>
-			</tr>
-		</table>
-		*/
+
+
+	/**
+	 * Static template 
+	 */
+	
+	/*
+	<table class="availability">
+		<tr class="weekdays">
+			<td>lundi</td>
+			<td>mardi</td>
+			<td class="available-false">mercredi</td>
+			<td>jeudi</td>
+			<td>vendredi</td>
+			<td>samedi</td>
+			<td>dimanche</td>
+		</tr>
+		<tr class="avails">
+			<td class="available-true" colspan="2"></td>
+			<td class="available-false"></td>
+			<td class="available-true" colspan="3"></td>
+			<td class="available-false"></td>
+		</tr>
+	</table>
+	*/
 
 	?>
 
