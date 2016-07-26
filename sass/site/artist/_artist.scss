@@ -1,9 +1,63 @@
 
+.artist {
+
+	&.hentry {
+		margin: 0;
+	}
+
+	.entry-header {
+		text-align: center;
+		padding:4em 10% 4em 10%;
+	}
+
+	.entry-content {
+		text-align: center;
+		margin: 0;
+		padding:0 10% 4em 10%;	
+	}
+
+	.entry-title {
+		margin: 0;
+	}
+
+}
+
+.gallery {
+	text-align: center;
+	padding:6em 10% 6em 10%;
+	background: url(./img/background-black.jpg) repeat;
+
+	.grid-item {
+		display: block;
+		@include box-sizing(border-box);
+		overflow: hidden;
+		border: 0px solid $color__tonic;
+
+		margin: 0;
+		padding: 0;
+		line-height: 0;
+		width: 25%;
+
+		img {
+			@include transition(transform 8s ease);
+			width: 100%;
+		}
+	}
+
+	.grid-item:hover {
+		// border: 7px solid $color__tonic;
+		
+		img {
+			transform: scale(1.15);
+		}
+	}
+
+}
 
 
 .artist-availability {
 	text-align: center;
-	margin:4em 0 4em 0;
+	margin:4em 10% 4em 10%;
 }
 
 .available-today {
@@ -18,7 +72,7 @@
 table.availability {
 
 	margin: 1em auto 0 auto;
-	width: 80%;
+	width: 100%;
 
 	td {
 		width: 14.28%; // 1/7
@@ -48,4 +102,10 @@ table.availability {
 
 	}
 
+}
+
+
+.availability-special {
+	display: block;
+	margin-top: 1em;
 }

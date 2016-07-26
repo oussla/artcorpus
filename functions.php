@@ -42,6 +42,15 @@ function artcorpus_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+	/**
+	 * Manage images sizes.
+	 * Images are defined to be resized, not cropped, inside the given dimensions. 
+	 * Height is supersized to less influence the final dimensions. 
+	 */
+	add_image_size('gallery_small', 150, 600);
+	add_image_size('gallery_medium', 250, 1000);
+	add_image_size('gallery_large', 500, 2000);
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'artcorpus' ),

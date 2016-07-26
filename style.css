@@ -49,6 +49,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  * 		@include transition(color .3s ease);
  * 		
  */
+/**
+ * Box Sizing mixin
+ * https://web-design-weekly.com/2013/05/12/handy-sass-mixins/
+ * Usage:
+ * 		@include box-sizing(border-box);
+ * 		
+ */
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -303,6 +310,19 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
+}
+
+h1 {
+  font-size: 50px;
+  font-size: 3.125rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-weight: normal;
 }
 
 p {
@@ -912,9 +932,54 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Artist
 --------------------------------------------------------------*/
+.artist.hentry {
+  margin: 0;
+}
+.artist .entry-header {
+  text-align: center;
+  padding: 4em 10% 4em 10%;
+}
+.artist .entry-content {
+  text-align: center;
+  margin: 0;
+  padding: 0 10% 4em 10%;
+}
+.artist .entry-title {
+  margin: 0;
+}
+
+.gallery {
+  text-align: center;
+  padding: 6em 10% 6em 10%;
+  background: url(./img/background-black.jpg) repeat;
+}
+.gallery .grid-item {
+  display: block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 0px solid #dc3b17;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  width: 25%;
+}
+.gallery .grid-item img {
+  -webkit-transition: transform 8s ease;
+  -moz-transition: transform 8s ease;
+  -ms-transition: transform 8s ease;
+  -o-transition: transform 8s ease;
+  transition: transform 8s ease;
+  width: 100%;
+}
+.gallery .grid-item:hover img {
+  transform: scale(1.15);
+}
+
 .artist-availability {
   text-align: center;
-  margin: 4em 0 4em 0;
+  margin: 4em 10% 4em 10%;
 }
 
 .available-today {
@@ -928,7 +993,7 @@ a:hover, a:active {
 
 table.availability {
   margin: 1em auto 0 auto;
-  width: 80%;
+  width: 100%;
 }
 table.availability td {
   width: 14.28%;
@@ -946,6 +1011,11 @@ table.availability .avails td.available-true {
 }
 table.availability .avails td.available-false {
   background-color: #f1f1f1;
+}
+
+.availability-special {
+  display: block;
+  margin-top: 1em;
 }
 
 body {
@@ -1061,10 +1131,6 @@ object {
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
-.gallery {
-  margin-bottom: 1.5em;
-}
-
 .gallery-item {
   display: inline-block;
   text-align: center;

@@ -9,7 +9,6 @@
 
 get_header(); ?>
 
-	YO L'ARTISTE.
 	<!-- TEMPLATE : single-artist.php -->
 
 	<main id="main" class="site-main" role="main">
@@ -63,29 +62,28 @@ get_header(); ?>
 					?>
 				</div><!-- .entry-content -->
 
-				<section>
 
-	 				<h2>GALLERY</h2>
+				<section class="gallery">
 
 					<?php
 
 						/**
-						 * TODO: artist's gallery. 
-						 * Masonry + PhotoSwipe
+						 * Masonry + PhotoSwipe gallery
 		 				 */
 		 				
 		 				$gallery = get_field('gallery');
-		 				// var_dump($gallery);
 
 		 				if( $gallery ): ?>
-						    <div class="grid">
-						        <?php foreach( $gallery as $image ): ?>
-					                <a href="<?php echo $image['url']; ?>" class="grid-item">
-					                     <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
-					                </a>
-						        <?php endforeach; ?>
-						    </div>
-						<?php endif; ?>
+							<div class="grid">
+							<?php foreach( $gallery as $image ): ?>
+								<a href="<?php echo $image['url']; ?>" class="grid-item">
+									<?php echo wp_get_attachment_image($image['id'], 'gallery_medium'); ?>
+								</a>
+							<?php endforeach; ?>
+							</div>
+						<?php endif; 
+
+					?>
 		 			
 				</section>
 

@@ -36,3 +36,17 @@
   -o-transition: $args;
   transition: $args;
 }
+
+
+/**
+ * Box Sizing mixin
+ * https://web-design-weekly.com/2013/05/12/handy-sass-mixins/
+ * Usage:
+ * 		@include box-sizing(border-box);
+ * 		
+ */
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
+}
