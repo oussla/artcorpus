@@ -172,15 +172,27 @@ function artcorpus_scripts() {
 add_action( 'wp_enqueue_scripts', 'artcorpus_scripts' );
 
 
+function artcorpus_baseurl_script() {
+?>
+<script type="text/javascript">
+	var baseURL = "<?php echo get_template_directory_uri(); ?>";
+</script>
+<?php
+}
+add_action('wp_footer', 'artcorpus_baseurl_script');
+
+
 /**
  * TEST FILTER 
  * for post overriding post thumbnails
  */
+/*
 function artcorpus_post_thumbnail_html($html) {
 	return "YOYO".$html."OYOY";
 
 }
 add_filter( 'post_thumbnail_html', 'artcorpus_post_thumbnail_html', 11 );
+*/
 
 /**
  * Implement the Custom Header feature.
