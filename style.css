@@ -56,6 +56,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  * 		@include box-sizing(border-box);
  * 		
  */
+/**
+ * Border radius mixin
+ * Usage:
+ * 		@include border-radius(10px);
+ */
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -937,21 +942,42 @@ a:hover, a:active {
 }
 .artist .entry-header {
   text-align: center;
-  padding: 4em 10% 4em 10%;
+  padding: 4em 10% 3em 10%;
+  overflow: auto;
+}
+.artist .entry-header img {
+  width: 50%;
+  display: block;
+  float: left;
+}
+.artist .entry-header .artist-job {
+  font-size: 20px;
+  font-size: 1.25rem;
+  margin-top: 0;
+}
+.artist .entry-header .artist-portrait {
+  margin-top: 2em;
+}
+.artist .entry-header .artist-main {
+  margin-top: 6em;
+}
+.artist .guest-dates {
+  font-size: 20px;
+  font-size: 1.25rem;
 }
 .artist .entry-content {
   text-align: center;
   margin: 0;
-  padding: 0 10% 4em 10%;
+  padding: 1em 10% 4em 10%;
 }
 .artist .entry-title {
   margin: 0;
+  line-height: 1em;
 }
 
 .gallery {
   text-align: center;
   padding: 6em 10% 6em 10%;
-  background: url(./img/background-black.jpg) repeat;
 }
 .gallery .grid-item {
   display: block;
@@ -977,6 +1003,12 @@ a:hover, a:active {
   transform: scale(1.15);
 }
 
+/**
+ * 
+ * Artist availability
+ * template-parts/artist-availability.php
+ * 
+ */
 .artist-availability {
   text-align: center;
   margin: 4em 10% 4em 10%;
@@ -1016,6 +1048,17 @@ table.availability .avails td.available-false {
 .availability-special {
   display: block;
   margin-top: 1em;
+}
+
+/**
+ *
+ *	Artists grid
+ *	template-parts/artists-grid.php
+ * 
+ */
+.artists-grid {
+  text-align: center;
+  padding: 6em 10% 6em 10%;
 }
 
 body {
@@ -1072,6 +1115,27 @@ body {
 
 #sbi_load {
   display: none;
+}
+
+/**
+ *
+ * ELEMENTS
+ * 
+ */
+.dot {
+  margin: 0 auto;
+  width: 4px;
+  height: 4px;
+  background-color: #000;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.background-black {
+  background: url(./img/background-black.jpg) repeat;
+  color: #FFF;
 }
 
 /*--------------------------------------------------------------
