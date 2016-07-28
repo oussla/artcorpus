@@ -49,7 +49,6 @@
 .gallery {
 	text-align: center;
 	padding:6em 10% 6em 10%;
-	background: url(./img/background-black.jpg) repeat;
 
 	.grid-item {
 		display: block;
@@ -78,6 +77,13 @@
 
 }
 
+
+/**
+ * 
+ * Artist availability
+ * template-parts/artist-availability.php
+ * 
+ */
 
 .artist-availability {
 	text-align: center;
@@ -128,8 +134,20 @@ table.availability {
 
 }
 
-
 .availability-special {
 	display: block;
 	margin-top: 1em;
+}
+
+
+/**
+ *
+ *	Artists grid
+ *	template-parts/artists-grid.php
+ * 
+ */
+.artists-grid {
+	text-align: center;
+	padding:6em 10% 6em 10%;
+
 }

@@ -113,3 +113,9 @@ body {
 	background-color: #000;
 	@include border-radius(2px);
 }
+
+
+.background-black {
+	background: url(./img/background-black.jpg) repeat;
+	color: #FFF;
+}

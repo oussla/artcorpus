@@ -91,7 +91,7 @@ get_header(); ?>
 					?>
 				</div><!-- .entry-content -->
 
-				<section class="gallery">
+				<section class="gallery background-black">
 
 					<?php
 
@@ -131,20 +131,28 @@ get_header(); ?>
 			<?php
 
 		endwhile; // End of the loop.
+
+		?>
+
+		<?php
+
+			/**
+			 *	Add BYCH: Before You Come Here
+			 */
+			get_template_part( 'template-parts/bych');
+
 		?>
 
 
+		<?php
 
-	<?php
+			/**
+			 * Others artists grid. 
+			 */
+			get_template_part( 'template-parts/artists', 'grid' );
 
+		?>
 
-		/**
-		 *	Add BYCH: Before You Come Here
-		 */
-		get_template_part( 'template-parts/bych');
-
-
-	?>
 
 
 
