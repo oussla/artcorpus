@@ -8,6 +8,20 @@
 	.entry-header {
 		text-align: center;
 		padding:4em 10% 3em 10%;
+		overflow: auto;
+
+		img {
+			width: 50%;
+			   display: block;
+    		float: left;
+		}
+
+		.artist-portrait {			
+			margin-top: 2em;
+		}
+		.artist-main {
+			margin-top: 6em;
+		}
 	}
 
 	.guest-dates {

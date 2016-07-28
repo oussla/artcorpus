@@ -56,9 +56,9 @@ get_header(); ?>
 					<?php
 
 						$portrait = get_field('portrait');
-						echo wp_get_attachment_image($portrait['id'], 'large');
+						echo wp_get_attachment_image($portrait['id'], 'large', false, array('class' => 'artist-portrait'));
 
-						the_post_thumbnail('large'); 
+						the_post_thumbnail('large', array('class' => 'artist-main')); 
 
 					?>
 				</header><!-- .entry-header -->
