@@ -10,10 +10,14 @@
 		padding:4em 10% 3em 10%;
 	}
 
+	.guest-dates {
+		@include font-size(1.25);
+	}
+
 	.entry-content {
 		text-align: center;
 		margin: 0;
-		padding:1em 10% 4em 10%;	
+		padding:1em 10% 4em 10%;
 	}
 
 	.entry-title {

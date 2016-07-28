@@ -15,10 +15,15 @@ get_header(); ?>
 
 		<?php
 
-		// Is this artist a guest ? 
-		$guest = get_field('guest') == 1;
 
 		while ( have_posts() ) : the_post();
+
+			// Is this artist a guest ? 
+			$guest = get_field('guest') == 1;
+
+			// Get the artist name
+			$name = get_field('name');
+			if($name == '') $name = get_the_title();
 
 			// get the artist background 
 			$background = "";
@@ -29,6 +34,24 @@ get_header(); ?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?><?php echo $background; ?>>
 				<header class="entry-header">
 					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+
+					<?php
+
+						if($guest) {
+							$guestStartDate = strftime('%#d %B', get_field('guest_date_start'));
+							$guestEndDate = strftime('%#d %B %Y', get_field('guest_date_end'));
+
+							?>
+
+							<span class="guest-dates">
+								<?php printf(esc_html__('en Guest chez Art Corpus du %s au %s', 'artcorpus'), $guestStartDate, $guestEndDate); ?>
+							</span>
+
+							<?php
+
+						}
+
+					?>
 
 					<?php
 
