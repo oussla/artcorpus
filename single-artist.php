@@ -14,37 +14,33 @@ get_header(); ?>
 	<main id="main" class="site-main" role="main">
 
 		<?php
+
+		// Is this artist a guest ? 
+		$guest = get_field('guest') == 1;
+
 		while ( have_posts() ) : the_post();
 
+			// get the artist background 
+			$background = "";
+			$backgroundImage = get_field('background');
+			if($backgroundImage != '') $background = 'style="background: url('.$backgroundImage['url'].') no-repeat top right;"';
+
 			?>
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?><?php echo $background; ?>>
 				<header class="entry-header">
 					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 					<?php
 
-						/**
-						 * The Artist's portrait
-						 */
-						// the_post_thumbnail(); 
+						$portrait = get_field('portrait');
+						echo wp_get_attachment_image($portrait['id'], 'large');
 
-						/**
-						 * The Artist's special work 
-						 *
-						 * TODO: to be replaced with simple ID, and img srcset ? 
-						 * // see https://make.wordpress.org/core/2015/11/10/responsive-images-in-wordpress-4-4/
-						 */
-						$special = get_field('special_work_thumbnail');
-						// var_dump($special);
-						?>
-						<img src="<?php echo $special['sizes']['medium']; ?>" 
-							 alt="<?php echo $special['title']; ?>"
-							 title="<?php echo $special['title']; ?>" />
-						<?php
+						the_post_thumbnail('large'); 
 
 					?>
 				</header><!-- .entry-header -->
 
+				<div class="dot"></div>
 			
 				<div class="entry-content">
 					<?php
@@ -61,7 +57,6 @@ get_header(); ?>
 
 					?>
 				</div><!-- .entry-content -->
-
 
 				<section class="gallery">
 
