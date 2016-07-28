@@ -12,8 +12,13 @@
 
 		img {
 			width: 50%;
-			   display: block;
+			display: block;
     		float: left;
+		}
+
+		.artist-job {
+			@include font-size(1.25);
+			margin-top: 0;
 		}
 
 		.artist-portrait {			
@@ -36,6 +41,7 @@
 
 	.entry-title {
 		margin: 0;
+    	line-height: 1em;
 	}
 
 }
