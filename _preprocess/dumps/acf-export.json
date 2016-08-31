@@ -1,0 +1,280 @@
+[
+    {
+        "key": "group_56fae52266260",
+        "title": "Artist's details",
+        "fields": [
+            {
+                "key": "field_579527daea961",
+                "label": "Nom",
+                "name": "name",
+                "type": "text",
+                "instructions": "Au cas o\u00f9 le titre de la page serait diff\u00e9rent, pr\u00e9ciser le nom de l'artiste. ",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": 50,
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": "",
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "key": "field_579a6c1c08d61",
+                "label": "Job",
+                "name": "job",
+                "type": "text",
+                "instructions": "Vous pouvez ajouter une info sur son job, sous le nom de l'artiste. ",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_56b67688b97cb",
+                            "operator": "!=",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": 50,
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": "",
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "key": "field_56b67688b97cb",
+                "label": "Guest ?",
+                "name": "guest",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "Cet artiste est un guest.",
+                "default_value": 0
+            },
+            {
+                "key": "field_579a5c5368e67",
+                "label": "D\u00e9but du guest",
+                "name": "guest_date_start",
+                "type": "date_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_56b67688b97cb",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": 50,
+                    "class": "",
+                    "id": ""
+                },
+                "display_format": "d\/m\/Y",
+                "return_format": "U",
+                "first_day": 1
+            },
+            {
+                "key": "field_579a5d1368e68",
+                "label": "Fin du guest",
+                "name": "guest_date_end",
+                "type": "date_picker",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_56b67688b97cb",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": 50,
+                    "class": "",
+                    "id": ""
+                },
+                "display_format": "d\/m\/Y",
+                "return_format": "U",
+                "first_day": 1
+            },
+            {
+                "key": "field_56c0eb5a3ecd7",
+                "label": "Dispos",
+                "name": "availability",
+                "type": "checkbox",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "weekday1": "Lundi",
+                    "weekday2": "Mardi",
+                    "weekday3": "Mercredi",
+                    "weekday4": "Jeudi",
+                    "weekday5": "Vendredi",
+                    "weekday6": "Samedi",
+                    "weekday7": "Dimanche"
+                },
+                "default_value": [
+                    
+                ],
+                "layout": "horizontal",
+                "toggle": 0
+            },
+            {
+                "key": "field_56ee6a80ad8c6",
+                "label": "Dispos sp\u00e9ciales",
+                "name": "availability_special",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "formatting": "html",
+                "maxlength": "",
+                "readonly": 0,
+                "disabled": 0
+            },
+            {
+                "key": "field_56f93022819ce",
+                "label": "Portrait",
+                "name": "portrait",
+                "type": "image",
+                "instructions": "Affich\u00e9 en haut de page",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_56b67688b97cb",
+                            "operator": "!=",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_579a56f2a7f8d",
+                "label": "Image d'arri\u00e8re-plan",
+                "name": "background",
+                "type": "image",
+                "instructions": "L'image affich\u00e9e en haut de page, derri\u00e8re le portrait",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_56b67688b97cb",
+                            "operator": "!=",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "array",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": 400,
+                "min_height": 400,
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_56fae579cbd04",
+                "label": "Galerie",
+                "name": "gallery",
+                "type": "gallery",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "min": "",
+                "max": "",
+                "preview_size": "thumbnail",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "artist"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]
