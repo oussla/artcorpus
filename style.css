@@ -1052,6 +1052,21 @@ table.availability .avails td.available-false {
 
 /**
  *
+ *
+ * 
+ */
+.artist-name-button {
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: lowercase;
+  padding: 12px;
+  background-color: #000;
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+
+/**
+ *
  *	Artists grid
  *	template-parts/artists-grid.php
  * 
@@ -1059,10 +1074,26 @@ table.availability .avails td.available-false {
 .artists-grid {
   text-align: center;
   padding: 6em 10% 6em 10%;
+  overflow: auto;
+}
+.artists-grid a {
+  display: block;
+  float: left;
+  width: 33%;
+  position: relative;
+}
+.artists-grid a .artist-name-button {
+  text-decoration: none;
+  display: inline-block;
+  width: 70%;
+  left: 15%;
+  top: 25%;
+  position: absolute;
 }
 
 body {
   font-size: 100%;
+  min-width: 950px;
 }
 
 /**

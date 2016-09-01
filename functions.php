@@ -50,6 +50,8 @@ function artcorpus_setup() {
 	add_image_size('gallery_small', 150, 600);
 	add_image_size('gallery_medium', 250, 1000);
 	add_image_size('gallery_large', 500, 2000);
+	// Cropped artist image for grids 
+	add_image_size('artist_grid', 600, 450, true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

@@ -142,6 +142,21 @@ table.availability {
 
 /**
  *
+ *
+ * 
+ */
+
+.artist-name-button {
+	font-weight: normal;
+	text-decoration: none;
+	text-transform: lowercase;
+	padding: 12px;
+	background-color: #000;
+	@include font-size(1.125);
+}
+
+/**
+ *
  *	Artists grid
  *	template-parts/artists-grid.php
  * 
@@ -149,5 +164,24 @@ table.availability {
 .artists-grid {
 	text-align: center;
 	padding:6em 10% 6em 10%;
+	overflow: auto;
+
+	a {
+		display: block;
+		float: left;
+		width: 33%;
+		position: relative;
+
+		.artist-name-button {
+			text-decoration: none;
+			display: inline-block;
+			width: 70%;
+			left: 15%;
+			top: 25%;
+			position: absolute;
+		}
+
+	}
 
 }
+
