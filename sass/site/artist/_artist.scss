@@ -142,7 +142,7 @@ table.availability {
 
 /**
  *
- *
+ *	Artists name button, mostly displayed on grids. 
  * 
  */
 
@@ -151,9 +151,17 @@ table.availability {
 	text-decoration: none;
 	text-transform: lowercase;
 	padding: 12px;
+	color: #FFF;
 	background-color: #000;
 	@include font-size(1.125);
+	@include transition(all 0.3s ease-in-out);
 }
+
+// #TODO: improve transitions 
+.artist-name-button:hover {
+	background-color: $color__tonic;
+}
+
 
 /**
  *
@@ -163,13 +171,13 @@ table.availability {
  */
 .artists-grid {
 	text-align: center;
-	padding:6em 10% 6em 10%;
+	padding: 0 10% 6em 10%;
 	overflow: auto;
 
 	a {
 		display: block;
 		float: left;
-		width: 33%;
+		width: 33.3%;
 		position: relative;
 
 		.artist-name-button {
@@ -181,6 +189,10 @@ table.availability {
 			position: absolute;
 		}
 
+	}
+
+	a:hover .artist-name-button {
+		background-color: $color__tonic;
 	}
 
 }

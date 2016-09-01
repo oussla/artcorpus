@@ -12,8 +12,7 @@
 
 <section class="artists-grid background-black">
 
-<h3>Tous les artistes</h3>
-
+<h2 class="title-checkmarks"><span><?php echo esc_html__('tous les artistes', 'artcorpus') ?></span></h2>
 
 <?php 
 
@@ -42,9 +41,7 @@ if ($query->have_posts()) {
 		the_post_thumbnail('artist_grid'); 
 
 		?>
-
 		</a>
-
 		<?php
 
 	}

@@ -330,6 +330,28 @@ h2 {
   font-weight: normal;
 }
 
+section h2 {
+  margin: 2em 0 2em 0;
+}
+
+/**
+ * Title with little checkmarks on both sides
+ */
+.title-checkmarks span {
+  background: url("./img/2x/check-white.png") no-repeat right 10px;
+  background-size: 12px 12px;
+  padding-right: 32px;
+}
+.title-checkmarks span:before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  padding-left: 32px;
+  background: url("./img/2x/check-white.png") no-repeat left 0px;
+  background-size: 12px 12px;
+}
+
 p {
   margin-bottom: 1.5em;
 }
@@ -1052,7 +1074,7 @@ table.availability .avails td.available-false {
 
 /**
  *
- *
+ *	Artists name button, mostly displayed on grids. 
  * 
  */
 .artist-name-button {
@@ -1060,9 +1082,19 @@ table.availability .avails td.available-false {
   text-decoration: none;
   text-transform: lowercase;
   padding: 12px;
+  color: #FFF;
   background-color: #000;
   font-size: 18px;
   font-size: 1.125rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.artist-name-button:hover {
+  background-color: #dc3b17;
 }
 
 /**
@@ -1073,13 +1105,13 @@ table.availability .avails td.available-false {
  */
 .artists-grid {
   text-align: center;
-  padding: 6em 10% 6em 10%;
+  padding: 0 10% 6em 10%;
   overflow: auto;
 }
 .artists-grid a {
   display: block;
   float: left;
-  width: 33%;
+  width: 33.3%;
   position: relative;
 }
 .artists-grid a .artist-name-button {
@@ -1089,6 +1121,9 @@ table.availability .avails td.available-false {
   left: 15%;
   top: 25%;
   position: absolute;
+}
+.artists-grid a:hover .artist-name-button {
+  background-color: #dc3b17;
 }
 
 body {
