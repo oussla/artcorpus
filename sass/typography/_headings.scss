@@ -12,3 +12,29 @@ h2 {
 	@include font-size(1.5); // 24px
 	font-weight: normal;
 }
+
+section h2 {
+	margin: 2em 0 2em 0;
+}
+
+/**
+ * Title with little checkmarks on both sides
+ */
+.title-checkmarks { 
+	
+	span {
+		background: url('./img/2x/check-white.png') no-repeat right 10px;
+		background-size: 12px 12px;
+		padding-right: 32px;
+	}
+
+	span:before {
+		content: "";
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		padding-left: 32px;
+		background: url("./img/2x/check-white.png") no-repeat left 0px;
+		background-size: 12px 12px;
+	}
+}
