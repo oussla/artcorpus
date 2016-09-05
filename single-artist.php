@@ -149,12 +149,9 @@ get_header(); ?>
 			/**
 			 * Others artists grid. 
 			 */
-			get_template_part( 'template-parts/artists', 'grid' );
+			artcorpus_artists_grid(ARTISTS_GRID_ALL);
 
 		?>
-
-
-
 
 
 	</main><!-- #main -->

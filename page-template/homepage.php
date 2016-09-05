@@ -76,84 +76,18 @@ get_header(); ?>
 		get_template_part( 'template-parts/bych');
 
 
-	?>
-	
-
-	<h2><?php _e('Les artistes', 'artcorpus'); ?></h2>
-	<?php
-
+		/**
+		 * In-house artists-only grid. 
+		 */
+		artcorpus_artists_grid(ARTISTS_GRID_ARTISTS);
 
 
 		/**
-		 *	Loop on main Artists, ignoring guests
+		 * Guests. 
 		 */
-		$args = array(
-			'post_type' => 'artist',
-			'meta_query' => array(
-				array(
-					'key'     => 'guest',
-					'value'   => 0,
-					'compare' => '=',
-				)
-			),
-			'ignore_sticky_posts' => 1
-		);
-		$artists_query = new WP_Query( $args );
-
-		while ( $artists_query->have_posts() ) : $artists_query->the_post();
-			?>
-			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-
-			</div>
-			<?php
-		endwhile;
-
-		wp_reset_postdata();
+		artcorpus_artists_grid(ARTISTS_GRID_GUESTS, 'white');
 
 	?>
-
-	<hr />
-
-
-
-	<h2><?php _e('Les guests', 'artcorpus'); ?></h2>
-	<?php
-
-
-		/**
-		 *	Loop on Guests
-		 */
-		$args = array(
-			'post_type' => 'artist',
-			'meta_query' => array(
-				array(
-					'key'     => 'guest',
-					'value'   => 1,
-					'compare' => '=',
-				)
-			),
-			'ignore_sticky_posts' => 1
-		);
-		$artists_query = new WP_Query( $args );
-
-		while ( $artists_query->have_posts() ) : $artists_query->the_post();
-			?>
-			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-
-			</div>
-			<?php
-		endwhile;
-		
-		wp_reset_postdata();
-
-
-	?>
-
-	<hr />
 
 
 	<h2><?php _e('Les news du shop', 'artcorpus'); ?></h2>
