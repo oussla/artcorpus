@@ -14,7 +14,7 @@ h2 {
 }
 
 section h2 {
-	margin: 2em 0 2em 0;
+	margin: 1.25em 0 1.25em 0;
 }
 
 /**
@@ -37,4 +37,12 @@ section h2 {
 		background: url("./img/2x/check-white.png") no-repeat left 0px;
 		background-size: 12px 12px;
 	}
+}
+
+.background-white .title-checkmarks {
+
+	span, span:before {
+		background-image:  url("./img/2x/check-black.png");
+	}
+	
 }
