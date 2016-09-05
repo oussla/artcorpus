@@ -331,7 +331,7 @@ h2 {
 }
 
 section h2 {
-  margin: 2em 0 2em 0;
+  margin: 1.25em 0 1.25em 0;
 }
 
 /**
@@ -350,6 +350,10 @@ section h2 {
   padding-left: 32px;
   background: url("./img/2x/check-white.png") no-repeat left 0px;
   background-size: 12px 12px;
+}
+
+.background-white .title-checkmarks span, .background-white .title-checkmarks span:before {
+  background-image: url("./img/2x/check-black.png");
 }
 
 p {
@@ -1126,6 +1130,10 @@ table.availability .avails td.available-false {
   background-color: #dc3b17;
 }
 
+.grid-big a {
+  width: 50%;
+}
+
 body {
   font-size: 100%;
   min-width: 950px;
@@ -1202,6 +1210,11 @@ body {
 .background-black {
   background: url(./img/background-black.jpg) repeat;
   color: #FFF;
+}
+
+.background-white {
+  background: url(./img/background-white.jpg) repeat;
+  color: #000;
 }
 
 /*--------------------------------------------------------------
