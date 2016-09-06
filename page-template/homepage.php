@@ -36,90 +36,88 @@ get_header(); ?>
 
 	<main id="main" class="site-main" role="main">
 
-	<h2><?php _e('En ce moment...', 'artcorpus'); ?></h2>
-	<?php
+		<h2><?php _e('En ce moment...', 'artcorpus'); ?></h2>
+		<?php
 
-		/**
-		 *	Add sticky post
-		 */
-		$sticky = get_option( 'sticky_posts' );
-		$args = array(
-			'posts_per_page' => 1,
-			'post__in'  => $sticky,
-			'ignore_sticky_posts' => 1
-		);
-		$sticky_query = new WP_Query( $args );
-		if ( isset($sticky[0]) ) {
+			/**
+			 *	Add sticky post
+			 */
+			$sticky = get_option( 'sticky_posts' );
+			$args = array(
+				'posts_per_page' => 1,
+				'post__in'  => $sticky,
+				'ignore_sticky_posts' => 1
+			);
+			$sticky_query = new WP_Query( $args );
+			if ( isset($sticky[0]) ) {
 
-			while ( $sticky_query->have_posts() ) : $sticky_query->the_post();
-				?>
-				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				while ( $sticky_query->have_posts() ) : $sticky_query->the_post();
+					?>
+					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-					<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-					<?php the_content(); ?>
+						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+						<?php the_content(); ?>
 
-				</div>
-				<?php
-			endwhile;
+					</div>
+					<?php
+				endwhile;
 
-		}
-		wp_reset_postdata();
+			}
+			wp_reset_postdata();
 
-	?>
+		?>
 
-	<?php
-
-
-		/**
-		 *	Add BYCH: Before You Come Here
-		 */
-		get_template_part( 'template-parts/bych');
+		<?php
 
 
-		/**
-		 * In-house artists-only grid. 
-		 */
-		artcorpus_artists_grid(ARTISTS_GRID_ARTISTS);
+			/**
+			 *	Add BYCH: Before You Come Here
+			 */
+			get_template_part( 'template-parts/bych');
 
 
-		/**
-		 * Guests. 
-		 */
-		artcorpus_artists_grid(ARTISTS_GRID_GUESTS, 'white');
-
-	?>
+			/**
+			 * In-house artists-only grid. 
+			 */
+			artcorpus_artists_grid(ARTISTS_GRID_ARTISTS);
 
 
-	<h2><?php _e('Les news du shop', 'artcorpus'); ?></h2>
-	<?php
+			/**
+			 * Guests. 
+			 */
+			artcorpus_artists_grid(ARTISTS_GRID_GUESTS, 'white');
 
-		/**
-		 *	Add 10 latest news
-		 */
-		$sticky = get_option( 'sticky_posts' );
-		$args = array(
-			'posts_per_page' => 5,
-			'post__not_in' => $sticky,
-			'ignore_sticky_posts' => 1
-		);
-		$latest_query = new WP_Query( $args );
+		?>
 
-		while ( $latest_query->have_posts() ) : $latest_query->the_post();
-			?>
-			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<section class="posts-list white">
+			<h2 class="title-checkmarks"><span><?php echo esc_html__('les news du shop', 'artcorpus'); ?></span></h2>
 
-				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-				<?php the_content(); ?>
-
-			</div>
 			<?php
-		endwhile;
 
-		wp_reset_postdata();
+				/**
+				 *	Add N latest news
+				 */
+				$sticky = get_option( 'sticky_posts' );
+				$args = array(
+					'posts_per_page' => 5,
+					'post__not_in' => $sticky,
+					'ignore_sticky_posts' => 1
+				);
+				$latest_query = new WP_Query( $args );
 
-	?>
+		        while ( $latest_query->have_posts() ) : $latest_query->the_post(); ?>
 
-	<hr />
+		            <?php
+		                get_template_part( 'template-parts/content', get_post_format() );
+		            ?>
+
+		        <?php endwhile;
+
+				wp_reset_postdata();
+
+			?>
+
+		</section>
 
 	
 	</main><!-- #main -->
