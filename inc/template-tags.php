@@ -119,3 +119,89 @@ function artcorpus_category_transient_flusher() {
 }
 add_action( 'edit_category', 'artcorpus_category_transient_flusher' );
 add_action( 'save_post',     'artcorpus_category_transient_flusher' );
+
+
+
+/**
+ * Artists grids types
+ */
+define('ARTISTS_GRID_ALL', 'artists_grid_all');
+define('ARTISTS_GRID_ARTISTS', 'artists_grid_artists');
+define('ARTISTS_GRID_GUESTS', 'artists_grid_guests');
+
+
+/**
+ * Displays artists grid
+ * @param  string $type Grid type, see constants above. 
+ * @param  string $background Background color: 'black' / 'white'
+ * @return void.
+ */
+/**
+ * [artcorpus_artists_grid description]
+ * @param  [type] $type       [description]
+ * @param  string $background [description]
+ * @return [type]             [description]
+ */
+function artcorpus_artists_grid($type = ARTISTS_GRID_ALL, $background = 'black') {
+
+	// Get all artists 
+	$args = array(
+		'post_type' => 'artist',
+		'posts_per_page' => 24,
+		'meta_query' => array(
+			array(
+				'key'     => 'guest',
+				'value'   => ($type == ARTISTS_GRID_ARTISTS ? 0 : ($type == ARTISTS_GRID_GUESTS ? 1 : array(0, 1))),
+				'compare' => ($type == ARTISTS_GRID_ARTISTS ? '=' : ($type == ARTISTS_GRID_GUESTS ? '=' : 'IN')),
+			)
+		),
+		'ignore_sticky_posts' => 1
+	);
+
+	?>
+
+	<section class="artists-grid <?php echo ($type == ARTISTS_GRID_ARTISTS ? 'artists-only grid-big' : ($type == ARTISTS_GRID_GUESTS ? 'guests-only' : '')); ?> background-<?php echo $background; ?>">
+
+	<?php
+
+	?>
+	<h2 class="title-checkmarks"><span><?php 
+		echo esc_html__(($type == ARTISTS_GRID_ARTISTS ? 'les artistes' : ($type == ARTISTS_GRID_GUESTS ? 'les guests' : 'tous les artistes')), 'artcorpus');
+	?></span></h2>
+	<?php
+
+	$query = new WP_Query( $args );
+
+	if ($query->have_posts()) {
+		
+		while($query->have_posts()) {
+
+			$query->the_post();
+			$name = get_field('name');
+			if($name == '') $name = get_the_title();
+
+			?>
+			<a href="<?php echo get_permalink(); ?>" class="grid-item">
+			<h3 class="artist-name-button"><?php echo $name; ?></h3>
+			<?php
+
+			the_post_thumbnail('artist_grid'); 
+
+			?>
+			</a>
+			<?php
+
+		}
+		
+		// Restore original Post Data 
+		wp_reset_postdata();
+	}
+
+
+	?>
+
+	</section>
+
+	<?php
+
+}
