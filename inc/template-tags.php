@@ -9,35 +9,109 @@
 
 if ( ! function_exists( 'artcorpus_posted_on' ) ) :
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Prints HTML with meta information for the current post-date/time, author and categories.
  */
 function artcorpus_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+	$time_string = '<time class="entry-date published updated" datetime="%1$s" title="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		$time_string = '<time class="entry-date published" datetime="%1$s" title="%1$s">%2$s</time><time class="updated" datetime="%3$s" title="%1$s">%4$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
+		get_the_time('Y-m-d G:i'),
+		artcorpus_time_ago(),
+		get_the_time('Y-m-d G:i'),
+		artcorpus_time_ago( get_the_modified_time('G') )
 	);
 
-	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'artcorpus' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
+	$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
-	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'artcorpus' ),
+	$byline = sprintf(__( '<span class="small">by</span> %s', 'post author', 'artcorpus' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+	$categories = "";
 
+	$categories_list = get_the_category_list( esc_html__( ', ', 'artcorpus' ) );
+		if ( $categories_list && artcorpus_categorized_blog() ) {
+			$categories = sprintf(__( '<span class="small">in</span> %s', 'post author', 'artcorpus' ), $categories_list);
+		}
+
+	echo '<span class="posted-on">' . $posted_on . ',</span><span class="byline"> ' 
+			. $byline . '</span> <span class="cat-links">' 
+			. $categories . '</span>';
 }
 endif;
+
+
+/**
+ * Human readable time. 
+ * See → http://www.jasonbobich.com/wordpress/a-better-way-to-add-time-ago-to-your-wordpress-theme/
+ * @return void
+ */
+function artcorpus_time_ago($date = null) {
+ 
+	global $post;
+ 	
+ 	if($date == null) $date = get_post_time('G', true, $post);
+ 
+	// Array of time period chunks
+	$chunks = array(
+		array( 60 * 60 * 24 * 365 , __( 'year', 'artcorpus' ), __( 'years', 'artcorpus' ) ),
+		array( 60 * 60 * 24 * 30 , __( 'month', 'artcorpus' ), __( 'months', 'artcorpus' ) ),
+		array( 60 * 60 * 24 * 7, __( 'week', 'artcorpus' ), __( 'weeks', 'artcorpus' ) ),
+		array( 60 * 60 * 24 , __( 'day', 'artcorpus' ), __( 'days', 'artcorpus' ) ),
+		array( 60 * 60 , __( 'hour', 'artcorpus' ), __( 'hours', 'artcorpus' ) ),
+		array( 60 , __( 'minute', 'artcorpus' ), __( 'minutes', 'artcorpus' ) ),
+		array( 1, __( 'second', 'artcorpus' ), __( 'seconds', 'artcorpus' ) )
+	);
+ 
+	if ( !is_numeric( $date ) ) {
+		$time_chunks = explode( ':', str_replace( ' ', ':', $date ) );
+		$date_chunks = explode( '-', str_replace( ' ', '-', $date ) );
+		$date = gmmktime( (int)$time_chunks[1], (int)$time_chunks[2], (int)$time_chunks[3], (int)$date_chunks[1], (int)$date_chunks[2], (int)$date_chunks[0] );
+	}
+ 
+	$current_time = current_time( 'mysql', $gmt = 0 );
+	$newer_date = strtotime( $current_time );
+ 
+	// Difference in seconds
+	$since = $newer_date - $date;
+ 
+	// Something went wrong with date calculation and we ended up with a negative date.
+	if ( 0 > $since )
+		return __( 'sometime', 'artcorpus' );
+ 
+	/**
+	 * We only want to output one chunks of time here, eg:
+	 * x years
+	 * xx months
+	 * so there's only one bit of calculation below:
+	 */
+ 
+	//Step one: the first chunk
+	for ( $i = 0, $j = count($chunks); $i < $j; $i++) {
+		$seconds = $chunks[$i][0];
+ 
+		// Finding the biggest chunk (if the chunk fits, break)
+		if ( ( $count = floor($since / $seconds) ) != 0 )
+			break;
+	}
+ 
+	// Set output var
+	$output = ( 1 == $count ) ? '1 '. $chunks[$i][1] : $count . ' ' . $chunks[$i][2];
+ 
+ 
+	if ( !(int)trim($output) ){
+		$output = '0 ' . __( 'seconds', 'artcorpus' );
+	}
+ 
+	$output .= __(' ago', 'artcorpus');
+ 
+	return $output;
+}
+
+
 
 if ( ! function_exists( 'artcorpus_entry_footer' ) ) :
 /**
