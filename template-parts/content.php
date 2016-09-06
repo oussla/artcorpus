@@ -10,6 +10,20 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<?php
+
+	/**
+	 *
+	 * ### TODO : 
+	 * - manage post thumbnail 
+	 * - different post formats 
+	 * 
+	 */
+
+	?>
+	<?php the_post_thumbnail(); ?>
+
 	<header class="entry-header">
 		<?php
 			if ( is_single() ) {
@@ -26,6 +40,7 @@
 		endif; ?>
 	</header><!-- .entry-header -->
 
+
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(
@@ -41,7 +56,4 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php artcorpus_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

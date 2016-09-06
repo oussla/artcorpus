@@ -26,3 +26,44 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+.posts-list {
+	text-align: center;
+    padding: 0 10% 6em 10%;
+    overflow: auto;
+}
+
+article {
+	text-align: left;
+
+	.entry-title {
+		@include font-size(1.5); // 24px
+		margin: 0;
+
+		a {
+			text-decoration: none;
+			color: #000;
+		}
+	}
+
+	.entry-meta {
+		@include font-size(0.6875); // 11px
+		text-transform: uppercase;
+		color: #7f7f7f;	
+
+		a {
+			text-decoration: none;
+			color: #7f7f7f;	
+		}
+		
+		.small {
+			text-transform: none;
+			color: #b3b3b3;
+		}	
+	}
+
+	.entry-content {
+		margin-top: 0;
+	}
+
+}
