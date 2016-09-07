@@ -36,18 +36,15 @@
 
 		<?php
 
-		/**
-		 * ###TODO : 
-		 * translate and display message according to todayAvail. 
-		 */
+		if($todayAvail) {
+			echo esc_html__('Oui.', 'artcorpus').'<span class="small">'.esc_html__('(si tout va bien)', 'artcorpus').'</span>';
+		} else {
+			echo esc_html__('Aaah... non.', 'artcorpus');
+		}
 
 		?>
 
-		Oui. <span class="small">(si tout va bien)</span>
-
 	</div>
-
-
 
 
 
