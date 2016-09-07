@@ -279,3 +279,11 @@ function artcorpus_artists_grid($type = ARTISTS_GRID_ALL, $background = 'black')
 	<?php
 
 }
+
+
+
+
+function artcorpus_read_more_link() {
+    return '<a class="more-link button" href="' . get_permalink() . '">'. esc_html__('lire la suite', 'artcorpus') .'</a>';
+}
+add_filter( 'the_content_more_link', 'artcorpus_read_more_link' );

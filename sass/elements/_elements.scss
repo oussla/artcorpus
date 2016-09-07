@@ -36,3 +36,25 @@ img {
 }
 
 @import "tables";
+
+
+
+/**
+ *
+ * Button links
+ * 
+ */
+
+a.button {
+	display: inline-block;
+	@include font-size(0.875);
+	padding: 12px 20px;
+	border: 1px solid #000;
+	text-decoration: none;
+	color: #000;
+}
+
+a.button:hover {
+	color: #FFF;
+	background-color: #000;
+}
