@@ -210,12 +210,6 @@ define('ARTISTS_GRID_GUESTS', 'artists_grid_guests');
  * @param  string $background Background color: 'black' / 'white'
  * @return void.
  */
-/**
- * [artcorpus_artists_grid description]
- * @param  [type] $type       [description]
- * @param  string $background [description]
- * @return [type]             [description]
- */
 function artcorpus_artists_grid($type = ARTISTS_GRID_ALL, $background = 'black') {
 
 	// Get all artists 
@@ -282,7 +276,10 @@ function artcorpus_artists_grid($type = ARTISTS_GRID_ALL, $background = 'black')
 
 
 
-
+/**
+ * Read more custom button
+ * @return Custom button markup
+ */
 function artcorpus_read_more_link() {
     return '<a class="more-link button" href="' . get_permalink() . '">'. esc_html__('lire la suite', 'artcorpus') .'</a>';
 }
