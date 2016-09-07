@@ -352,12 +352,14 @@ section h2 {
   background-size: 12px 12px;
 }
 
-.background-white .title-checkmarks span, .background-white .title-checkmarks span:before {
+.white .title-checkmarks span, .white .title-checkmarks span:before,
+.background-white .title-checkmarks span,
+.background-white .title-checkmarks span:before {
   background-image: url("./img/2x/check-black.png");
 }
 
 p {
-  margin-bottom: 1.5em;
+  margin-bottom: 0.5em;
 }
 
 dfn, cite, em, i {
@@ -474,6 +476,52 @@ img {
 table {
   margin: 0 0 1.5em;
   width: 100%;
+}
+
+/**
+ *
+ * ELEMENTS
+ * 
+ */
+.dot {
+  margin: 0 auto;
+  width: 4px;
+  height: 4px;
+  background-color: #000;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.background-black {
+  background: url(./img/background-black.jpg) repeat;
+  color: #FFF;
+}
+
+.background-white {
+  background: url(./img/background-white.jpg) repeat;
+  color: #000;
+}
+
+/**
+ *
+ * Button links
+ * 
+ */
+a.button {
+  display: inline-block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  padding: 12px 20px;
+  border: 1px solid #000;
+  text-decoration: none;
+  color: #000;
+}
+
+a.button:hover {
+  color: #FFF;
+  background-color: #000;
 }
 
 /*--------------------------------------------------------------
@@ -893,7 +941,7 @@ a:hover, a:active {
 }
 
 .hentry {
-  margin: 0 0 1.5em;
+  margin: 0 0 3em;
 }
 
 .byline,
@@ -915,6 +963,62 @@ a:hover, a:active {
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
+}
+
+.posts-list {
+  text-align: center;
+  padding: 0 10% 6em 10%;
+  overflow: auto;
+}
+.posts-list article {
+  max-width: 75%;
+}
+
+article {
+  text-align: left;
+}
+article .entry-title {
+  font-size: 24px;
+  font-size: 1.5rem;
+  margin: 0;
+}
+article .entry-title a {
+  text-decoration: none;
+  color: #000;
+}
+article .entry-meta {
+  font-size: 11px;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  color: #7f7f7f;
+}
+article .entry-meta a {
+  text-decoration: none;
+  color: #7f7f7f;
+}
+article .entry-meta .small {
+  text-transform: none;
+  color: #b3b3b3;
+}
+article .entry-content {
+  margin-top: 0;
+}
+
+/**
+ * Alternative posts formats
+ */
+article.format-aside {
+  float: right;
+}
+
+article.format-quote {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+article.format-quote .entry-title {
+  font-size: 34px;
+  font-size: 2.125rem;
 }
 
 /*--------------------------------------------------------------
@@ -1189,32 +1293,6 @@ body {
 
 #sbi_load {
   display: none;
-}
-
-/**
- *
- * ELEMENTS
- * 
- */
-.dot {
-  margin: 0 auto;
-  width: 4px;
-  height: 4px;
-  background-color: #000;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  border-radius: 2px;
-}
-
-.background-black {
-  background: url(./img/background-black.jpg) repeat;
-  color: #FFF;
-}
-
-.background-white {
-  background: url(./img/background-white.jpg) repeat;
-  color: #000;
 }
 
 /*--------------------------------------------------------------

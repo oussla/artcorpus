@@ -108,7 +108,7 @@ get_header(); ?>
 		        while ( $latest_query->have_posts() ) : $latest_query->the_post(); ?>
 
 		            <?php
-		                get_template_part( 'template-parts/content', get_post_format() );
+		                get_template_part( 'template-parts/content', 'excerpt' );
 		            ?>
 
 		        <?php endwhile;
