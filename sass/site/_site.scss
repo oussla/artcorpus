@@ -101,30 +101,3 @@ body {
 #sbi_load {
 	display: none;
 }
-
-
-
-/**
- *
- * ELEMENTS
- * 
- */
-
-.dot {
-	margin: 0 auto;
-	width: 4px;
-	height: 4px;
-	background-color: #000;
-	@include border-radius(2px);
-}
-
-
-.background-black {
-	background: url(./img/background-black.jpg) repeat;
-	color: #FFF;
-}
-
-.background-white {
-	background: url(./img/background-white.jpg) repeat;
-	color: #000;
-}
