@@ -27,15 +27,6 @@
 	margin: 0 0 1.5em;
 }
 
-.posts-list {
-	text-align: center;
-    padding: 0 10% 6em 10%;
-    overflow: auto;
-
-    article {
-    	max-width: 75%;
-    }
-}
 
 article {
 	text-align: left;
@@ -88,4 +79,35 @@ article.format-quote {
     .entry-title {
 		@include font-size(2.125); // 34px
 	}
+}
+
+
+/**
+ * Lists
+ */
+.posts-list,
+.post-single {
+	text-align: center;
+    padding: 0 10% 6em 10%;
+    overflow: auto;
+
+    article {
+    	max-width: 75%;
+    }
+}
+
+/**
+ * Single
+ */
+.post-single {
+    article {
+    	max-width: 75%;
+    	text-align: left;
+	    margin-left: auto;
+	    margin-right: auto;
+
+	    .entry-title {
+			@include font-size(3.125); // 50px
+		}
+    }
 }
