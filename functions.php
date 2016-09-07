@@ -78,10 +78,11 @@ function artcorpus_setup() {
 	 */
 	add_theme_support( 'post-formats', array(
 		'aside',
-		'image',
-		'video',
+		// 'image',
+		// 'video',
 		'quote',
-		'link',
+		// 'link',
+		'status'
 	) );
 
 	// Set up the WordPress core custom background feature.
