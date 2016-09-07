@@ -10,6 +10,10 @@
 		padding:4em 10% 3em 10%;
 		overflow: auto;
 
+		.entry-title {
+			@include font-size(3.125); // 50px
+		}
+
 		img {
 			width: 50%;
 			display: block;
