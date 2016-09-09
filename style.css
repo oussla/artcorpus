@@ -736,8 +736,10 @@ a:hover, a:active {
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
-  margin: 0 0 1.5em;
+  margin: 0 auto;
   overflow: hidden;
+  width: 75%;
+  text-align: left;
 }
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
@@ -1003,6 +1005,10 @@ article.format-aside {
   float: right;
 }
 
+.post-single article.format-aside {
+  float: none;
+}
+
 article.format-quote {
   text-align: center;
   margin-left: auto;
@@ -1044,11 +1050,6 @@ article.format-quote .entry-title {
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-  display: none;
-}
-
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -1092,7 +1093,7 @@ article.format-quote .entry-title {
 }
 .artist .entry-header {
   text-align: center;
-  padding: 4em 10% 3em 10%;
+  padding: 0 10% 3em 10%;
   overflow: auto;
 }
 .artist .entry-header .entry-title {
@@ -1293,6 +1294,15 @@ body {
   font-weight: bold;
   font-size: 15px;
   font-size: 0.9375rem;
+}
+
+/**
+ *
+ *
+ * 
+ */
+.site-main {
+  padding-top: 4em;
 }
 
 /**
