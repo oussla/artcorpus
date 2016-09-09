@@ -71,6 +71,10 @@ article.format-aside {
 	float: right;
 }
 
+.post-single article.format-aside {
+	float: none;
+}
+
 article.format-quote {
 	text-align: center;
     margin-left: auto;
