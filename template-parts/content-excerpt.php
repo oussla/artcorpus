@@ -15,7 +15,7 @@
 
 	if(has_post_thumbnail()):
 	?>
-		<a href="<?php the_permalink(); ?>" rel="bookmark">
+		<a href="<?php the_permalink(); ?>" rel="bookmark" class="post-thumbnail-wrapper">
 			<?php the_post_thumbnail($size = 'post-thumbnail', array('class' => 'post-thumbnail')); ?>
 		</a>
 	<?php

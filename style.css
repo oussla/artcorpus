@@ -999,6 +999,13 @@ article .entry-content {
 }
 
 /**
+ * First section
+ */
+section.first {
+  padding-top: 4em;
+}
+
+/**
  * Alternative posts formats
  */
 article.format-aside {
@@ -1025,7 +1032,7 @@ article.format-quote .entry-title {
 .posts-list,
 .post-single {
   text-align: center;
-  padding: 0 10% 6em 10%;
+  padding: 0 10% 4em 10%;
   overflow: auto;
 }
 .posts-list article,
@@ -1045,6 +1052,51 @@ article.format-quote .entry-title {
 .post-single article .entry-title {
   font-size: 50px;
   font-size: 3.125rem;
+}
+
+/**
+ * Sticky on homepage
+ */
+.sticky .sticky-title {
+  width: 48%;
+  margin-bottom: 1em;
+  float: left;
+  text-align: center;
+}
+.sticky .sticky-title h3 {
+  font-size: 34px;
+  font-size: 2.125rem;
+  font-weight: normal;
+  text-transform: lowercase;
+  margin: 0;
+}
+.sticky .sticky-title h2 {
+  font-size: 50px;
+  font-size: 3.125rem;
+  line-height: 2.125rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+.sticky article {
+  max-width: 100%;
+}
+.sticky article .post-thumbnail-wrapper {
+  float: right;
+  width: 48%;
+}
+.sticky article .post-thumbnail-wrapper img {
+  max-width: 100%;
+}
+.sticky article .entry-meta {
+  display: none;
+}
+.sticky article .entry-content,
+.sticky article .entry-header {
+  clear: left;
+  overflow: auto;
+  width: 48%;
+  text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -1089,7 +1141,7 @@ article.format-quote .entry-title {
 ## Artist
 --------------------------------------------------------------*/
 .artist.hentry {
-  margin: 0;
+  margin: 4em 0 0 0;
 }
 .artist .entry-header {
   text-align: center;
@@ -1147,11 +1199,11 @@ article.format-quote .entry-title {
   width: 25%;
 }
 .gallery .grid-item img {
-  -webkit-transition: transform 8s ease;
-  -moz-transition: transform 8s ease;
-  -ms-transition: transform 8s ease;
-  -o-transition: transform 8s ease;
-  transition: transform 8s ease;
+  -webkit-transition: transform 1.5s ease-out;
+  -moz-transition: transform 1.5s ease-out;
+  -ms-transition: transform 1.5s ease-out;
+  -o-transition: transform 1.5s ease-out;
+  transition: transform 1.5s ease-out;
   width: 100%;
 }
 .gallery .grid-item:hover img {
@@ -1301,10 +1353,6 @@ body {
  *
  * 
  */
-.site-main {
-  padding-top: 4em;
-}
-
 /**
  * 
  * FOOTERS

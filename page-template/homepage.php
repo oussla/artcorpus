@@ -10,8 +10,6 @@
 
 get_header(); ?>
 
-	YO HOMEPAGE.
-
 	<header>
 
 	<?php
@@ -36,36 +34,37 @@ get_header(); ?>
 
 	<main id="main" class="site-main" role="main">
 
-		<h2><?php _e('En ce moment...', 'artcorpus'); ?></h2>
-		<?php
+		<section class="first posts-list sticky white background-white">
+			<div class="sticky-title">
+				<h3><?php _e('En ce moment chez', 'artcorpus'); ?></h3>
+				<h2><?php _e('Art Corpus', 'artcorpus'); ?></h2>
+			</div>
+			<?php
 
-			/**
-			 *	Add sticky post
-			 */
-			$sticky = get_option( 'sticky_posts' );
-			$args = array(
-				'posts_per_page' => 1,
-				'post__in'  => $sticky,
-				'ignore_sticky_posts' => 1
-			);
-			$sticky_query = new WP_Query( $args );
-			if ( isset($sticky[0]) ) {
+				/**
+				 *	Add sticky post
+				 */
+				$sticky = get_option( 'sticky_posts' );
+				$args = array(
+					'posts_per_page' => 1,
+					'post__in'  => $sticky,
+					'ignore_sticky_posts' => 1
+				);
+				$sticky_query = new WP_Query( $args );
 
-				while ( $sticky_query->have_posts() ) : $sticky_query->the_post();
-					?>
-					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<?php the_content(); ?>
+				while ( $sticky_query->have_posts() ) : $sticky_query->the_post(); ?>
 
-					</div>
-					<?php
-				endwhile;
+		            <?php
+		                get_template_part( 'template-parts/content', 'excerpt' );
+		            ?>
 
-			}
-			wp_reset_postdata();
+		        <?php endwhile;
 
-		?>
+				wp_reset_postdata();
+
+			?>
+		</section>
 
 		<?php
 

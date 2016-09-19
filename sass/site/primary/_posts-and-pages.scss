@@ -64,6 +64,13 @@ article {
 }
 
 /**
+ * First section
+ */
+section.first {
+	padding-top: 4em;
+}
+
+/**
  * Alternative posts formats
  */
 
@@ -92,7 +99,7 @@ article.format-quote {
 .posts-list,
 .post-single {
 	text-align: center;
-    padding: 0 10% 6em 10%;
+    padding: 0 10% 4em 10%;
     overflow: auto;
 
     article {
@@ -114,4 +121,63 @@ article.format-quote {
 			@include font-size(3.125); // 50px
 		}
     }
+}
+
+
+/**
+ * Sticky on homepage
+ */
+
+.sticky {
+
+	.sticky-title {
+		width: 48%;
+		margin-bottom: 1em;
+		float: left;
+		text-align: center;
+
+		h3 {
+			@include font-size(2.125); // 34px
+			font-weight: normal;
+			text-transform: lowercase;
+			margin: 0;
+		}
+
+		h2 {
+			@include font-size(3.125); // 50px
+			line-height: 2.125rem;
+			font-weight: bold;
+			text-transform: uppercase;
+			margin: 0;
+		}
+	}
+
+	article {
+    	max-width: 100%;
+
+    	.post-thumbnail-wrapper {
+    		float: right;
+    		width: 48%;
+
+	    	img {    
+	    		max-width: 100%;
+	    	}
+    	}
+
+
+    	.entry-meta {
+    		display: none;
+    	}
+
+    	.entry-content,
+    	.entry-header {
+    		clear: left;
+    		overflow: auto;
+		    width: 48%;
+		    text-align: center;
+    	}
+
+    }
+
+
 }
