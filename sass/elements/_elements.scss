@@ -80,7 +80,18 @@ a.button {
 	color: #000;
 }
 
+.highlight {
+
+	a.button {
+		color: #FFF;
+		background-color: $color__tonic;
+		border-color: $color__tonic;
+	}
+
+}
+
 a.button:hover {
 	color: #FFF;
 	background-color: #000;
+	border-color: #000;
 }
