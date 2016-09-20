@@ -19,6 +19,7 @@
 	if($name == '') $name = get_the_title();
 
 	$avails = get_field('availability');
+	$availSpecial = get_field('availability_special');
 	$today = strtolower(strftime("%A"));
 
 ?>
@@ -47,61 +48,10 @@
 	</div>
 
 
+<?php
 
-	<table class="availability">
-	<?php
-
-		// Setting an array with all translated weekdays.
-		// Starts with "next Monday" as a first reference monday. 
-		// Display all availabilities, per day. 
-		$timestamp = strtotime('next Monday');
-		$colspan = 1;
-
-		$trWeekdays = '<tr class="weekdays">'.PHP_EOL;
-		$trAvails = '<tr class="avails">'.PHP_EOL;
-
-		for ($i = 0; $i < 7; $i++) {
-
-		    $currentDayName = strtolower(strftime('%A', $timestamp));
-		    // check current day availability
-		    $currentAvail = in_array("weekday".($i + 1), $avails);
-		    // same for next day
-		    $nextAvail = in_array("weekday".($i + 2), $avails);
-
-		    // display week day
-		    $trWeekdays .= '<td class="available-'.($currentAvail ? 'true' : 'false').'">'.$currentDayName.'</td>'.PHP_EOL;
-
-		    // calculate colspan and / or display
-		    if($currentAvail != $nextAvail || $i == 6) {
-		    	// Display current availability with calculated colspan
-		    	$trAvails .= '<td class="available-'.($currentAvail ? 'true' : 'false').'" '.
-		    					($colspan > 1 ? 'colspan="'.$colspan.'"' : '').'></td>'.PHP_EOL;
-		    	// Reset colspan
-		    	$colspan = 1;
-		    } else {
-		    	$colspan++;
-		    }
-
-		    $timestamp = strtotime('+1 day', $timestamp);
-		}
-
-		$trWeekdays .= '</tr>';
-		$trAvails .= '</tr>';
-
-		echo $trWeekdays . $trAvails;
-
-	?>
-	</table>
-
-
-	<?php
-	$availSpecial = get_field('availability_special');
-	if($availSpecial != ''):
-	?>
-		<span class="availability-special"><?php echo $availSpecial; ?></span>
-	<?php
-	endif;
-
+	// Calling template to get the availability table
+	artcorpus_artists_availability_table($avails, $availSpecial);
 
 
 	/**
