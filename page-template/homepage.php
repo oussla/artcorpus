@@ -34,7 +34,7 @@ get_header(); ?>
 
 	<main id="main" class="site-main" role="main">
 
-		<section class="first posts-list sticky white background-white">
+		<section class="first posts-list sticky highlight white background-white">
 			<div class="sticky-title">
 				<h3><?php _e('En ce moment chez', 'artcorpus'); ?></h3>
 				<h2><?php _e('Art Corpus', 'artcorpus'); ?></h2>
