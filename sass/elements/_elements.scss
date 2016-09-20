@@ -80,14 +80,11 @@ a.button {
 	color: #000;
 }
 
-.highlight {
-
-	a.button {
-		color: #FFF;
-		background-color: $color__tonic;
-		border-color: $color__tonic;
-	}
-
+.highlight a.button,
+a.button.highlight {
+	color: #FFF;
+	background-color: $color__tonic;
+	border-color: $color__tonic;
 }
 
 a.button:hover {
