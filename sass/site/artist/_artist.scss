@@ -109,10 +109,12 @@ table.availability {
 	width: 100%;
 
 	td {
-		width: 14.28%; // 1/7
+		// width: 14.28%; // 1/7
+		width: 12.5%; // 1/8
 		@include font-size(0.875);
 		height: 1.25em;
 		text-align: center;
+		overflow: hidden;
 	}
 
 	.weekdays {
@@ -136,12 +138,38 @@ table.availability {
 
 	}
 
+	.name {
+		text-align: right;
+		padding-right: 1em;
+		font-weight: bold;
+	}
+
 }
 
 .availability-special {
 	display: block;
 	margin-top: 1em;
 }
+
+
+/**
+ *
+ *	Multiple artists availabilities 
+ * 
+ */
+.artists-availabilities {
+
+	table.availability {   
+	    border-collapse: separate;
+    	border-spacing: 0 2em;
+
+    	.weekdays td.available-false {
+    		color: #000;
+    	}
+	}
+
+}
+
 
 
 /**

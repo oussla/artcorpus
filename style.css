@@ -520,9 +520,17 @@ a.button {
   color: #000;
 }
 
+.highlight a.button,
+a.button.highlight {
+  color: #FFF;
+  background-color: #dc3b17;
+  border-color: #dc3b17;
+}
+
 a.button:hover {
   color: #FFF;
   background-color: #000;
+  border-color: #000;
 }
 
 /*--------------------------------------------------------------
@@ -1060,6 +1068,7 @@ article.format-quote .entry-title {
 .sticky .sticky-title {
   width: 48%;
   margin-bottom: 1em;
+  margin-top: 2em;
   float: left;
   text-align: center;
 }
@@ -1235,11 +1244,12 @@ table.availability {
   width: 100%;
 }
 table.availability td {
-  width: 14.28%;
+  width: 12.5%;
   font-size: 14px;
   font-size: 0.875rem;
   height: 1.25em;
   text-align: center;
+  overflow: hidden;
 }
 table.availability .weekdays td.available-false {
   color: #b3b3b3;
@@ -1251,10 +1261,28 @@ table.availability .avails td.available-true {
 table.availability .avails td.available-false {
   background-color: #f1f1f1;
 }
+table.availability .name {
+  text-align: right;
+  padding-right: 1em;
+  font-weight: bold;
+}
 
 .availability-special {
   display: block;
   margin-top: 1em;
+}
+
+/**
+ *
+ *	Multiple artists availabilities 
+ * 
+ */
+.artists-availabilities table.availability {
+  border-collapse: separate;
+  border-spacing: 0 2em;
+}
+.artists-availabilities table.availability .weekdays td.available-false {
+  color: #000;
 }
 
 /**

@@ -51,7 +51,7 @@
 <?php
 
 	// Calling template to get the availability table
-	artcorpus_artists_availability_table($avails, $availSpecial);
+	artcorpus_artists_availability_table($avails, $availSpecial, array('displayWeekDays' => true));
 
 
 	/**
