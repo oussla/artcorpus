@@ -13,12 +13,28 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<section class="first post-single 2cols">
+		<section class="first post-single columns">
 
 			<?php
 			while ( have_posts() ) : the_post();
 
-				get_template_part( 'template-parts/content', 'page' );
+				?>
+				<div class="column column-2-3">
+					<?php
+					get_template_part( 'template-parts/content', 'page' );
+					?>
+				</div>
+
+				<div class="column column-1-3">
+					<article>
+						<?php
+							$rightColumn = get_field('rightcolumn');
+							echo $rightColumn;
+						?>
+					</article>
+				</div>
+
+				<?php
 
 			endwhile; // End of the loop.
 			?>
