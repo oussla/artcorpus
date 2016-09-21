@@ -944,6 +944,16 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+.column-1-3 {
+  width: 33.33%;
+  float: left;
+}
+
+.column-2-3 {
+  width: 66.66%;
+  float: left;
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -1048,11 +1058,15 @@ article.format-quote .entry-title {
   max-width: 75%;
 }
 
+.column article {
+  max-width: 100%;
+  padding: 0 10% 0 0;
+}
+
 /**
  * Single
  */
 .post-single article {
-  max-width: 75%;
   text-align: left;
   margin-left: auto;
   margin-right: auto;
