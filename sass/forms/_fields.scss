@@ -14,38 +14,66 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: $color__text-input;
+
+	@include font-size(.875);
+	@include transition(all .3s ease);
+	font-weight: normal;
+	display: inline-block;
+	color: #000;
+	outline: none;
+	padding: 12px 20px;
 	border: 1px solid $color__border-input;
-	border-radius: 3px;
+	text-decoration: none;
+	background-color: #fff;
+	max-width: 100%;
+
 
 	&:focus {
 		color: $color__text-input-focus;
+		border-color: $color__tonic;
 	}
+
 }
 
 select {
 	border: 1px solid $color__border-input;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"] {
-	padding: 3px;
-}
-
 textarea {
-	padding-left: 3px;
 	width: 100%;
 }
+
+label {
+	@include font-size(0.9375); // 15px font size
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #666;
+}
+
+
+/**
+ * Contact Form 7
+ */
+
+// Erreurs 
+span.wpcf7-not-valid-tip {
+    color: #f00;
+    @include font-size(0.875);
+    font-weight: normal;
+    text-transform: none;
+}
+
+
+div.wpcf7-response-output {
+	margin:0; 
+	padding: 0;
+	@include font-size(0.875);
+    // text-transform: uppercase;
+    border: none;
+}
+
+div.wpcf7-validation-errors {
+	border: none;
+}
+
+//wpcf7-display-none wpcf7-validation-errors
