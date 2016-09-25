@@ -11,7 +11,7 @@ var gulp = require('gulp'),
  */
 gulp.task('sass', function() {
 	return sass('../sass/style.scss', {
-			style: 'compressed'
+			style: 'expanded' // nested / compact / expanded / compressed 
 		})
 		.on('error', sass.logError)
 		.pipe(gulp.dest('../'));
