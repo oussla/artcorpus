@@ -91,6 +91,17 @@ get_header(); ?>
 					?>
 				</div><!-- .entry-content -->
 
+
+				<?php
+
+					/**
+	 				 * Artist's availability. 
+	 				 */
+					get_template_part( 'template-parts/artist', 'availability' );
+
+				?>
+
+
 				<section class="gallery background-black">
 
 					<?php
@@ -114,16 +125,6 @@ get_header(); ?>
 					?>
 		 			
 				</section>
-
-
-				<?php
-
-					/**
-	 				 * Artist's availability. 
-	 				 */
-					get_template_part( 'template-parts/artist', 'availability' );
-
-				?>
 
 
 			</article><!-- #post-## -->
