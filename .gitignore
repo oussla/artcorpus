@@ -2,3 +2,4 @@ _preprocess/node_modules/
 _preprocess/bower_components/
 _preprocess/.sass-cache/
 sass/.sass-cache/
+vendors/*
