@@ -1099,10 +1099,15 @@ article.format-quote .entry-title {
   text-align: left;
   margin-left: auto;
   margin-right: auto;
+  max-width: 800px;
 }
 .post-single article .entry-title {
   font-size: 50px;
   font-size: 3.125rem;
+}
+.post-single article .entry-content h1 {
+  font-size: 32px;
+  font-size: 2rem;
 }
 
 /**
@@ -1149,6 +1154,23 @@ article.format-quote .entry-title {
   overflow: auto;
   width: 48%;
   text-align: center;
+}
+
+figcaption {
+  font-size: 11px;
+  font-size: 0.6875rem;
+}
+
+figure.alignleft {
+  margin-left: -15%;
+  width: 115%;
+  max-width: 115%;
+}
+
+figure.alignright {
+  margin-right: -15%;
+  max-width: 115%;
+  width: 115%;
 }
 
 /*--------------------------------------------------------------
@@ -1226,8 +1248,9 @@ article.format-quote .entry-title {
 }
 .artist .entry-content {
   text-align: center;
-  margin: 0;
-  padding: 1em 10% 4em 10%;
+  margin: 0 auto;
+  padding: 1em 0 4em 0;
+  max-width: 800px;
 }
 .artist .entry-title {
   margin: 0;
@@ -1491,6 +1514,7 @@ object {
 --------------------------------------------------------------*/
 .wp-caption {
   margin-bottom: 1.5em;
+  margin-left: 0;
   max-width: 100%;
 }
 .wp-caption img[class*="wp-image-"] {
