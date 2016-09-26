@@ -533,6 +533,15 @@ a.button:hover {
   border-color: #000;
 }
 
+.blocklink {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 2em;
+  width: 100%;
+  text-align: center;
+}
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -983,6 +992,12 @@ a:hover, a:active {
 }
 .widget select {
   max-width: 100%;
+}
+.widget h2 {
+  margin: 0;
+}
+.widget h2.widget-title {
+  margin: 0 0 0.5em 0;
 }
 
 /**
