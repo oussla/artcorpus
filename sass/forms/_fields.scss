@@ -48,14 +48,17 @@ label {
     font-weight: bold;
     text-transform: uppercase;
     color: #666;
+
+    span.required:after {
+    	content: '*';
+    	color: $color__tonic;
+    }
 }
 
 
 /**
  * Contact Form 7
  */
-
-// Erreurs 
 span.wpcf7-not-valid-tip {
     color: #f00;
     @include font-size(0.875);
@@ -68,7 +71,6 @@ div.wpcf7-response-output {
 	margin:0; 
 	padding: 0;
 	@include font-size(0.875);
-    // text-transform: uppercase;
     border: none;
 }
 
@@ -77,3 +79,46 @@ div.wpcf7-validation-errors {
 }
 
 //wpcf7-display-none wpcf7-validation-errors
+
+
+/**
+ * Custom file upload buttons
+ */
+.input-file-container {
+    position: relative;
+    width: 100%;
+
+    .wpcf7-form-control-wrap {
+    	position: static;
+    }
+
+    input[type="file"] {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 200px;
+	    padding: 14px 0;
+	    opacity: 0;
+	    cursor: pointer;
+	}
+}
+
+.input-file-trigger {
+	display: inline-block;
+	@include font-size(0.875);
+	padding: 12px 20px;
+	border: 1px solid #000;
+	text-decoration: none;
+	background-color: #FFF;
+	text-transform: none;
+    font-weight: normal;
+}
+
+.input-file-feedback {
+    margin: 0;
+    @include font-size(0.875);
+}
+
+.input-file-feedback:not(:empty) {
+    margin: 0.5em 0;
+}

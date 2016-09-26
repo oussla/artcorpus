@@ -641,6 +641,10 @@ label {
   text-transform: uppercase;
   color: #666;
 }
+label span.required:after {
+  content: '*';
+  color: #dc3b17;
+}
 
 /**
  * Contact Form 7
@@ -663,6 +667,48 @@ div.wpcf7-response-output {
 
 div.wpcf7-validation-errors {
   border: none;
+}
+
+/**
+ * Custom file upload buttons
+ */
+.input-file-container {
+  position: relative;
+  width: 100%;
+}
+.input-file-container .wpcf7-form-control-wrap {
+  position: static;
+}
+.input-file-container input[type="file"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  padding: 14px 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.input-file-trigger {
+  display: inline-block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  padding: 12px 20px;
+  border: 1px solid #000;
+  text-decoration: none;
+  background-color: #FFF;
+  text-transform: none;
+  font-weight: normal;
+}
+
+.input-file-feedback {
+  margin: 0;
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+
+.input-file-feedback:not(:empty) {
+  margin: 0.5em 0;
 }
 
 /*--------------------------------------------------------------

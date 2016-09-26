@@ -71,4 +71,18 @@ $(document).ready(function(){
 	google.maps.event.addDomListener(window, 'load', mapInitialize);
 
 
+	/**
+	 * Custom file upload buttons
+	 */
+	$('.input-file-container input[type="file"] ').on('change', function(event) {
+		// Extract filename
+		var fullPath = this.value;
+		var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
+	    var filename = fullPath.substring(startIndex);
+	    if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
+	        filename = filename.substring(1);
+	    }
+	    $('.input-file-feedback').html(filename);
+	});
+
 });
