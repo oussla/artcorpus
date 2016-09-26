@@ -1,7 +1,25 @@
+/**
+ * Columns wrapper 
+ */
+.columns {
+
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+/**
+ * Single column
+ */
 .column {
 	
 }
 
+/**
+ * Widths details
+ */
 .column-1-3 {
 	width: 33.33%;
 	float: left;

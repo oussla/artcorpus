@@ -70,6 +70,10 @@ section.first {
 	padding-top: 4em;
 }
 
+section.column {
+	padding-right: 5%;
+}
+
 /**
  * Alternative posts formats
  */
@@ -105,11 +109,6 @@ article.format-quote {
     article {
     	max-width: 75%;
     }
-}
-
-.column article {
-	max-width: 100%;
-	padding: 0 10% 0 0;
 }
 
 

@@ -970,9 +970,27 @@ a:hover, a:active {
   line-height: 0.875em;
 }
 
+/**
+ * Contact Sidebar 
+ */
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+/**
+ * Columns wrapper 
+ */
+.columns:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/**
+ * Single column
+ */
+/**
+ * Widths details
+ */
 .column-1-3 {
   width: 33.33%;
   float: left;
@@ -1052,6 +1070,10 @@ section.first {
   padding-top: 4em;
 }
 
+section.column {
+  padding-right: 5%;
+}
+
 /**
  * Alternative posts formats
  */
@@ -1085,11 +1107,6 @@ article.format-quote .entry-title {
 .posts-list article,
 .post-single article {
   max-width: 75%;
-}
-
-.column article {
-  max-width: 100%;
-  padding: 0 10% 0 0;
 }
 
 /**
@@ -1176,6 +1193,10 @@ figure.alignright {
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
+aside {
+  padding: 4em 10% 4em 0;
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
