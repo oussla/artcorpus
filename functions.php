@@ -125,7 +125,7 @@ function artcorpus_widgets_init() {
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'after_title'   => '</h2>'
 	) );
 
 	register_sidebar( array(
@@ -135,7 +135,18 @@ function artcorpus_widgets_init() {
 		'before_widget' => '<address>',
 		'after_widget'  => '</address>',
 		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'after_title'   => '</h2>'
+	) );
+
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Contact Sidebar', 'artcorpus' ),
+		'id'            => 'contact-sidebar',
+		'description'   => '',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>'
 	) );
 
 
