@@ -13,33 +13,37 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<section class="first post-single columns">
-
-			<?php
-			while ( have_posts() ) : the_post();
-
-				?>
-				<div class="column column-2-3">
-					<?php
-					get_template_part( 'template-parts/content', 'page' );
-					?>
-				</div>
-
-				<div class="column column-1-3">
-					<article>
-						<?php
-							$rightColumn = get_field('rightcolumn');
-							echo $rightColumn;
-						?>
-					</article>
-				</div>
+		<div class="columns">
+		
+			<section class="first post-single column column-2-3">
 
 				<?php
+				while ( have_posts() ) : the_post();
 
-			endwhile; // End of the loop.
+					get_template_part( 'template-parts/content', 'page' );
+
+				endwhile; // End of the loop.
+				?>
+
+			</section>
+
+
+			<?php
+			
+			/**
+			 * Widget area: contact-sidebar.
+			 */
+			if ( is_active_sidebar( 'contact-sidebar' ) ) : ?>
+				<aside class="widget-area contact-sidebar column column-1-3" role="complementary">
+					<?php dynamic_sidebar( 'contact-sidebar' ); ?>
+				</aside><!-- .contact-sidebar -->
+				<?php 
+			endif; 
+
 			?>
 
-		</section>
+		</div><!-- .columns -->
+
 
 		<section class="post-single white background-white">
 
