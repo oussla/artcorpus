@@ -288,6 +288,7 @@ function artcorpus_artists_availability_table($avails, $availSpecial = '', $args
 	$args = array_merge(array(
 		'displayWeekDays' => false, 
 		'name' => '',
+		'permalink' => '',
 		'addTable' => true,
 		'availSpecialInTable' => false,
 		'echo' => true,
@@ -309,7 +310,11 @@ function artcorpus_artists_availability_table($avails, $availSpecial = '', $args
 
 	if($args['name']) {
 		$trWeekdays .= '<td class="name"></td>';
-		$trAvails .= '<td class="name">'.$args['name'].'</td>';
+		$nameLayout = '<td class="name">%%</td>';
+		if($args['permalink']) {
+			$nameLayout = '<td class="name"><a href="'.$args['permalink'].'">%%</a></td>';
+		}
+		$trAvails .= str_replace('%%', $args['name'], $nameLayout);
 	}
 
 	for ($i = 0; $i < 7; $i++) {

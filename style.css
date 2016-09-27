@@ -1432,6 +1432,10 @@ table.availability .name {
   padding-right: 1em;
   font-weight: bold;
 }
+table.availability .name a {
+  text-decoration: none;
+  color: #000;
+}
 table.availability td.availability-special {
   display: table-cell;
   text-align: left;

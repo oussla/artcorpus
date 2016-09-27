@@ -93,6 +93,7 @@ get_header(); ?>
 						$table .= artcorpus_artists_availability_table($avails, $availSpecial, 
 							array('displayWeekDays' => $count == 0, 
 								  'name' => $name,
+								  'permalink' => get_the_permalink(),
 								  'addTable' => false, 
 								  'availSpecialInTable' => true,
 								  'echo' => false));
