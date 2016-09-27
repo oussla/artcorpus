@@ -1399,6 +1399,24 @@ table.availability td {
   text-align: center;
   overflow: hidden;
 }
+table.availability td[colspan="2"] {
+  width: 25%;
+}
+table.availability td[colspan="3"] {
+  width: 37.5%;
+}
+table.availability td[colspan="4"] {
+  width: 50%;
+}
+table.availability td[colspan="5"] {
+  width: 62.5%;
+}
+table.availability td[colspan="6"] {
+  width: 75%;
+}
+table.availability td[colspan="7"] {
+  width: 87.5%;
+}
 table.availability .weekdays td.available-false {
   color: #b3b3b3;
 }
@@ -1413,6 +1431,12 @@ table.availability .name {
   text-align: right;
   padding-right: 1em;
   font-weight: bold;
+}
+table.availability td.availability-special {
+  display: table-cell;
+  text-align: left;
+  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .availability-special {

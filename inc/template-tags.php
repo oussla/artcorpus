@@ -289,7 +289,8 @@ function artcorpus_artists_availability_table($avails, $availSpecial = '', $args
 		'displayWeekDays' => false, 
 		'name' => '',
 		'addTable' => true,
-		'echo' => true
+		'availSpecialInTable' => false,
+		'echo' => true,
 	), $args);
 
 	$output = '';
@@ -336,15 +337,22 @@ function artcorpus_artists_availability_table($avails, $availSpecial = '', $args
 	    $timestamp = strtotime('+1 day', $timestamp);
 	}
 
+
 	$trWeekdays .= '</tr>';
 	$trAvails .= '</tr>';
 
 	if($args['displayWeekDays']) $output .= $trWeekdays;
+
 	$output .= $trAvails;
+	// Special availability displayed inside the table
+	if($args['availSpecialInTable'] && $availSpecial != '') {
+		$output .= '<tr><td></td><td colspan="7" class="availability-special">'.$availSpecial.'</td></tr>';
+	}
 
 	if($args['addTable']) $output .= '</table>';
 
-	if($availSpecial != '') {
+	// Special availability displayed below the table
+	if( ! $args['availSpecialInTable'] && $availSpecial != '') {
 		$output .= '<span class="availability-special">'.$availSpecial.'</span>';
 	}
 

@@ -58,11 +58,20 @@ get_header(); ?>
 				 */
 				
 
-				// Get all artists 
+				// Get all artists, ignoring guests
 				$args = array(
 					'post_type' => 'artist',
 					'posts_per_page' => 48,
-					'ignore_sticky_posts' => 1
+					'ignore_sticky_posts' => 1,
+					'meta_query' => array(
+						array(
+							'key'     => 'guest',
+							'value'   =>  0
+						)
+					),
+					'orderby' => 'meta_value_num',
+					'meta_key' => 'rank',
+					'order' => 'ASC'
 				);
 
 
@@ -85,6 +94,7 @@ get_header(); ?>
 							array('displayWeekDays' => $count == 0, 
 								  'name' => $name,
 								  'addTable' => false, 
+								  'availSpecialInTable' => true,
 								  'echo' => false));
 
 						$count ++;
