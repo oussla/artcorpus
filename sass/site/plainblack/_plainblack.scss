@@ -1,0 +1,36 @@
+/**
+ * Plain Black post/page template
+ */
+
+.plainblack {
+
+	.post-single {
+		padding-bottom: 0;
+	}
+
+	article {
+		max-width: 600px;
+	}
+
+	.entry-content {
+
+		ul {
+			margin: 0 auto 1.5em auto;
+		    padding: 0;
+		    list-style: none;
+		}
+
+		li {
+			padding: 0 0 1em 0;
+			margin: 0 0 1em 0;
+			background: url(./img/2x/tick-white.png) no-repeat center bottom;
+			background-size: 10px 3px;
+		}
+
+	}
+
+	.post-thumbnail {
+		width: 100%;
+		float: left;
+	}
+}

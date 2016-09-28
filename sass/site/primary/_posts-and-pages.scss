@@ -58,7 +58,7 @@ article {
 	}
 
 	.entry-content {
-		margin-top: 0;
+		margin-top: 2em;
 	}
 
 }
@@ -117,7 +117,6 @@ article.format-quote {
  */
 .post-single {
     article {
-    	text-align: left;
 	    margin-left: auto;
 	    margin-right: auto;
 	    max-width: 800px;
@@ -128,6 +127,10 @@ article.format-quote {
 
 		.entry-content h1 {
 			@include font-size(2); // 50px	
+		}
+
+		&.format-quote {
+			text-align: left;
 		}
     }
 }
@@ -192,6 +195,9 @@ article.format-quote {
 
 }
 
+/**
+ * Figures & captions
+ */
 
 figcaption {
 	@include font-size(0.6875); // 11px
@@ -207,4 +213,17 @@ figure.alignright {
     margin-right: -15%;
     max-width: 115%;
     width: 115%;
+}
+
+
+/**
+ * Centered contents
+ */
+
+.centered {
+
+	article {
+		text-align: center;
+	}
+	
 }
