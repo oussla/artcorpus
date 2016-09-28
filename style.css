@@ -500,9 +500,18 @@ table {
   color: #FFF;
 }
 
+.background-plainblack {
+  background: #000;
+  color: #FFF;
+}
+
 .background-white {
   background: url(./img/background-white.jpg) repeat;
   color: #000;
+}
+
+.centered {
+  text-align: center;
 }
 
 /**
@@ -1121,7 +1130,7 @@ article .entry-meta .small {
   color: #b3b3b3;
 }
 article .entry-content {
-  margin-top: 0;
+  margin-top: 2em;
 }
 
 /**
@@ -1174,7 +1183,6 @@ article.format-quote .entry-title {
  * Single
  */
 .post-single article {
-  text-align: left;
   margin-left: auto;
   margin-right: auto;
   max-width: 800px;
@@ -1186,6 +1194,9 @@ article.format-quote .entry-title {
 .post-single article .entry-content h1 {
   font-size: 32px;
   font-size: 2rem;
+}
+.post-single article.format-quote {
+  text-align: left;
 }
 
 /**
@@ -1234,6 +1245,9 @@ article.format-quote .entry-title {
   text-align: center;
 }
 
+/**
+ * Figures & captions
+ */
 figcaption {
   font-size: 11px;
   font-size: 0.6875rem;
@@ -1249,6 +1263,13 @@ figure.alignright {
   margin-right: -15%;
   max-width: 115%;
   width: 115%;
+}
+
+/**
+ * Centered contents
+ */
+.centered article {
+  text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -1517,6 +1538,34 @@ table.availability td.availability-special {
 
 .grid-big a {
   width: 50%;
+}
+
+/*--------------------------------------------------------------
+## Plain Black
+--------------------------------------------------------------*/
+/**
+ * Plain Black post/page template
+ */
+.plainblack .post-single {
+  padding-bottom: 0;
+}
+.plainblack article {
+  max-width: 600px;
+}
+.plainblack .entry-content ul {
+  margin: 0 auto 1.5em auto;
+  padding: 0;
+  list-style: none;
+}
+.plainblack .entry-content li {
+  padding: 0 0 1em 0;
+  margin: 0 0 1em 0;
+  background: url(./img/2x/tick-white.png) no-repeat center bottom;
+  background-size: 10px 3px;
+}
+.plainblack .post-thumbnail {
+  width: 100%;
+  float: left;
 }
 
 body {
