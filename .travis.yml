@@ -1,7 +1,9 @@
 language: node_js
 node_js:
   - "5.10.1"
-install: true
+install: 
+  - cd _preprocess
+  - npm install
 script: 
   -
 env:
