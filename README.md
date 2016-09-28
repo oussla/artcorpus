@@ -1,11 +1,11 @@
 Art Corpus
 ==========
 
-Custom Wordpress theme for Art Corpus Tattoo Shop, Paris. 
+Custom Wordpress theme for Art Corpus Tattoo Shop, Paris.  
 Testing stuffs.
 
 ###Deployment
-Continuous integration with [Travis CI](https://travis-ci.org). 
+Continuous integration with [Travis CI](https://travis-ci.org).  
 [![Build Status](https://travis-ci.org/oussla/artcorpus.svg?branch=master)](https://travis-ci.org/oussla/artcorpus)
 
 ---
