@@ -11,6 +11,17 @@ get_header(); ?>
 
 	<!-- TEMPLATE : single-artist.php -->
 
+	<?php
+
+		// Do we have to display a disclaimer ?
+		$disclaimer = get_field('disclaimer') == 1;
+
+		if($disclaimer) {
+			echo artcorpus_disclaimer();
+		}
+
+	?>
+
 	<main id="main" class="site-main" role="main">
 
 		<?php
@@ -33,9 +44,9 @@ get_header(); ?>
 			?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?><?php echo $background; ?>>
 				<header class="entry-header">
+					<h1 class="entry-title"><?php echo $name; ?></h1>
 					<?php 
 						
-						the_title( '<h1 class="entry-title">', '</h1>' ); 
 						$job = get_field('job');
 						if($job != ''):
 							?>
