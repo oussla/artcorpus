@@ -85,4 +85,13 @@ $(document).ready(function(){
 	    $('.input-file-feedback').html(filename);
 	});
 
+
+	/**
+	 * Disclaimer
+	 */
+	$('#disclaimer #disclaimer-accept').click(function(event) {
+		event.preventDefault();
+		$('#disclaimer').hide();
+	});
+
 });

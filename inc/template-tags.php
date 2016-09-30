@@ -375,3 +375,33 @@ function artcorpus_read_more_link() {
     return '<a class="more-link button" href="' . get_permalink() . '">'. esc_html__('lire la suite', 'artcorpus') .'</a>';
 }
 add_filter( 'the_content_more_link', 'artcorpus_read_more_link' );
+
+
+
+if ( ! function_exists( 'artcorpus_disclaimer' ) ) :
+/**
+ * Returns the Disclamier 
+ * @return [type] [description]
+ */
+function artcorpus_disclaimer() {
+	?>
+	<div class="disclaimer" id="disclaimer">
+
+		<div class="disclaimer-content">
+			<div class="disclaimer-header"></div>
+			<?php
+
+				dynamic_sidebar('disclaimer');
+
+			?>
+			<a class="button highlight" href="#" id="disclaimer-accept">Entrer</a>
+			<a class="button" href="<?php get_home_url(); ?>" id="disclaimer-decline">Quitter</a>
+		</div>';
+		<div class="disclaimer-overlay"></div>';
+
+
+	</div>
+
+	<?php
+}
+endif;

@@ -118,15 +118,6 @@ add_action( 'after_setup_theme', 'artcorpus_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function artcorpus_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'artcorpus' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>'
-	) );
 
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Identity', 'artcorpus' ),
@@ -145,6 +136,16 @@ function artcorpus_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>'
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Disclaimer', 'artcorpus' ),
+		'id'            => 'disclaimer',
+		'description'   => '',
+		'before_widget' => '',
+		'after_widget'  => '',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>'
 	) );
@@ -276,6 +277,27 @@ function artcorpus_mce_before_init_insert_formats( $init_array ) {
 add_filter( 'tiny_mce_before_init', 'artcorpus_mce_before_init_insert_formats' );
 
 
+
+
+/**
+ * Artist custom post type: template switch
+ * DEACTIVATED, not needed at this moment. 
+ */
+/*
+add_filter( 'template_include', 'portfolio_page_template', 99 );
+function portfolio_page_template( $template ) {
+
+	$templateName = get_field('template');
+	if ( $templateName && trim($templateName) != '' && $templateName != 'normal') {
+		$newTemplate = locate_template( array( 'single-artist-'.$templateName.'.php' ) );
+		if ( $newTemplate != '') {
+			return $newTemplate ;
+		}
+	}
+
+	return $template;
+}
+*/
 
 
 /**
