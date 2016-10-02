@@ -87,11 +87,52 @@ $(document).ready(function(){
 
 
 	/**
+	 * Set Cookie
+	 * @param String 	cName 		Cookie Name
+	 * @param String 	cValue		Cookie Value
+	 * @param int 		expiredays	Duration days
+	 */
+	function setCookie(cName, cValue, expiredays) {
+	    var d = new Date();
+	    d.setTime(d.getTime() + (expiredays*24*60*60*1000));
+	    var expires = "expires="+ d.toUTCString();
+	    document.cookie = cName + "=" + cValue + "; " + expires;
+	}
+
+	/**
+	 * Get Cookie
+	 * @param  String	cName 	Cookie Name
+	 * @return String 			Cookie Value
+	 */
+	function getCookie(cName) {
+	    var name = cName + "=";
+	    var ca = document.cookie.split(';');
+	    for(var i = 0; i <ca.length; i++) {
+	        var c = ca[i];
+	        while (c.charAt(0)==' ') {
+	            c = c.substring(1);
+	        }
+	        if (c.indexOf(name) == 0) {
+	            return c.substring(name.length,c.length);
+	        }
+	    }
+	    return "";
+	}
+
+	/**
 	 * Disclaimer
 	 */
+	
+	var disclaimerCookieName = "disclaimer";
+	if(getCookie(disclaimerCookieName) == "") {
+		// Disclaimer is hidden by default. Show only if disclaimer cookie is not found. 
+		$('#disclaimer').show();
+	}
 	$('#disclaimer #disclaimer-accept').click(function(event) {
 		event.preventDefault();
 		$('#disclaimer').hide();
+		// Set cookie to "1" for one day
+		setCookie(disclaimerCookieName, "1", 1);
 	});
 
 });
