@@ -47,7 +47,7 @@ get_header(); ?>
 
 		<section class="post-single white background-white">
 
-			<h2 class="title-checkmarks"><span><?php echo _('Est-ce que mon tatoueur/pierceur est là aujourd\'hui ?', 'artcorpus'); ?></span></h2>
+			<h2 class="title-checkmarks"><span><?php echo __('Est-ce que mon tatoueur/pierceur est là aujourd\'hui ?', 'artcorpus'); ?></span></h2>
 
 			<div class="artists-availabilities">
 				<?php
