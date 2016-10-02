@@ -170,7 +170,9 @@ function artcorpus_scripts() {
 	  wp_deregister_script('jquery');
 	  wp_enqueue_script('jquery', get_template_directory_uri() . "/vendors/jquery-2.2.2.min.js", array(), "2.2.2", true);
 	  wp_enqueue_script('masonry', get_template_directory_uri() . "/vendors/masonry.pkdg.min.js", array('jquery'), "4.0.0", true);
-	  wp_enqueue_script('googlemap', "https://maps.googleapis.com/maps/api/js?key=AIzaSyCsh1aWAM2_fdE4KYghJ-yLry9qWQGhLOI", array(), "1", true);
+
+	  $GoogleMapsAPIKey = get_option('artcorpus_googleapikey');
+	  wp_enqueue_script('googlemap', "https://maps.googleapis.com/maps/api/js?key=" . $GoogleMapsAPIKey, array(), "1", true);
 	  wp_enqueue_script('slick', get_template_directory_uri() . "/vendors/slick/slick.min.js", array('jquery'), false, true);
 	  wp_enqueue_style('slick_style', get_template_directory_uri() . "/vendors/slick/slick.css", array(), false, "all");
 	  wp_enqueue_script('lightgallery', get_template_directory_uri() . "/vendors/lightgallery/js/lightgallery.min.js", array('jquery'), false, true);
