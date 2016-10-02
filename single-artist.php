@@ -79,7 +79,14 @@ get_header(); ?>
 						$portrait = get_field('portrait');
 						echo wp_get_attachment_image($portrait['id'], 'large', false, array('class' => 'artist-portrait'));
 
-						the_post_thumbnail('large', array('class' => 'artist-main')); 
+						$has_sidecontent = get_field('has_sidecontent');
+						if($has_sidecontent == 1) {
+							echo '<div class="sidecontent">';
+							echo get_field('sidecontent');
+							echo '</div>';
+						} else {
+							the_post_thumbnail('large', array('class' => 'artist-main')); 
+						}
 
 					?>
 				</header><!-- .entry-header -->
