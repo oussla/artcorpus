@@ -62,12 +62,58 @@
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": "",
+                    "width": 50,
                     "class": "",
                     "id": ""
                 },
                 "message": "Cet artiste est un guest.",
                 "default_value": 0
+            },
+            {
+                "key": "field_57ead60a16a52",
+                "label": "Classement",
+                "name": "rank",
+                "type": "select",
+                "instructions": "D\u00e9finit l'ordre d'apparition, notamment dans les grilles d'artistes et sur le calendrier.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": 50,
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "1": 1,
+                    "2": 2,
+                    "3": 3,
+                    "4": 4,
+                    "5": 5,
+                    "6": 6,
+                    "7": 7,
+                    "8": 8,
+                    "9": 9,
+                    "10": 10,
+                    "11": 11,
+                    "12": 12,
+                    "13": 13,
+                    "14": 14,
+                    "15": 15,
+                    "16": 16,
+                    "17": 17,
+                    "18": 18,
+                    "19": 19,
+                    "20": 20
+                },
+                "default_value": [
+                    
+                ],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "disabled": 0,
+                "readonly": 0
             },
             {
                 "key": "field_579a5c5368e67",
@@ -186,7 +232,7 @@
                     ]
                 ],
                 "wrapper": {
-                    "width": "",
+                    "width": 50,
                     "class": "",
                     "id": ""
                 },
@@ -218,7 +264,7 @@
                     ]
                 ],
                 "wrapper": {
-                    "width": "",
+                    "width": 50,
                     "class": "",
                     "id": ""
                 },
@@ -257,6 +303,64 @@
                 "max_height": "",
                 "max_size": "",
                 "mime_types": ""
+            },
+            {
+                "key": "field_57ee7027f16c6",
+                "label": "Disclaimer ?",
+                "name": "disclaimer",
+                "type": "true_false",
+                "instructions": "Afficher un message d'avertissement si les photos sont \u00e0 d\u00e9conseiller aux mineurs. ",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "Afficher le disclaimer",
+                "default_value": 0
+            },
+            {
+                "key": "field_57f1132c22bd5",
+                "label": "Ajouter un texte compl\u00e9mentaire\u00a0?",
+                "name": "has_sidecontent",
+                "type": "true_false",
+                "instructions": "Ce texte sera affich\u00e9 \u00e0 c\u00f4t\u00e9 du portrait, \u00e0 la place de l'image \"\u00e0 la une\". ",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "Ajouter un texte compl\u00e9mentaire",
+                "default_value": 0
+            },
+            {
+                "key": "field_57f112f922bd4",
+                "label": "Texte compl\u00e9mentaire",
+                "name": "sidecontent",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_57f1132c22bd5",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 0
             }
         ],
         "location": [
@@ -270,47 +374,6 @@
         ],
         "menu_order": 0,
         "position": "acf_after_title",
-        "style": "default",
-        "label_placement": "top",
-        "instruction_placement": "label",
-        "hide_on_screen": "",
-        "active": 1,
-        "description": ""
-    },
-    {
-        "key": "group_57e2ecedd1820",
-        "title": "Contact Page Fields",
-        "fields": [
-            {
-                "key": "field_57e2ed1d42054",
-                "label": "Colonne de droite",
-                "name": "rightcolumn",
-                "type": "wysiwyg",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "tabs": "all",
-                "toolbar": "full",
-                "media_upload": 1
-            }
-        ],
-        "location": [
-            [
-                {
-                    "param": "page_template",
-                    "operator": "==",
-                    "value": "page-template\/contact.php"
-                }
-            ]
-        ],
-        "menu_order": 0,
-        "position": "normal",
         "style": "default",
         "label_placement": "top",
         "instruction_placement": "label",
