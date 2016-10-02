@@ -87,6 +87,54 @@ setlocale(LC_TIME , get_locale().'.utf-8', $alternateLocale);
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'artcorpus' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
+
+
+		<?php
+
+			
+			$gallery = get_field('gallery');
+			$image_list = '<div class="homeslideshow-wrapper"><div class="homeslideshow">';
+			if( $gallery ): 
+				foreach( $gallery as $image ):
+					$image_list .= '<div>' . '<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="' . $image['url'] . '" alt="">' . '</div>';
+				endforeach;
+			endif; 
+			$image_list .= '</div></div>';
+
+			echo $image_list;
+			
+		
+			/*
+			$gallery = get_post_gallery_images();
+			$image_list = '<div class="homeslideshow-wrapper"><div class="homeslideshow">';
+
+			foreach( $gallery as $image_url ) {
+				$image_list .= '<div>' . '<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="' . $image_url . '" alt="">' . '</div>';
+			}
+			$image_list .= '</div></div>';
+
+			echo $image_list;
+			*/
+
+
+			/**
+			 *	Slideshow 
+			 */
+			
+			/*
+			$gallery = get_post_gallery_images();
+			$image_list = '<div class="homeslideshow-wrapper"><div class="homeslideshow">';
+
+			foreach( $gallery as $image_url ) {
+				$image_list .= '<div>' . '<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="' . $image_url . '" alt="">' . '</div>';
+			}
+			$image_list .= '</div></div>';
+
+			echo $image_list;
+			*/
+		
+		?>
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

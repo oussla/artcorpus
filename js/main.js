@@ -9,10 +9,10 @@ $(document).ready(function(){
 		'pauseOnHover': false,
 		'lazyload': true,
 		'autoplay': true,
-  		'autoplaySpeed': 2000,
+  		'autoplaySpeed': 3000,
   		'infinite': true,
   		'fade': true,
-  		'dots': true
+  		'dots': false
 	});
 
 	/**

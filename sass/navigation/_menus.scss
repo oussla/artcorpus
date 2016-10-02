@@ -2,7 +2,11 @@
 	clear: both;
 	display: block;
 	float: left;
-	width: 100%;
+	width: 100%;    
+	padding-top: 1em;
+    background: rgba(0, 0, 0, 0.75);
+	position: relative;
+	z-index: 1103;
 
 	@include font-size(1.25); // 20px font size
 

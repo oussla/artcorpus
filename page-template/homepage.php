@@ -10,28 +10,6 @@
 
 get_header(); ?>
 
-	<header>
-
-	<?php
-
-		/**
-		 *	Slideshow 
-		 */
-		$gallery = get_post_gallery_images();
-		$image_list = '<div class="homeslideshow">';
-
-		foreach( $gallery as $image_url ) {
-			$image_list .= '<div>' . '<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="' . $image_url . '" alt="">' . '</div>';
-		}
-		$image_list .= '</div>';
-
-		echo $image_list;
-
-	?>
-
-	</header>
-
-
 	<main id="main" class="site-main" role="main">
 
 		<section class="first posts-list sticky highlight white background-white">

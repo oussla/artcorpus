@@ -192,8 +192,37 @@ article.format-quote {
 
     }
 
+}
+
+
+/**
+ * Homepage customs
+ */
+
+.home {
+
+	.site-branding {
+		margin: 6em 0 6em 0;
+	}
+
+	.homeslideshow-wrapper {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.slick-slider {
+		// height: 400px;
+		width: 100%;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+	}
 
 }
+
 
 /**
  * Figures & captions

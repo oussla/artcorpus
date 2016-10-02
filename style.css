@@ -759,6 +759,10 @@ a:hover, a:active {
   display: block;
   float: left;
   width: 100%;
+  padding-top: 1em;
+  background: rgba(0, 0, 0, 0.75);
+  position: relative;
+  z-index: 1103;
   font-size: 20px;
   font-size: 1.25rem;
 }
@@ -990,6 +994,16 @@ a:hover, a:active {
 .site-content:after,
 .site-footer:after {
   clear: both;
+}
+
+/*--------------------------------------------------------------
+# Slideshow
+--------------------------------------------------------------*/
+/**
+ * Slick slideshow specials 
+ */
+.slick-slide img {
+  width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -1282,6 +1296,26 @@ article.format-quote .entry-title {
   overflow: auto;
   width: 48%;
   text-align: center;
+}
+
+/**
+ * Homepage customs
+ */
+.home .site-branding {
+  margin: 6em 0 6em 0;
+}
+.home .homeslideshow-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.home .slick-slider {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
 }
 
 /**
@@ -1625,12 +1659,19 @@ body {
   color: #fff;
   text-align: center;
   background: url(./img/background-black.jpg) repeat;
+  position: relative;
 }
 .site-header .site-subhead {
   overflow: auto;
   background-color: rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1101;
 }
 
+.site-branding {
+  position: relative;
+  z-index: 1102;
+}
 .site-branding .site-title a {
   display: block;
   margin: 20px auto;
