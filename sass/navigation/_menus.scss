@@ -22,6 +22,8 @@
 			top: 2.5em;
 			left: -999em;
 			z-index: 99999;
+			@include transition(opacity .3s ease);
+			opacity: 0;
 
 			ul {
 				left: -999em;
@@ -45,6 +47,7 @@
 
 			:hover > a,
 			.focus > a {
+				color: #888;
 			}
 
 			a:hover,
@@ -55,6 +58,10 @@
 		li:hover > ul,
 		li.focus > ul {
 			left: auto;
+			background: #FFF;
+			padding: 1em;
+			margin-left: -1em;
+			opacity: 1;
 		}
 	}
 	

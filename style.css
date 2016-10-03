@@ -778,6 +778,12 @@ a:hover, a:active {
   top: 2.5em;
   left: -999em;
   z-index: 99999;
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -ms-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+  opacity: 0;
 }
 .main-navigation ul ul ul {
   left: -999em;
@@ -794,9 +800,17 @@ a:hover, a:active {
   width: 200px;
   color: #000;
 }
+.main-navigation ul ul :hover > a,
+.main-navigation ul ul .focus > a {
+  color: #888;
+}
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
   left: auto;
+  background: #FFF;
+  padding: 1em;
+  margin-left: -1em;
+  opacity: 1;
 }
 .main-navigation li {
   display: inline-block;
