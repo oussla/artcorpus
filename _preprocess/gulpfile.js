@@ -1,12 +1,13 @@
 /**
- * Basic Gulp tests. 
+ * 
  */
 
 var gulp = require('gulp'),
 	sass = require('gulp-ruby-sass'),
 	util = require('gulp-util'),
 	ftp = require('vinyl-ftp'),
-	minimist = require('minimist');
+	minimist = require('minimist'),
+	mainBowerFiles = require('gulp-main-bower-files');
 
 // Get command arguments
 var args = minimist(process.argv.slice(2));
@@ -28,6 +29,26 @@ gulp.task('sass', function() {
 gulp.task('watch', function() {
 	gulp.watch('../sass/**/*.scss', ['sass']);
 });
+
+
+
+
+
+
+/**
+ * Parallel tasks test, woohoo
+ */
+gulp.task('simpleecho', function() {
+	util.log('the simpleecho');
+});
+
+gulp.task('watchmore', function() {
+	gulp.watch('../sass/**/*.scss', ['simpleecho', 'sass']);
+});
+
+
+
+
 
 /**
  * FTP deployment
