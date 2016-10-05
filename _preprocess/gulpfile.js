@@ -6,8 +6,10 @@ var gulp = require('gulp'),
 	sass = require('gulp-ruby-sass'),
 	util = require('gulp-util'),
 	ftp = require('vinyl-ftp'),
+	concat = require('gulp-concat'),
 	minimist = require('minimist'),
-	mainBowerFiles = require('gulp-main-bower-files');
+	gulpFilter = require('gulp-filter'),
+	mainBowerFiles = require('main-bower-files');
 
 // Get command arguments
 var args = minimist(process.argv.slice(2));
@@ -17,11 +19,27 @@ var args = minimist(process.argv.slice(2));
  */
 gulp.task('sass', function() {
 	return sass('../sass/style.scss', {
+			sourcemap: true,
 			style: 'expanded' // nested / compact / expanded / compressed 
 		})
 		.on('error', sass.logError)
 		.pipe(gulp.dest('../'));
 });
+
+
+/**
+ * Get all Bower dependencies main CSS/SCSS files
+ * Doesn't work if dependencies have assets references in CSS: images, fonts... 
+ */
+gulp.task('bowerCSS', function() {
+	var cssFilter = gulpFilter(['**/*.css', '**/*.scss']);
+
+	return gulp.src(mainBowerFiles(), { base: './bower_components' })
+			   .pipe(cssFilter)
+			   .pipe(concat('bower.all.scss'))
+			   .pipe(gulp.dest('../vendors/'));
+});
+
 
 /**
  * Watcher
