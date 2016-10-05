@@ -1,3 +1,12 @@
 @import "colors";
 @import "typography";
 @import "structure";
+
+/**
+ * Responsive breakpoints 
+ * Used with include-media
+ * see: https://github.com/eduardoboucas/include-media
+ */
+$breakpoints: (phone: 640px, 
+               tablet: 768px, 
+               desktop: 1024px) !default;

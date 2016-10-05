@@ -256,3 +256,64 @@ figure.alignright {
 	}
 	
 }
+
+
+
+@include media("<=phone", "<tablet") {
+	
+	.posts-list,
+	.post-single {
+	    article {
+	    	max-width: 100%;
+	    }
+	}
+
+	.sticky {
+
+		.sticky-title {
+			width: 100%;
+			float: none;
+			text-align: center;
+			margin-top: 0;
+
+			h3 {
+				@include font-size(1.5);
+				margin: 0;
+			}
+
+			h2 {
+				@include font-size(2.125); // 50px
+				line-height: 2.125rem;
+				margin: 0;
+			}
+		}
+
+		article {
+	    	max-width: 100%;
+
+	    	.post-thumbnail-wrapper {
+	    		float: none;
+	    		width: 100%;
+
+	    		img {
+	    			max-width: none;
+	    			width: 100%;
+	    		}
+	    	}
+
+	    	.entry-content,
+	    	.entry-header {
+			    width: 100%;
+			    text-align: center;
+			    margin-top: 0;
+	    	}
+
+	    }
+
+	    .hentry {
+		    margin-bottom: 0;
+		}
+
+	}
+
+}

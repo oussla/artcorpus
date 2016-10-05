@@ -23,3 +23,20 @@
 
 }
 
+
+@include media("<=phone", "<tablet") {
+	
+	.bych {
+
+		.pointing {
+			display: none;
+			background: none;
+		}
+
+		.pointing.pointing-right {
+			background: none;
+		}
+
+	}
+
+}

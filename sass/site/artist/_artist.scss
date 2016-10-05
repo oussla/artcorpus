@@ -280,3 +280,25 @@ table.availability {
 	}
 
 }
+
+
+
+@include media("<=phone", "<tablet") {
+
+	.artists-grid {
+
+		a {
+			width: 50%;
+		}
+		
+	}
+	
+	.grid-big {
+
+		a {
+			width: 100%;
+		}
+
+	}
+
+}
