@@ -108,6 +108,14 @@
 }
 
 /* Small menu. */
+.menu-toggle {
+	border: none;
+	background: none;
+	outline: none;
+	margin: 0 auto;
+	text-transform: lowercase;
+}
+
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
@@ -219,6 +227,8 @@
 @include media("<=phone") {
 	
 	.main-navigation {
+		text-align: center;
+   		padding-top: 0.5em;
 
 		.nav-menu > li {
 			background: url('./img/2x/check-white.png') no-repeat center bottom;

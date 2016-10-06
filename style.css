@@ -858,6 +858,14 @@ a:hover, a:active {
 }
 
 /* Small menu. */
+.menu-toggle {
+  border: none;
+  background: none;
+  outline: none;
+  margin: 0 auto;
+  text-transform: lowercase;
+}
+
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;
@@ -951,6 +959,10 @@ a:hover, a:active {
 }
 
 @media (max-width: 640px) {
+  .main-navigation {
+    text-align: center;
+    padding-top: 0.5em;
+  }
   .main-navigation .nav-menu > li {
     background: url("./img/2x/check-white.png") no-repeat center bottom;
     background-size: 12px 12px;
