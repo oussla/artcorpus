@@ -283,7 +283,7 @@ table.availability {
 
 
 
-@include media("<=phone", "<tablet") {
+@include media("<=phone") {
 
 	.artists-grid {
 

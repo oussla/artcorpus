@@ -259,7 +259,7 @@ figure.alignright {
 
 
 
-@include media("<=phone", "<tablet") {
+@include media("<=phone") {
 	
 	.posts-list,
 	.post-single {

@@ -781,10 +781,16 @@ a:hover, a:active {
   font-size: 1.25rem;
 }
 .main-navigation ul {
-  display: none;
   list-style: none;
   margin: 0;
   padding-left: 0;
+  opacity: 0;
+  max-height: 0;
+  -webkit-transition: all, 0.8s, easeOut;
+  -moz-transition: all, 0.8s, easeOut;
+  -ms-transition: all, 0.8s, easeOut;
+  -o-transition: all, 0.8s, easeOut;
+  transition: all, 0.8s, easeOut;
 }
 .main-navigation ul ul {
   float: left;
@@ -857,13 +863,21 @@ a:hover, a:active {
   display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+.main-navigation.toggled ul {
+  opacity: 1;
+  max-height: 500px;
+}
+
+@media (min-width: 641px) {
   .menu-toggle {
     display: none;
   }
 
   .main-navigation ul {
     display: block;
+    opacity: 1;
+    height: auto;
+    max-height: 500px;
   }
 }
 .site-main .comment-navigation, .site-main
@@ -936,6 +950,43 @@ a:hover, a:active {
   text-decoration: none;
 }
 
+@media (max-width: 640px) {
+  .main-navigation .nav-menu > li {
+    background: url("./img/2x/check-white.png") no-repeat center bottom;
+    background-size: 12px 12px;
+  }
+  .main-navigation li {
+    display: block;
+    padding: 0 0 16px 0;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .main-navigation ul ul {
+    left: 0;
+    opacity: 1;
+    max-height: initial;
+  }
+  .main-navigation ul ul a {
+    width: auto;
+    color: #fff;
+    padding-top: 10px;
+    font-size: 16px;
+    font-size: 1rem;
+  }
+  .main-navigation ul ul li {
+    margin-bottom: 0;
+  }
+  .main-navigation ul li > ul,
+  .main-navigation ul li:hover > ul,
+  .main-navigation ul li.focus > ul {
+    margin-left: 0;
+    float: none;
+    position: relative;
+    padding: 0;
+    top: 0;
+    margin-bottom: 10px;
+  }
+}
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -1373,7 +1424,7 @@ figure.alignright {
   text-align: center;
 }
 
-@media (max-width: 640px) and (max-width: 767px) {
+@media (max-width: 640px) {
   .posts-list article,
   .post-single article {
     max-width: 100%;
@@ -1459,7 +1510,7 @@ aside {
   float: right;
 }
 
-@media (max-width: 640px) and (max-width: 767px) {
+@media (max-width: 640px) {
   .bych .pointing {
     display: none;
     background: none;
@@ -1700,7 +1751,7 @@ table.availability td.availability-special {
   width: 50%;
 }
 
-@media (max-width: 640px) and (max-width: 767px) {
+@media (max-width: 640px) {
   .artists-grid a {
     width: 50%;
   }
