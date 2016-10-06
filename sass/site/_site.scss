@@ -84,15 +84,7 @@ body {
 }
 
 
-/**
- *
- *
- * 
- */
 
-.site-main {
-	// padding-top: 4em;
-}
 
 /**
  * 
@@ -130,4 +122,22 @@ body {
 // Remove some remaining element from "Instagram Feed" plugin. 
 #sbi_load {
 	display: none;
+}
+
+
+
+@include media("<=phone") {
+	
+}
+
+@include media("retina2x") {
+
+	.site-branding {
+		
+		.site-title a {
+	        background: url(./img/2x/artcorpus-logo.png) transparent no-repeat;  
+	        background-size: 300px 255px;
+		}
+	}
+
 }

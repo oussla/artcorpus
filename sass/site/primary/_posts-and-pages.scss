@@ -260,9 +260,15 @@ figure.alignright {
 
 
 @include media("<=phone") {
+
+	section.first {
+		padding-top: 2em;
+	}
 	
 	.posts-list,
 	.post-single {
+		padding: 0 5% 2em 5%;
+
 	    article {
 	    	max-width: 100%;
 	    }
@@ -312,6 +318,16 @@ figure.alignright {
 
 	    .hentry {
 		    margin-bottom: 0;
+		}
+
+	}
+
+
+
+	.home {
+
+		.site-branding {
+			margin: 2em 0 2em 0;
 		}
 
 	}
