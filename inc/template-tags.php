@@ -320,6 +320,10 @@ function artcorpus_artists_availability_table($avails, $availSpecial = '', $args
 	for ($i = 0; $i < 7; $i++) {
 
 	    $currentDayName = strtolower(strftime('%A', $timestamp));
+	    $currentDayNameStart = substr($currentDayName, 0, 3);
+	    $currentDayNameEnd = substr($currentDayName, 3);
+	    $currentDayName = $currentDayNameStart.'<span class="weekday-end">'.$currentDayNameEnd.'</span>';
+
 	    // check current day availability
 	    $currentAvail = in_array("weekday".($i + 1), $avails);
 	    // same for next day
