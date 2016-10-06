@@ -3,17 +3,21 @@ $(document).ready(function(){
 
 	console.log("HELL YEAH ART CORPUS");
 
-	// Homepage Slick slideshow 
-	$('.homeslideshow').slick({
-		'arrows': false,
-		'pauseOnHover': false,
-		'lazyload': true,
-		'autoplay': true,
-  		'autoplaySpeed': 3000,
-  		'infinite': true,
-  		'fade': true,
-  		'dots': false
-	});
+	var isMobile = window.matchMedia("only screen and (max-width: 640px)").matches;
+
+    if(!isMobile) {
+		// Homepage Slick slideshow 
+		$('.homeslideshow').slick({
+			'arrows': false,
+			'pauseOnHover': false,
+			'lazyload': true,
+			'autoplay': true,
+	  		'autoplaySpeed': 3000,
+	  		'infinite': true,
+	  		'fade': true,
+	  		'dots': false
+		});
+	}
 
 	/**
 	 * Masonry Gallery

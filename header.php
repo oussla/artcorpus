@@ -91,7 +91,7 @@ setlocale(LC_TIME , get_locale().'.utf-8', $alternateLocale);
 
 		<?php
 
-			
+		if ( is_front_page() && is_home() ) {
 			$gallery = get_field('gallery');
 			$image_list = '<div class="homeslideshow-wrapper"><div class="homeslideshow">';
 			if( $gallery ): 
@@ -102,36 +102,7 @@ setlocale(LC_TIME , get_locale().'.utf-8', $alternateLocale);
 			$image_list .= '</div></div>';
 
 			echo $image_list;
-			
-		
-			/*
-			$gallery = get_post_gallery_images();
-			$image_list = '<div class="homeslideshow-wrapper"><div class="homeslideshow">';
-
-			foreach( $gallery as $image_url ) {
-				$image_list .= '<div>' . '<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="' . $image_url . '" alt="">' . '</div>';
-			}
-			$image_list .= '</div></div>';
-
-			echo $image_list;
-			*/
-
-
-			/**
-			 *	Slideshow 
-			 */
-			
-			/*
-			$gallery = get_post_gallery_images();
-			$image_list = '<div class="homeslideshow-wrapper"><div class="homeslideshow">';
-
-			foreach( $gallery as $image_url ) {
-				$image_list .= '<div>' . '<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-lazy="' . $image_url . '" alt="">' . '</div>';
-			}
-			$image_list .= '</div></div>';
-
-			echo $image_list;
-			*/
+		}
 		
 		?>
 
