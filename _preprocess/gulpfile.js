@@ -20,7 +20,7 @@ var args = minimist(process.argv.slice(2));
 gulp.task('sass', function() {
 	return sass('../sass/style.scss', {
 			sourcemap: true,
-			style: 'expanded' // nested / compact / expanded / compressed 
+			style: args.env == 'production' ? 'compressed' : 'expanded' // nested / compact / expanded / compressed 
 		})
 		.on('error', sass.logError)
 		.pipe(gulp.dest('../'));
@@ -49,7 +49,15 @@ gulp.task('watch', ['sass'], function() {
 });
 
 
-
+/**
+ * Build for Production
+ */
+gulp.task('build', function() {
+	// TODO:
+	// - SASS in "production" mode 
+	// - concat and minify JS 
+	// - any other task...	 
+});
 
 
 
