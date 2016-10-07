@@ -126,10 +126,6 @@ body {
 
 
 
-@include media("<=phone") {
-	
-}
-
 @include media("retina2x") {
 
 	.site-branding {
@@ -140,4 +136,17 @@ body {
 		}
 	}
 
+}
+
+@include media("<=phone") {
+
+	.site-branding {
+		
+		.site-title a {
+			background-size: 150px 127px;
+			width: 150px;
+			height: 127px;
+		}
+	}
+	
 }
