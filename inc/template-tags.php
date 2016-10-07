@@ -226,21 +226,21 @@ function artcorpus_artists_grid($type = ARTISTS_GRID_ALL, $background = 'black')
 		'ignore_sticky_posts' => 1
 	);
 
-	?>
-
-	<section class="artists-grid <?php echo ($type == ARTISTS_GRID_ARTISTS ? 'artists-only grid-big' : ($type == ARTISTS_GRID_GUESTS ? 'guests-only' : '')); ?> background-<?php echo $background; ?>">
-
-	<?php
-
-	?>
-	<h2 class="title-checkmarks"><span><?php 
-		echo esc_html__(($type == ARTISTS_GRID_ARTISTS ? 'les artistes' : ($type == ARTISTS_GRID_GUESTS ? 'les guests' : 'tous les artistes')), 'artcorpus');
-	?></span></h2>
-	<?php
 
 	$query = new WP_Query( $args );
 
 	if ($query->have_posts()) {
+		?>
+
+		<section class="artists-grid <?php echo ($type == ARTISTS_GRID_ARTISTS ? 'artists-only grid-big' : ($type == ARTISTS_GRID_GUESTS ? 'guests-only' : '')); ?> background-<?php echo $background; ?>">
+
+		<?php
+
+		?>
+		<h2 class="title-checkmarks"><span><?php 
+			echo esc_html__(($type == ARTISTS_GRID_ARTISTS ? 'les artistes' : ($type == ARTISTS_GRID_GUESTS ? 'les guests' : 'tous les artistes')), 'artcorpus');
+		?></span></h2>
+		<?php
 		
 		while($query->have_posts()) {
 
@@ -261,16 +261,17 @@ function artcorpus_artists_grid($type = ARTISTS_GRID_ALL, $background = 'black')
 
 		}
 		
+		?>
+
+		</section>
+
+		<?php
+		
 		// Restore original Post Data 
 		wp_reset_postdata();
 	}
 
 
-	?>
-
-	</section>
-
-	<?php
 
 }
 
