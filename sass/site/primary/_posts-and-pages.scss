@@ -272,6 +272,13 @@ figure.alignright {
 	    article {
 	    	max-width: 100%;
 	    }
+
+	}
+
+	.post-single {
+		article .entry-title {
+			@include font-size(2.125);
+		}
 	}
 
 	.sticky {
