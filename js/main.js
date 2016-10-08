@@ -55,6 +55,7 @@ $(document).ready(function(){
 	        center: mapCenter,
 	        scrollwheel: false,
 	        mapTypeControl: false,
+	        panControl: false,
 	        styles: styleArray,
 	        zoom: 15
 	    });
