@@ -33,7 +33,7 @@
 
 	<div class="available-today available-<?php echo ($todayAvail ? 'true' : 'false'); ?>">
 
-		<?php printf(esc_html__('Est-ce que %s est à la boutique le %s ?', 'artcorpus'), $name, $today); ?><br />
+		<?php printf(esc_html__('Est-ce que %s est à la boutique le %s&nbsp;?', 'artcorpus'), $name, $today); ?><br />
 
 		<?php
 
