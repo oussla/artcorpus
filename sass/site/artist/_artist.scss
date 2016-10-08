@@ -308,25 +308,20 @@ table.availability {
 		.weekday-end {
 			display: none;
 		}
-		
+
 	}
 
 
 	.gallery {
-		// text-align: center;
-		// padding:6em 10% 6em 10%;
 
 		.grid-item {
-			// display: block;
-			// @include box-sizing(border-box);
-			// overflow: hidden;
-			// border: 0px solid $color__tonic;
-
-			// margin: 0;
-			// padding: 0;
-			// line-height: 0;
 			width: 50%;
 		}
+
+	}
+
+	.artist-name-button {
+	    @include font-size(0.875); // 15px font size
 	}
 
 	.artists-grid {
