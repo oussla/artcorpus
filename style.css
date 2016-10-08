@@ -785,11 +785,11 @@ a:hover, a:active {
   padding-left: 0;
   opacity: 0;
   max-height: 0;
-  -webkit-transition: all, 0.8s, easeOut;
-  -moz-transition: all, 0.8s, easeOut;
-  -ms-transition: all, 0.8s, easeOut;
-  -o-transition: all, 0.8s, easeOut;
-  transition: all, 0.8s, easeOut;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 .main-navigation ul ul {
   float: left;
@@ -797,11 +797,11 @@ a:hover, a:active {
   top: 2.5em;
   left: -999em;
   z-index: 99999;
-  -webkit-transition: opacity 0.3s ease;
-  -moz-transition: opacity 0.3s ease;
-  -ms-transition: opacity 0.3s ease;
-  -o-transition: opacity 0.3s ease;
-  transition: opacity 0.3s ease;
+  -webkit-transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -ms-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
   opacity: 0;
 }
 .main-navigation ul ul ul {
@@ -849,11 +849,11 @@ a:hover, a:active {
   text-decoration: none;
   text-transform: lowercase;
   color: #fff;
-  -webkit-transition: box-shadow, 0.3s, easeOut;
-  -moz-transition: box-shadow, 0.3s, easeOut;
-  -ms-transition: box-shadow, 0.3s, easeOut;
-  -o-transition: box-shadow, 0.3s, easeOut;
-  transition: box-shadow, 0.3s, easeOut;
+  -webkit-transition: box-shadow, 0.3s, linear;
+  -moz-transition: box-shadow, 0.3s, linear;
+  -ms-transition: box-shadow, 0.3s, linear;
+  -o-transition: box-shadow, 0.3s, linear;
+  transition: box-shadow, 0.3s, linear;
 }
 
 /* Small menu. */
@@ -892,7 +892,7 @@ a:hover, a:active {
 .post-navigation {
   margin: 0 auto;
   overflow: hidden;
-  width: 75%;
+  width: 100%;
   text-align: left;
 }
 .comment-navigation .nav-previous,
@@ -960,7 +960,7 @@ a:hover, a:active {
 @media (max-width: 640px) {
   .main-navigation {
     text-align: center;
-    padding-top: 0.5em;
+    padding-top: 0;
   }
   .main-navigation .nav-menu > li {
     background: url("./img/2x/check-white.png") no-repeat center bottom;
@@ -999,6 +999,20 @@ a:hover, a:active {
     padding: 0;
     top: 0;
     margin-bottom: 10px;
+  }
+
+  .comment-navigation .nav-previous,
+  .posts-navigation .nav-previous,
+  .post-navigation .nav-previous {
+    float: none;
+    width: 100%;
+  }
+  .comment-navigation .nav-next,
+  .posts-navigation .nav-next,
+  .post-navigation .nav-next {
+    float: none;
+    text-align: left;
+    width: 100%;
   }
 }
 /*--------------------------------------------------------------
@@ -1147,6 +1161,12 @@ a:hover, a:active {
   line-height: 0.875em;
 }
 
+@media (max-width: 640px) {
+  .footer-identity address {
+    font-size: 20px;
+    font-size: 1.25rem;
+  }
+}
 /**
  * Contact Sidebar 
  */
@@ -1498,6 +1518,14 @@ figure.alignright {
   .home .site-branding {
     margin: 2em 0 2em 0;
   }
+  .home .site-branding .site-title a {
+    background-size: 300px 256px;
+    width: 300px;
+    height: 256px;
+  }
+  .home .homeslideshow-wrapper {
+    display: none;
+  }
 }
 /*--------------------------------------------------------------
 ## Asides
@@ -1805,8 +1833,17 @@ table.availability td.availability-special {
     width: 50%;
   }
 
+  .artist-name-button {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+
   .artists-grid a {
     width: 50%;
+  }
+  .artists-grid a .artist-name-button {
+    width: 80%;
+    left: 10%;
   }
 
   .grid-big a {
@@ -1912,6 +1949,13 @@ body {
   .site-branding .site-title a {
     background: url(./img/2x/artcorpus-logo.png) transparent no-repeat;
     background-size: 300px 255px;
+  }
+}
+@media (max-width: 640px) {
+  .site-branding .site-title a {
+    background-size: 150px 127px;
+    width: 150px;
+    height: 127px;
   }
 }
 /*--------------------------------------------------------------

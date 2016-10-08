@@ -53,6 +53,18 @@
 
 }
 
+@include media("<=phone") {
+
+	.footer-identity {
+
+		address {
+			@include font-size(1.25);
+		}
+		
+	}
+
+}
+
 
 /**
  * Contact Sidebar 
