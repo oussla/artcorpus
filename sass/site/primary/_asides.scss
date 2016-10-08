@@ -6,3 +6,15 @@
 aside {
 	padding: 4em 10% 4em 0;
 }
+
+
+/**
+ * 
+ */
+@include media("<=phone") {
+
+	aside {
+		padding: 2em 5% 2em 5%;
+	}
+
+}

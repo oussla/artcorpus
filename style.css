@@ -1198,6 +1198,20 @@ a:hover, a:active {
   float: left;
 }
 
+/**
+ * 
+ */
+@media (max-width: 640px) {
+  .column-1-3 {
+    width: 100%;
+    float: none;
+  }
+
+  .column-2-3 {
+    width: 100%;
+    float: none;
+  }
+}
 .disclaimer {
   color: #FFF;
   width: 100%;
@@ -1534,6 +1548,14 @@ aside {
   padding: 4em 10% 4em 0;
 }
 
+/**
+ * 
+ */
+@media (max-width: 640px) {
+  aside {
+    padding: 2em 5% 2em 5%;
+  }
+}
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -1712,11 +1734,13 @@ table.availability .weekdays td.available-false {
   color: #b3b3b3;
 }
 table.availability .avails td.available-true {
-  background: url(./img/availability.jpg) repeat-x;
+  background: url(./img/availability-extend.jpg) repeat-x center;
   background-color: #dc3b17;
 }
 table.availability .avails td.available-false {
   background-color: #f1f1f1;
+  color: #b3b3b3;
+  font-size: 12px;
 }
 table.availability .name {
   text-align: right;
@@ -1825,7 +1849,13 @@ table.availability td.availability-special {
     margin-left: 5%;
     margin-right: 5%;
   }
-  .artist-availability .weekday-end {
+
+  .artists-availabilities table.availability {
+    border-collapse: separate;
+    border-spacing: 0 1em;
+  }
+
+  .weekday-end {
     display: none;
   }
 
