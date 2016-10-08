@@ -160,12 +160,14 @@ table.availability {
 	.avails {
 
 		td.available-true {
-			background: url(./img/availability.jpg) repeat-x;
+			background: url(./img/availability-extend.jpg) repeat-x center;
 			background-color: $color__tonic;
 		}
 
 		td.available-false {
 			background-color: #f1f1f1;
+			color: $color__text-disabled;
+    		font-size: 12px;
 		}
 
 	}
@@ -305,12 +307,21 @@ table.availability {
 		margin-left: 5%;
 		margin-right: 5%;
 
-		.weekday-end {
-			display: none;
+
+	}
+
+	.artists-availabilities {
+
+		table.availability {
+			border-collapse: separate;
+    		border-spacing: 0 1em;
 		}
 
 	}
 
+	.weekday-end {
+		display: none;
+	}
 
 	.gallery {
 

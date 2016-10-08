@@ -337,7 +337,7 @@ function artcorpus_artists_availability_table($avails, $availSpecial = '', $args
 	    if($currentAvail != $nextAvail || $i == 6) {
 	    	// Display current availability with calculated colspan
 	    	$trAvails .= '<td class="available-'.($currentAvail ? 'true' : 'false').'" '.
-	    					($colspan > 1 ? 'colspan="'.$colspan.'"' : '').'></td>'.PHP_EOL;
+	    					($colspan > 1 ? 'colspan="'.$colspan.'"' : '').'>'.($currentAvail ? '' : '&#x2716;').'</td>'.PHP_EOL;
 	    	// Reset colspan
 	    	$colspan = 1;
 	    } else {
