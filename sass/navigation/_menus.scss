@@ -16,7 +16,7 @@
 		padding-left: 0;
 		opacity: 0;
 		max-height: 0;
-		@include transition(all, 0.8s, easeOut);
+		@include transition(all 0.3s linear);
 
 		ul {
 			float: left;
@@ -24,7 +24,7 @@
 			top: 2.5em;
 			left: -999em;
 			z-index: 99999;
-			@include transition(opacity .3s ease);
+			@include transition(opacity .3s linear);
 			opacity: 0;
 
 			ul {
@@ -97,7 +97,7 @@
 		text-decoration: none;
 		text-transform: lowercase;
 		color: #fff;
-		@include transition(box-shadow, 0.3s, easeOut);
+		@include transition(box-shadow, 0.3s, linear);
 	}
 
 	.current_page_item > a,
@@ -147,7 +147,7 @@
 	.site-main & {
 		margin: 0 auto;
 		overflow: hidden;
-		width: 75%;
+		width: 100%;
 		text-align: left;
 	}
 
@@ -228,7 +228,7 @@
 	
 	.main-navigation {
 		text-align: center;
-   		padding-top: 0.5em;
+   		padding-top: 0;
 
 		.nav-menu > li {
 			background: url('./img/2x/check-white.png') no-repeat center bottom;
@@ -277,6 +277,23 @@
 
 		}
 
+	}
+
+
+	.comment-navigation,
+	.posts-navigation,
+	.post-navigation {
+
+		.nav-previous {
+			float: none;
+			width: 100%;
+		}
+
+		.nav-next {
+			float: none;
+			text-align: left;
+			width: 100%;
+		}
 	}
 
 }
