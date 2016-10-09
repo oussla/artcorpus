@@ -999,6 +999,7 @@ a:hover, a:active {
     padding: 0;
     top: 0;
     margin-bottom: 10px;
+    background: none;
   }
 
   .comment-navigation .nav-previous,
