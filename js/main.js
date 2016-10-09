@@ -56,6 +56,7 @@ $(document).ready(function(){
 	        scrollwheel: false,
 	        mapTypeControl: false,
 	        panControl: false,
+	        draggable: !isMobile,
 	        styles: styleArray,
 	        zoom: 15
 	    });
