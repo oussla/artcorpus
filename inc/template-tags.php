@@ -401,8 +401,8 @@ function artcorpus_disclaimer() {
 			?>
 			<a class="button highlight" href="#" id="disclaimer-accept">Entrer</a>
 			<a class="button" href="<?php get_home_url(); ?>" id="disclaimer-decline">Quitter</a>
-		</div>';
-		<div class="disclaimer-overlay"></div>';
+		</div>
+		<div class="disclaimer-overlay"></div>
 
 
 	</div>
