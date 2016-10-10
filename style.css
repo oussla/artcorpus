@@ -750,6 +750,7 @@ div.wpcf7-validation-errors {
 --------------------------------------------------------------*/
 a {
   color: #8f3c29;
+  text-decoration: none;
 }
 a:visited {
   color: #818181;
@@ -1449,6 +1450,24 @@ article.format-quote .entry-title {
   overflow: hidden;
   position: absolute;
   top: 0;
+}
+
+/**
+ * Facebook Posts
+ */
+.facebook-post {
+  overflow: hidden;
+  margin: 0 auto 4em auto;
+}
+.facebook-post img {
+  width: 50%;
+  float: left;
+}
+.facebook-post .entry-header,
+.facebook-post .entry-content {
+  float: left;
+  width: 45%;
+  margin-left: 5%;
 }
 
 /**

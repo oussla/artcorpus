@@ -233,6 +233,29 @@ article.format-quote {
 
 
 /**
+ * Facebook Posts
+ */
+
+.facebook-post {
+	overflow: hidden;
+    margin: 0 auto 4em auto;
+
+	img {
+	    width: 50%;
+	    float: left;
+	}
+
+	.entry-header,
+	.entry-content {
+	    float: left;
+	    width: 45%;
+	    margin-left: 5%;
+	}
+
+}
+
+
+/**
  * Figures & captions
  */
 
