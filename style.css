@@ -1565,6 +1565,17 @@ figure.alignright {
   .home .homeslideshow-wrapper {
     display: none;
   }
+
+  .facebook-post img {
+    width: 100%;
+    float: none;
+  }
+  .facebook-post .entry-header,
+  .facebook-post .entry-content {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+  }
 }
 /*--------------------------------------------------------------
 ## Asides
