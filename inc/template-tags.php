@@ -410,3 +410,46 @@ function artcorpus_disclaimer() {
 	<?php
 }
 endif;
+
+
+
+/**
+ * Returns the formatted Facebook post
+ * @param  Array $post 		The Facebook post details
+ * @return void
+ */
+function artcorpus_format_facebook_post($post) {
+	?>
+
+	<article class="facebook-post">
+
+		<?php 
+		if(isset($post['image']) && $post['image'] != ""):
+		?>
+			<img src="<?php echo $post['image']; ?>" alt="<?php echo $post['title']; ?>" />
+		<?php
+		endif;
+		?>
+
+		<header class="entry-header">
+
+			<div class="entry-meta">
+				<a target="_blank" href="<?php echo $post['url']; ?>"><?php echo artcorpus_time_ago($post['timestamp']); ?></a>, 
+				<?php printf($post['like_count']." ".esc_html__('like%s', 'artcorpus'), ($post['like_count'] > 1 ? "s" : "")); ; ?>
+			</div>
+
+		</header>
+
+		<div class="entry-content">
+
+			<?php
+				echo preg_replace('/#(\w+)/', ' <a target="_blank" href="http://www.facebook.com/hashtag/$1">#$1</a>', $post['content']);
+			 ?>
+
+		</div><!-- .entry-content -->
+
+
+	</article>
+
+	<?php
+}
