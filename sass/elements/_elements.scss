@@ -54,7 +54,7 @@ img {
 
 
 .background-black {
-	background: url(./img/background-black.jpg) repeat;
+	background: url(./img/background-black.jpg) #000 repeat;
 	color: #FFF;
 }
 
@@ -64,7 +64,7 @@ img {
 }
 
 .background-white {
-	background: url(./img/background-white.jpg) repeat;
+	background: url(./img/background-white.jpg) #fff repeat;
 	color: #000;
 }
 
@@ -87,6 +87,12 @@ a.button {
 	border: 1px solid #000;
 	text-decoration: none;
 	color: #000;
+}
+
+.background-black a.button,
+.background-plainblack a.button {
+	border: 1px solid #d8d8d8;
+	color: #d8d8d8;
 }
 
 .highlight a.button,
