@@ -47,7 +47,7 @@
 	.entry-content {
 		text-align: center;
 		margin: 0 auto;
-		padding: 1em 0 0 0;
+		padding: 1em 5% 0 5%;
 		max-width: $post-max-width;
 	}
 
@@ -285,6 +285,7 @@ table.availability {
 
 
 
+
 @include media("<=phone") {
 
 	.artist {
@@ -292,11 +293,22 @@ table.availability {
 		.entry-header {
 			padding-left: 5%;
 			padding-right: 5%;
+
+
+			img.has-sidecontent {
+				width: 100%;
+	    		float: none;
+			}
+
+			.sidecontent {
+				float: none;
+				width: 100%;
+				margin-left: 0;
+			}
 		}
 
 		.entry-content {
-			padding-left: 5%;
-			padding-right: 5%;
+			text-align: left;
 		}
 
 	}

@@ -79,10 +79,11 @@ get_header(); ?>
 
 						<?php
 
-							$portrait = get_field('portrait');
-							echo wp_get_attachment_image($portrait['id'], 'large', false, array('class' => 'artist-portrait'));
-
 							$has_sidecontent = get_field('has_sidecontent');
+							$portrait = get_field('portrait');
+							echo wp_get_attachment_image($portrait['id'], 'large', false, 
+														 array('class' => 'artist-portrait'.($has_sidecontent ? ' has-sidecontent' : '')));
+
 							if($has_sidecontent == 1) {
 								echo '<div class="sidecontent">';
 								echo get_field('sidecontent');
