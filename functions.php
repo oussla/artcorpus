@@ -279,6 +279,24 @@ function artcorpus_mce_before_init_insert_formats( $init_array ) {
 add_filter( 'tiny_mce_before_init', 'artcorpus_mce_before_init_insert_formats' );
 
 
+/**
+ * Custom archive titles
+ * @param  string 	$title 	The archive title
+ * @return string 	The new archive title, custom
+ */
+function artcorpus_the_archive_title($title) {
+	if ( is_category() ) {
+	    $title = single_cat_title( '', false );
+	} elseif ( is_tag() ) {
+	    $title = single_tag_title( '', false );
+	} elseif ( is_author() ) {
+	    $title = '<span class="vcard">' . get_the_author() . '</span>' ;
+	}
+
+	return $title;
+}
+add_filter( 'get_the_archive_title', 'artcorpus_the_archive_title');
+
 
 
 /**

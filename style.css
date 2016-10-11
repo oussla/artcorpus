@@ -1474,6 +1474,17 @@ article.format-quote .entry-title {
 }
 
 /**
+ * Archives
+ */
+.archives .page-header h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.archives .page-header h1 {
+  margin-top: 0;
+}
+
+/**
  * Facebook Posts
  */
 .facebook-post {
