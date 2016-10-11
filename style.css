@@ -1642,7 +1642,7 @@ aside {
   float: right;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 940px) {
   .bych .pointing {
     display: none;
     background: none;
