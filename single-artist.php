@@ -44,51 +44,57 @@ get_header(); ?>
 			?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?><?php echo $background; ?>>
 				<header class="entry-header">
-					<h1 class="entry-title"><?php echo $name; ?></h1>
-					<?php 
+
+					<div class="header-content">
+
+						<h1 class="entry-title"><?php echo $name; ?></h1>
+						<?php 
+							
+							$job = get_field('job');
+							if($job != ''):
+								?>
+								<h2 class="artist-job"><?php echo $job; ?></h2>
+								<?php
+							endif;
+
+						?>
+
+						<?php
+
+							if($guest) {
+								$guestStartDate = strftime('%#d %B', get_field('guest_date_start'));
+								$guestEndDate = strftime('%#d %B %Y', get_field('guest_date_end'));
+
+								?>
+
+								<span class="guest-dates">
+									<?php printf(esc_html__('en Guest chez Art Corpus du %s au %s', 'artcorpus'), $guestStartDate, $guestEndDate); ?>
+								</span>
+
+								<?php
+
+							}
+
+						?>
+
+						<?php
+
+							$portrait = get_field('portrait');
+							echo wp_get_attachment_image($portrait['id'], 'large', false, array('class' => 'artist-portrait'));
+
+							$has_sidecontent = get_field('has_sidecontent');
+							if($has_sidecontent == 1) {
+								echo '<div class="sidecontent">';
+								echo get_field('sidecontent');
+								echo '</div>';
+							} else {
+								the_post_thumbnail('large', array('class' => 'artist-main')); 
+							}
+
+						?>
 						
-						$job = get_field('job');
-						if($job != ''):
-							?>
-							<h2 class="artist-job"><?php echo $job; ?></h2>
-							<?php
-						endif;
+					</div>
 
-					?>
-
-					<?php
-
-						if($guest) {
-							$guestStartDate = strftime('%#d %B', get_field('guest_date_start'));
-							$guestEndDate = strftime('%#d %B %Y', get_field('guest_date_end'));
-
-							?>
-
-							<span class="guest-dates">
-								<?php printf(esc_html__('en Guest chez Art Corpus du %s au %s', 'artcorpus'), $guestStartDate, $guestEndDate); ?>
-							</span>
-
-							<?php
-
-						}
-
-					?>
-
-					<?php
-
-						$portrait = get_field('portrait');
-						echo wp_get_attachment_image($portrait['id'], 'large', false, array('class' => 'artist-portrait'));
-
-						$has_sidecontent = get_field('has_sidecontent');
-						if($has_sidecontent == 1) {
-							echo '<div class="sidecontent">';
-							echo get_field('sidecontent');
-							echo '</div>';
-						} else {
-							the_post_thumbnail('large', array('class' => 'artist-main')); 
-						}
-
-					?>
 				</header><!-- .entry-header -->
 
 				<div class="dot"></div>
@@ -122,25 +128,29 @@ get_header(); ?>
 
 				<section class="gallery background-black">
 
-					<?php
+					<div class="section-content">
 
-						/**
-						 * Masonry + PhotoSwipe gallery
-		 				 */
-		 				
-		 				$gallery = get_field('gallery');
+						<?php
 
-		 				if( $gallery ): ?>
-							<div class="grid">
-							<?php foreach( $gallery as $image ): ?>
-								<a href="<?php echo $image['url']; ?>" class="grid-item">
-									<?php echo wp_get_attachment_image($image['id'], 'gallery_medium'); ?>
-								</a>
-							<?php endforeach; ?>
-							</div>
-						<?php endif; 
+							/**
+							 * Masonry + PhotoSwipe gallery
+			 				 */
+			 				
+			 				$gallery = get_field('gallery');
 
-					?>
+			 				if( $gallery ): ?>
+								<div class="grid">
+								<?php foreach( $gallery as $image ): ?>
+									<a href="<?php echo $image['url']; ?>" class="grid-item">
+										<?php echo wp_get_attachment_image($image['id'], 'gallery_medium'); ?>
+									</a>
+								<?php endforeach; ?>
+								</div>
+							<?php endif; 
+
+						?>
+
+					</div>
 		 			
 				</section>
 

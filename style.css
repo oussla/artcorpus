@@ -43,12 +43,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 /**
- * Media Queries 
- */
-/**
  * Responsive breakpoints & media expressions
  * Used with include-media
  * see: https://github.com/eduardoboucas/include-media
+ */
+/**
+ * Site max width
  */
 /**
  * Transition mixin
@@ -888,6 +888,12 @@ a:hover, a:active {
     max-height: 500px;
   }
 }
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+  max-width: 800px;
+  margin: 0 auto;
+}
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
@@ -1314,6 +1320,15 @@ article .entry-meta .small {
 }
 article .entry-content {
   margin-top: 2em;
+}
+
+/**
+ * Site width limit
+ */
+.section-content,
+.header-content {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /**

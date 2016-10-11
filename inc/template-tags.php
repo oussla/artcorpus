@@ -234,35 +234,39 @@ function artcorpus_artists_grid($type = ARTISTS_GRID_ALL, $background = 'black')
 
 		<section class="artists-grid <?php echo ($type == ARTISTS_GRID_ARTISTS ? 'artists-only grid-big' : ($type == ARTISTS_GRID_GUESTS ? 'guests-only' : '')); ?> background-<?php echo $background; ?>">
 
-		<?php
+			<div class="section-content">
 
-		?>
-		<h2 class="title-checkmarks"><span><?php 
-			echo esc_html__(($type == ARTISTS_GRID_ARTISTS ? 'les artistes' : ($type == ARTISTS_GRID_GUESTS ? 'les guests' : 'tous les artistes')), 'artcorpus');
-		?></span></h2>
-		<?php
-		
-		while($query->have_posts()) {
+				<?php
 
-			$query->the_post();
-			$name = get_field('name');
-			if($name == '') $name = get_the_title();
+				?>
+				<h2 class="title-checkmarks"><span><?php 
+					echo esc_html__(($type == ARTISTS_GRID_ARTISTS ? 'les artistes' : ($type == ARTISTS_GRID_GUESTS ? 'les guests' : 'tous les artistes')), 'artcorpus');
+				?></span></h2>
+				<?php
+				
+				while($query->have_posts()) {
 
-			?>
-			<a href="<?php echo get_permalink(); ?>" class="grid-item">
-			<h3 class="artist-name-button"><?php echo $name; ?></h3>
-			<?php
+					$query->the_post();
+					$name = get_field('name');
+					if($name == '') $name = get_the_title();
 
-			the_post_thumbnail('artist_grid'); 
+					?>
+					<a href="<?php echo get_permalink(); ?>" class="grid-item">
+					<h3 class="artist-name-button"><?php echo $name; ?></h3>
+					<?php
 
-			?>
-			</a>
-			<?php
+					the_post_thumbnail('artist_grid'); 
 
-		}
-		
-		?>
+					?>
+					</a>
+					<?php
 
+				}
+				
+				?>
+
+			</div>
+			
 		</section>
 
 		<?php

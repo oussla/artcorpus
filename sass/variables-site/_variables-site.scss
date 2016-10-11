@@ -20,3 +20,9 @@ $media-expressions: (
 	'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
 	'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
 ) !default;
+
+/**
+ * Site max width
+ */
+$site-max-width: 1000px;
+$post-max-width: 800px;

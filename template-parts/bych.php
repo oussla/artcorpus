@@ -12,18 +12,20 @@
 
 <section class="bych">
 
-<?php
+	<div class="section-content">
+	<?php
 
-	$pageID = get_option('artcorpus_bychpage');
+		$pageID = get_option('artcorpus_bychpage');
 
-?>
+	?>
 
-	<div class="pointing pointing-right"></div>
+		<div class="pointing pointing-right"></div>
 
-	<a href="<?php echo get_permalink($pageID); ?>">
-		<img src="<?php echo get_template_directory_uri(); ?>/img/svg/bych.svg" alt="<?php _("Avant de passer à la boutique", "artcorpus"); ?>" />
-	</a>
+		<a href="<?php echo get_permalink($pageID); ?>">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/svg/bych.svg" alt="<?php _("Avant de passer à la boutique", "artcorpus"); ?>" />
+		</a>
 
-	<div class="pointing pointing-left"></div>
+		<div class="pointing pointing-left"></div>
+	</div>
 
 </section>

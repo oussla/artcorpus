@@ -143,6 +143,8 @@
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
+	max-width: $post-max-width;
+	margin: 0 auto;
 
 	.site-main & {
 		margin: 0 auto;
