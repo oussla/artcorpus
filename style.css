@@ -509,7 +509,7 @@ table {
 }
 
 .background-black {
-  background: url(./img/background-black.jpg) repeat;
+  background: url(./img/background-black.jpg) #000 repeat;
   color: #FFF;
 }
 
@@ -519,7 +519,7 @@ table {
 }
 
 .background-white {
-  background: url(./img/background-white.jpg) repeat;
+  background: url(./img/background-white.jpg) #fff repeat;
   color: #000;
 }
 
@@ -540,6 +540,12 @@ a.button {
   border: 1px solid #000;
   text-decoration: none;
   color: #000;
+}
+
+.background-black a.button,
+.background-plainblack a.button {
+  border: 1px solid #d8d8d8;
+  color: #d8d8d8;
 }
 
 .highlight a.button,
@@ -1228,13 +1234,13 @@ a:hover, a:active {
   top: 0;
   z-index: 20000;
   text-align: center;
-  display: block;
+  display: none;
 }
 
 .disclaimer-overlay {
   position: fixed;
-  top: 0;
-  bottom: 0;
+  top: -10em;
+  bottom: -10em;
   z-index: 10000;
   width: 100%;
   background: black;
@@ -1695,7 +1701,7 @@ aside {
 .artist .entry-content {
   text-align: center;
   margin: 0 auto;
-  padding: 1em 0 0 0;
+  padding: 1em 5% 0 5%;
   max-width: 800px;
 }
 .artist .entry-title {
@@ -1890,9 +1896,17 @@ table.availability td.availability-special {
     padding-left: 5%;
     padding-right: 5%;
   }
+  .artist .entry-header img.has-sidecontent {
+    width: 100%;
+    float: none;
+  }
+  .artist .entry-header .sidecontent {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+  }
   .artist .entry-content {
-    padding-left: 5%;
-    padding-right: 5%;
+    text-align: left;
   }
 
   .artist-availability {
