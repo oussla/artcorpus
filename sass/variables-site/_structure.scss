@@ -1,2 +1,27 @@
 $size__site-main: 100%;
 $size__site-sidebar: 25%;
+
+/**
+ * Responsive breakpoints & media expressions
+ * Used with include-media
+ * see: https://github.com/eduardoboucas/include-media
+ */
+$breakpoints: (phone: 640px, 
+               tablet: 768px, 
+               desktop: 1024px) !default;
+
+$media-expressions: (
+	'screen': 'screen',
+	'print': 'print',
+	'handheld': 'handheld',
+	'landscape': '(orientation: landscape)',
+	'portrait': '(orientation: portrait)',
+	'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
+	'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
+) !default;
+
+/**
+ * Site max width
+ */
+$site-max-width: 1000px;
+$post-max-width: 800px;
