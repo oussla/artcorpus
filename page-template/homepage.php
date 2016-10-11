@@ -93,13 +93,12 @@ get_header(); ?>
 				$latest_query = new WP_Query( $args );
 
 
-				/**
-				 * Merge arrays 
-				 * #TODO: sort by date / timestamp
-				 */
+				// Merge arrays
 				$global_posts = array_merge($latest_query->get_posts(), $fb_posts);
 				$global_posts = array_slice($global_posts, 0, 10);
 
+				// Sort by post date (keep in mind that we have different post types here)
+				usort($global_posts, 'artcorpus_compare_posts_dates');
 
 				foreach ($global_posts as $post) {
 					if(isset($post) && is_object($post)) {
