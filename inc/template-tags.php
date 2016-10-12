@@ -437,7 +437,10 @@ function artcorpus_format_facebook_post($post) {
 		<header class="entry-header">
 
 			<div class="entry-meta">
-				<a target="_blank" href="<?php echo $post['url']; ?>"><?php echo artcorpus_time_ago($post['timestamp']); ?></a>, 
+				<a target="_blank" href="<?php echo $post['url']; ?>">
+					<?php echo esc_html__('sur facebook', 'artcorpus'); ?>,
+					<?php echo artcorpus_time_ago($post['timestamp']); ?>
+				</a>, 
 				<?php printf($post['like_count']." ".esc_html__('like%s', 'artcorpus'), ($post['like_count'] > 1 ? "s" : "")); ; ?>
 			</div>
 
