@@ -372,6 +372,17 @@ section h2 {
   background-image: url("./img/2x/check-black.png");
 }
 
+/**
+ * Double title header
+ */
+.page-header.double-title h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.page-header.double-title h1 {
+  margin-top: 0;
+}
+
 p {
   margin: 0 0 0.5em 0;
 }
@@ -1373,13 +1384,15 @@ article.format-quote .entry-title {
  * Lists
  */
 .posts-list,
-.post-single {
+.post-single,
+.page-single {
   text-align: center;
   padding: 0 10% 4em 10%;
   overflow: auto;
 }
 .posts-list article,
-.post-single article {
+.post-single article,
+.page-single article {
   max-width: 75%;
 }
 
@@ -1984,6 +1997,9 @@ table.availability td.availability-special {
   float: left;
 }
 
+/*--------------------------------------------------------------
+## Errors
+--------------------------------------------------------------*/
 body {
   font-size: 100%;
 }

@@ -12,50 +12,40 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'artcorpus' ); ?></h1>
+			<section class="page-single first error-404 not-found white">
+				<header class="page-header double-title">
+					<h2 class="title-checkmarks"><span><?php echo esc_html__('ah, c\'est une erreur', 'artcorpus'); ?></span></h2>
+					<h1 class="page-title"><?php esc_html_e( 'il n\'y a rien ici.', 'artcorpus' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'artcorpus' ); ?></p>
+					<p>
+						<a class="button" href="<?php echo home_url(); ?>"><?php echo esc_html__('Retourner à la page d\'accueil', 'artcorpus'); ?></a>
+					</p>
 
 					<?php
-						get_search_form();
-
-						the_widget( 'WP_Widget_Recent_Posts' );
-
-						// Only show the widget if site has multiple categories.
-						if ( artcorpus_categorized_blog() ) :
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'artcorpus' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-						endif;
-
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'artcorpus' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
+						// esc_html_e( 'It looks like nothing was found at this location. ', 'artcorpus' ); 
+						// get_search_form();
 					?>
 
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
+
+
+			<?php 
+
+			/**
+			 * In-house artists-only grid. 
+			 */
+			artcorpus_artists_grid(ARTISTS_GRID_ARTISTS);
+
+
+			/**
+			 * Guests. 
+			 */
+			artcorpus_artists_grid(ARTISTS_GRID_GUESTS, 'white');
+
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
