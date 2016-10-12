@@ -2138,10 +2138,18 @@ object {
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
+.gallery {
+  padding: 4em 0 4em 0;
+}
+
 .gallery-item {
   display: inline-block;
   text-align: center;
   vertical-align: top;
+  width: 100%;
+  margin: 0;
+}
+.gallery-item img {
   width: 100%;
 }
 .gallery-columns-2 .gallery-item {
@@ -2171,6 +2179,17 @@ object {
 
 .gallery-caption {
   display: block;
+}
+
+/**
+ * Light Gallery
+ */
+.lg-outer {
+  z-index: 1200;
+}
+
+.lg-inner {
+  background: #000;
 }
 
 
