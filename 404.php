@@ -14,7 +14,7 @@ get_header(); ?>
 
 			<section class="page-single first error-404 not-found white">
 				<header class="page-header double-title">
-					<h2 class="title-checkmarks"><span><?php echo esc_html__('ah, c\'est une erreur', 'artcorpus'); ?></span></h2>
+					<h2 class="title-checkmarks"><span><?php echo esc_html__('c\'est une erreur.', 'artcorpus'); ?></span></h2>
 					<h1 class="page-title"><?php esc_html_e( 'il n\'y a rien ici.', 'artcorpus' ); ?></h1>
 				</header><!-- .page-header -->
 
@@ -23,10 +23,12 @@ get_header(); ?>
 						<a class="button" href="<?php echo home_url(); ?>"><?php echo esc_html__('Retourner à la page d\'accueil', 'artcorpus'); ?></a>
 					</p>
 
+					<p>
 					<?php
-						// esc_html_e( 'It looks like nothing was found at this location. ', 'artcorpus' ); 
+						esc_html_e( 'ou jetez un oeil sur les galeries :', 'artcorpus' ); 
 						// get_search_form();
 					?>
+					</p>
 
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
