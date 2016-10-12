@@ -34,9 +34,15 @@ $(document).ready(function(){
 	 * Light Gallery
 	 * Used to open full page images 
 	 */
-	$gallery = $('.grid').lightGallery({
+	$artistGallery = $('.grid').lightGallery({
 		'download': false
 	});
+
+	$pageGallery = $('.gallery').lightGallery({
+		'download': false,
+		'selector': 'a'
+	});
+	
 
 	/**
 	 * Google Maps
