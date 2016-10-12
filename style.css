@@ -2148,9 +2148,21 @@ object {
   vertical-align: top;
   width: 100%;
   margin: 0;
+  line-height: 0;
+}
+.gallery-item .gallery-icon {
+  overflow: hidden;
 }
 .gallery-item img {
   width: 100%;
+  -webkit-transition: transform 1.5s ease-out;
+  -moz-transition: transform 1.5s ease-out;
+  -ms-transition: transform 1.5s ease-out;
+  -o-transition: transform 1.5s ease-out;
+  transition: transform 1.5s ease-out;
+}
+.gallery-item:hover img {
+  transform: scale(1.15);
 }
 .gallery-columns-2 .gallery-item {
   max-width: 50%;
@@ -2179,6 +2191,8 @@ object {
 
 .gallery-caption {
   display: block;
+  padding-bottom: 12px;
+  padding-top: 12px;
 }
 
 /**

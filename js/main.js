@@ -22,12 +22,20 @@ $(document).ready(function(){
 	/**
 	 * Masonry Gallery
 	 */
-	$grid = $('.grid').masonry({
+	$artistGrid = $('.grid').masonry({
   		itemSelector: '.grid-item'
 	});
 	// Trigger layout Masonry after each image loads
-	$grid.imagesLoaded().progress( function() {
-	  $grid.masonry('layout');
+	$artistGrid.imagesLoaded().progress( function() {
+	  $artistGrid.masonry('layout');
+	});
+
+
+	$pageGrid = $('.post .gallery').masonry({
+  		itemSelector: 'figure'
+	});
+	$pageGrid.imagesLoaded().progress( function() {
+	  $pageGrid.masonry('layout');
 	});
 
 	/**
