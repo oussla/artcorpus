@@ -80,13 +80,14 @@ img {
  * 
  */
 
-a.button {
+a.button, a.button:active, a.button:visited {
 	display: inline-block;
 	@include font-size(0.875);
 	padding: 12px 20px;
 	border: 1px solid #000;
 	text-decoration: none;
 	color: #000;
+	@include transition(all 0.25s ease);
 }
 
 .background-black a.button,
@@ -106,6 +107,7 @@ a.button:hover {
 	color: #FFF;
 	background-color: #000;
 	border-color: #000;
+	box-shadow:none;
 }
 
 

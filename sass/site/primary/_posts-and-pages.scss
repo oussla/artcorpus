@@ -20,6 +20,11 @@
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+
+	a:hover {
+		@include box-shadow(0px 3px 0px 0px #efd8d3);
+	}
+
 }
 
 .page-links {
@@ -49,6 +54,10 @@ article {
 		a {
 			text-decoration: none;
 			color: #7f7f7f;	
+		}
+
+		a:hover {
+			@include box-shadow(0px 3px 0px 0px #dedede);
 		}
 		
 		.small {

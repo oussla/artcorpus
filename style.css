@@ -543,7 +543,7 @@ table {
  * Button links
  * 
  */
-a.button {
+a.button, a.button:active, a.button:visited {
   display: inline-block;
   font-size: 14px;
   font-size: 0.875rem;
@@ -551,6 +551,11 @@ a.button {
   border: 1px solid #000;
   text-decoration: none;
   color: #000;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 .background-black a.button,
@@ -570,6 +575,7 @@ a.button:hover {
   color: #FFF;
   background-color: #000;
   border-color: #000;
+  box-shadow: none;
 }
 
 .blocklink {
@@ -766,14 +772,15 @@ div.wpcf7-validation-errors {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: #8f3c29;
+  color: #c15036;
   text-decoration: none;
+  outline: none;
 }
 a:visited {
-  color: #818181;
+  color: #c15036;
 }
 a:hover, a:focus, a:active {
-  color: #c15036;
+  color: #dc3b17;
 }
 a:focus {
   outline: thin dotted;
@@ -837,10 +844,6 @@ a:hover, a:active {
   width: 200px;
   color: #000;
 }
-.main-navigation ul ul :hover > a,
-.main-navigation ul ul .focus > a {
-  color: #888;
-}
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
   left: auto;
@@ -872,6 +875,9 @@ a:hover, a:active {
   -ms-transition: box-shadow, 0.3s, linear;
   -o-transition: box-shadow, 0.3s, linear;
   transition: box-shadow, 0.3s, linear;
+}
+.main-navigation a:hover {
+  color: #808080;
 }
 
 /* Small menu. */
@@ -932,53 +938,64 @@ a:hover, a:active {
   text-align: right;
   width: 50%;
 }
+.comment-navigation a:hover,
+.posts-navigation a:hover,
+.post-navigation a:hover {
+  -webkit-box-shadow: 0px 3px 0px 0px #efd8d3;
+  -moz-box-shadow: 0px 3px 0px 0px #efd8d3;
+  -o-box-shadow: 0px 3px 0px 0px #efd8d3;
+  box-shadow: 0px 3px 0px 0px #efd8d3;
+}
 
 .subhead-menu {
   width: 70%;
   float: right;
-  color: #FFF;
-  list-style: none;
-  text-transform: uppercase;
   text-align: right;
-  margin: 0;
-  padding: 17px 20px 17px 20px;
-  font-size: 11px;
-  font-size: 0.6875rem;
-}
-.subhead-menu li {
-  display: inline;
-}
-.subhead-menu li a, .subhead-menu li a:active, .subhead-menu li a:visited {
-  color: #FFF;
-  text-decoration: none;
-}
-.subhead-menu li::after {
-  content: '-';
-  padding-left: 10px;
-  padding-right: 10px;
-}
-.subhead-menu li:last-child::after {
-  content: none;
-  padding-right: 0;
 }
 
 .polylang-menu {
   width: 30%;
   float: left;
+  text-align: left;
+}
+
+.subhead-menu,
+.polylang-menu {
   margin: 0;
   list-style: none;
-  text-transform: uppercase;
-  text-align: left;
   padding: 17px 20px 17px 20px;
+  text-transform: uppercase;
   font-size: 11px;
   font-size: 0.6875rem;
 }
+.subhead-menu li,
 .polylang-menu li {
   display: inline;
 }
-.polylang-menu li a, .polylang-menu li a:active, .polylang-menu li a:visited {
+.subhead-menu li a, .subhead-menu li a:active, .subhead-menu li a:visited,
+.polylang-menu li a,
+.polylang-menu li a:active,
+.polylang-menu li a:visited {
   color: #FFF;
   text-decoration: none;
+}
+.subhead-menu li::after,
+.polylang-menu li::after {
+  content: '-';
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.subhead-menu li:last-child::after,
+.polylang-menu li:last-child::after {
+  content: none;
+  padding-right: 0;
+}
+.subhead-menu a:hover,
+.polylang-menu a:hover {
+  -webkit-box-shadow: 0px 3px 0px 0px #808080;
+  -moz-box-shadow: 0px 3px 0px 0px #808080;
+  -o-box-shadow: 0px 3px 0px 0px #808080;
+  box-shadow: 0px 3px 0px 0px #808080;
 }
 
 @media (max-width: 640px) {
@@ -1303,6 +1320,14 @@ a:hover, a:active {
 .entry-summary {
   margin: 1.5em 0 0;
 }
+.page-content a:hover,
+.entry-content a:hover,
+.entry-summary a:hover {
+  -webkit-box-shadow: 0px 3px 0px 0px #efd8d3;
+  -moz-box-shadow: 0px 3px 0px 0px #efd8d3;
+  -o-box-shadow: 0px 3px 0px 0px #efd8d3;
+  box-shadow: 0px 3px 0px 0px #efd8d3;
+}
 
 .page-links {
   clear: both;
@@ -1330,6 +1355,12 @@ article .entry-meta {
 article .entry-meta a {
   text-decoration: none;
   color: #7f7f7f;
+}
+article .entry-meta a:hover {
+  -webkit-box-shadow: 0px 3px 0px 0px #dedede;
+  -moz-box-shadow: 0px 3px 0px 0px #dedede;
+  -o-box-shadow: 0px 3px 0px 0px #dedede;
+  box-shadow: 0px 3px 0px 0px #dedede;
 }
 article .entry-meta .small {
   text-transform: none;
@@ -2204,6 +2235,29 @@ object {
 
 .lg-inner {
   background: #000;
+}
+
+@media (max-width: 640px) {
+  .gallery-columns-2 .gallery-item,
+  .gallery-columns-3 .gallery-item,
+  .gallery-columns-4 .gallery-item,
+  .gallery-columns-5 .gallery-item,
+  .gallery-columns-6 .gallery-item,
+  .gallery-columns-7 .gallery-item,
+  .gallery-columns-8 .gallery-item,
+  .gallery-columns-9 .gallery-item {
+    max-width: 50%;
+  }
+
+  	/*
+  	div[class^="gallery-columns-5"] {
+  
+  		.gallery-item {
+  			max-width: 100%;
+  		}
+  
+  	}
+  	*/
 }
 
 
