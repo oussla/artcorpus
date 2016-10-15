@@ -782,9 +782,6 @@ a:visited {
 a:hover, a:focus, a:active {
   color: #dc3b17;
 }
-a:focus {
-  outline: thin dotted;
-}
 a:hover, a:active {
   outline: 0;
 }
@@ -1792,6 +1789,10 @@ aside {
   transform: scale(1.15);
 }
 
+.grid-item {
+  line-height: 0;
+}
+
 /**
  * 
  * Artist availability
@@ -1897,6 +1898,7 @@ table.availability td.availability-special {
   font-weight: normal;
   text-decoration: none;
   text-transform: lowercase;
+  line-height: 1em;
   padding: 12px;
   color: #FFF;
   background-color: #000;

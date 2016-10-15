@@ -90,6 +90,11 @@
 }
 
 
+.grid-item {
+	line-height: 0;
+}
+
+
 /**
  * 
  * Artist availability
@@ -228,6 +233,7 @@ table.availability {
 	font-weight: normal;
 	text-decoration: none;
 	text-transform: lowercase;
+	line-height: 1em;
 	padding: 12px;
 	color: #FFF;
 	background-color: #000;
