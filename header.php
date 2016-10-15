@@ -90,8 +90,7 @@ setlocale(LC_TIME , get_locale().'.utf-8', $alternateLocale);
 
 
 		<?php
-
-		if ( is_front_page() && is_home() ) {
+		if ( is_front_page() ) {
 			$gallery = get_field('gallery');
 			$image_list = '<div class="homeslideshow-wrapper"><div class="homeslideshow">';
 			if( $gallery ): 
