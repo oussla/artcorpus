@@ -31,7 +31,7 @@ $(document).ready(function(){
 	});
 
 
-	$pageGrid = $('.post .gallery').masonry({
+	$pageGrid = $('.post .gallery, .page .gallery').masonry({
   		itemSelector: 'figure'
 	});
 	$pageGrid.imagesLoaded().progress( function() {
