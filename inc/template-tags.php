@@ -223,6 +223,9 @@ function artcorpus_artists_grid($type = ARTISTS_GRID_ALL, $background = 'black')
 				'compare' => ($type == ARTISTS_GRID_ARTISTS ? '=' : ($type == ARTISTS_GRID_GUESTS ? '=' : 'IN')),
 			)
 		),
+		'order' => 'ASC',
+		'orderby' => 'meta_value_num',
+		'meta_key' => 'rank',
 		'ignore_sticky_posts' => 1
 	);
 
