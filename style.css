@@ -1785,12 +1785,11 @@ aside {
   margin: 0;
   line-height: 1em;
 }
-
-.gallery {
+.artist .gallery {
   text-align: center;
-  padding: 6em 10% 6em 10%;
+  padding: 4em 10% 4em 10%;
 }
-.gallery .grid-item {
+.artist .gallery .grid-item {
   display: block;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1802,7 +1801,7 @@ aside {
   line-height: 0;
   width: 25%;
 }
-.gallery .grid-item img {
+.artist .gallery .grid-item img {
   -webkit-transition: transform 1.5s ease-out;
   -moz-transition: transform 1.5s ease-out;
   -ms-transition: transform 1.5s ease-out;
@@ -1810,7 +1809,7 @@ aside {
   transition: transform 1.5s ease-out;
   width: 100%;
 }
-.gallery .grid-item:hover img {
+.artist .gallery .grid-item:hover img {
   transform: scale(1.15);
 }
 
