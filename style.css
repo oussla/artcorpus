@@ -1228,6 +1228,10 @@ a:hover, a:active {
 /**
  * Columns wrapper 
  */
+.columns {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 .columns:after {
   content: '';
   display: block;

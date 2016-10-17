@@ -2,6 +2,8 @@
  * Columns wrapper 
  */
 .columns {
+    max-width: $columns-max-width;
+    margin: 0 auto;
 
 	&:after {
 		content: '';
