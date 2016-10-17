@@ -1113,6 +1113,13 @@ a:hover, a:active {
   margin-right: auto;
 }
 
+@media (max-width: 640px) {
+  .alignleft {
+    float: none;
+    margin-right: 0;
+    width: 100%;
+  }
+}
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
@@ -1648,6 +1655,18 @@ figure.alignright {
     float: none;
     width: 100%;
     margin-left: 0;
+  }
+
+  figure.alignleft {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  figure.alignright {
+    margin-right: 0;
+    max-width: 100%;
+    width: 100%;
   }
 }
 /*--------------------------------------------------------------

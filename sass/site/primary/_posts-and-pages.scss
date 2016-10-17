@@ -439,4 +439,17 @@ figure.alignright {
 
 	}
 
+
+	figure.alignleft {
+		margin-left: 0;
+		width: 100%;
+		max-width: 100%;
+	}
+
+	figure.alignright {
+	    margin-right: 0;
+	    max-width: 100%;
+	    width: 100%;
+	}
+
 }

@@ -14,3 +14,14 @@
 	clear: both;
 	@include center-block;
 }
+
+
+@include media("<=phone") {
+
+	.alignleft {
+	    float: none;
+	    margin-right: 0;
+	    width: 100%;
+	}
+
+}
