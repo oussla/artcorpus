@@ -51,13 +51,14 @@
 					$tags = get_tags();
 					$tags_output = '<div class="entry-meta entry-tags">';
 					$tags_output .= '<span class="small">'.__('Tags&nbsp;: ', 'artcorpus').'</span>';
+					$tags_list = array();
 
 					foreach ( $tags as $tag ) {
 					    $tag_link = get_tag_link( $tag->term_id );
 					             
-					    $tags_output .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
-					    $tags_output .= "{$tag->name}</a>";
+					    $tags_list[] = "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>{$tag->name}</a>";
 					}
+					$tags_output .= implode(", ", $tags_list);
 					$tags_output .= '</div>';
 					echo $tags_output;
 				}
