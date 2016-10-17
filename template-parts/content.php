@@ -46,6 +46,22 @@
 
 			if ( is_single() ) {
 				the_content();
+
+				if(has_tag()) {
+					$tags = get_tags();
+					$tags_output = '<div class="entry-meta entry-tags">';
+					$tags_output .= '<span class="small">'.__('Tags&nbsp;: ', 'artcorpus').'</span>';
+
+					foreach ( $tags as $tag ) {
+					    $tag_link = get_tag_link( $tag->term_id );
+					             
+					    $tags_output .= "<a href='{$tag_link}' title='{$tag->name} Tag' class='{$tag->slug}'>";
+					    $tags_output .= "{$tag->name}</a>";
+					}
+					$tags_output .= '</div>';
+					echo $tags_output;
+				}
+
 			} else {
 				the_excerpt();
 				echo artcorpus_read_more_link();
