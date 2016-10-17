@@ -1119,6 +1119,12 @@ a:hover, a:active {
     margin-right: 0;
     width: 100%;
   }
+
+  .alignright {
+    float: none;
+    margin-left: 0;
+    width: 100%;
+  }
 }
 /*--------------------------------------------------------------
 # Clearings
