@@ -237,6 +237,7 @@
 
 	    a {
 	    	color: #808080;
+	    	@include font-size(0.75);
 	    }
 
 	    a:hover {
@@ -319,6 +320,15 @@
 			text-align: left;
 			width: 100%;
 		}
+	}
+
+
+	.footer-menu {
+
+		li {
+		    width: 50%;
+		}
+
 	}
 
 }
