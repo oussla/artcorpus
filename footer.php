@@ -32,7 +32,9 @@
 	 * Instagram feed plugin
 	 */
 	?>
-	<section class="footer-instagram">
+	<section class="footer-instagram background-black">
+		<h3 class="title-checkmarks"><span><?php echo __( 'sur instagram', 'artcorpus' ); ?></span></h3>
+
 		<?php echo do_shortcode('[instagram-feed]'); ?>
 	</section>
 
@@ -56,7 +58,7 @@
 		<div class="site-info">			
 			<?php echo __( 'Toutes les images copyright Art Corpus, sauf mention contraire.', 'artcorpus' ); ?>
 
-			<?php printf( esc_html__( 'Theme %1$s by %2$s.', 'artcorpus' ), 'artcorpus', '<a href="http://www.nicolaslagarde.com" rel="designer">Nicolas Lagarde</a>' ); ?>
+			<?php printf( esc_html__( 'Theme %1$s par %2$s.', 'artcorpus' ), 'ArtCorpus', '<a href="http://www.nicolaslagarde.com" rel="designer">Nicolas Lagarde</a>' ); ?>
 		</div><!-- .site-info -->
 
 	</footer><!-- #colophon -->
