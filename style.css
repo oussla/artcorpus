@@ -995,6 +995,29 @@ a:hover, a:active {
   box-shadow: 0px 3px 0px 0px #808080;
 }
 
+.footer-menu {
+  overflow: auto;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  padding-bottom: 4em;
+}
+.footer-menu li {
+  width: 33%;
+  float: left;
+  list-style-type: none;
+  padding-bottom: .5em;
+}
+.footer-menu li a {
+  color: #808080;
+}
+.footer-menu li a:hover {
+  -webkit-box-shadow: 0px 2px 0px 0px #505050;
+  -moz-box-shadow: 0px 2px 0px 0px #505050;
+  -o-box-shadow: 0px 2px 0px 0px #505050;
+  box-shadow: 0px 2px 0px 0px #505050;
+}
+
 @media (max-width: 640px) {
   .main-navigation {
     text-align: center;
@@ -2117,7 +2140,7 @@ body {
 
 .site-footer {
   text-align: center;
-  padding: 25px 0 25px 0;
+  padding: 4em 0 4em 0;
   color: #818181;
   background-color: #252525;
   font-size: 11px;

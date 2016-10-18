@@ -222,6 +222,31 @@
 
 
 
+.footer-menu {
+	overflow: auto;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    padding-bottom: 4em;
+
+	li {
+	    width: 33%;
+	    float: left;
+	    list-style-type: none;
+    	padding-bottom: .5em;
+
+	    a {
+	    	color: #808080;
+	    }
+
+	    a:hover {
+			@include box-shadow(0px 2px 0px 0px #505050);
+		}
+	}
+
+}
+
+
 
 @include media("<=phone") {
 	
