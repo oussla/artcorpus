@@ -29,16 +29,6 @@
 
 	<?php
 	/**
-	 * Map.
-	 */
-	?>
-	<section class="footer-map">
-		<div id="footermap" class="map"></div>
-	</section>
-
-
-	<?php
-	/**
 	 * Instagram feed plugin
 	 */
 	?>
