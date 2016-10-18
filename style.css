@@ -348,6 +348,12 @@ section h2 {
   margin: 1.25em 0 1.25em 0;
 }
 
+h3 {
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: normal;
+}
+
 /**
  * Title with little checkmarks on both sides
  */
@@ -370,6 +376,10 @@ section h2 {
 .background-white .title-checkmarks span,
 .background-white .title-checkmarks span:before {
   background-image: url("./img/2x/check-black.png");
+}
+
+h3.title-checkmarks span {
+  background-position: right 7px;
 }
 
 /**
@@ -2145,6 +2155,20 @@ body {
   background-color: #252525;
   font-size: 11px;
   font-size: 0.6875rem;
+}
+.site-footer a {
+  color: #808080;
+}
+.site-footer a:hover {
+  -webkit-box-shadow: 0px 2px 0px 0px #505050;
+  -moz-box-shadow: 0px 2px 0px 0px #505050;
+  -o-box-shadow: 0px 2px 0px 0px #505050;
+  box-shadow: 0px 2px 0px 0px #505050;
+}
+
+.footer-instagram {
+  text-align: center;
+  overflow: auto;
 }
 
 #sbi_load {

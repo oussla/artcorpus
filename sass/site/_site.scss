@@ -122,6 +122,19 @@ body {
 	color: #818181;
 	background-color: #252525;
 	@include font-size(0.6875); // 11px font size
+
+	a {
+    	color: #808080;
+    }
+
+    a:hover {
+		@include box-shadow(0px 2px 0px 0px #505050);
+	}
+}
+
+.footer-instagram {
+	text-align: center;
+	overflow: auto;
 }
 
 // Remove some remaining element from "Instagram Feed" plugin. 
