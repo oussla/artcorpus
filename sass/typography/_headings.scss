@@ -18,6 +18,11 @@ section h2 {
 	margin: 1.25em 0 1.25em 0;
 }
 
+h3 {
+	@include font-size(1.25);
+	font-weight: normal;
+}
+
 /**
  * Title with little checkmarks on both sides
  */
@@ -45,6 +50,14 @@ section h2 {
 
 	span, span:before {
 		background-image:  url("./img/2x/check-black.png");
+	}
+	
+}
+
+h3.title-checkmarks {
+
+	span {
+		background-position: right 7px;
 	}
 	
 }
