@@ -1020,6 +1020,8 @@ a:hover, a:active {
 }
 .footer-menu li a {
   color: #808080;
+  font-size: 12px;
+  font-size: 0.75rem;
 }
 .footer-menu li a:hover {
   -webkit-box-shadow: 0px 2px 0px 0px #505050;
@@ -1085,6 +1087,10 @@ a:hover, a:active {
     float: none;
     text-align: left;
     width: 100%;
+  }
+
+  .footer-menu li {
+    width: 50%;
   }
 }
 /*--------------------------------------------------------------
@@ -2173,6 +2179,10 @@ body {
 
 #sbi_load {
   display: none;
+}
+
+.site-info {
+  padding: 0 10%;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
