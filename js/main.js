@@ -116,7 +116,7 @@ $(document).ready(function(){
 	    var d = new Date();
 	    d.setTime(d.getTime() + (expiredays*24*60*60*1000));
 	    var expires = "expires="+ d.toUTCString();
-	    document.cookie = cName + "=" + cValue + "; " + expires;
+	    document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
 	}
 
 	/**
