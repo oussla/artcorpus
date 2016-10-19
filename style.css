@@ -579,6 +579,9 @@ a.button:hover {
   color: #FFF;
   background-color: #000;
   border-color: #000;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
   box-shadow: none;
 }
 
@@ -592,6 +595,17 @@ a.button:hover {
   background-color: #7f7f7f;
   border-color: #7f7f7f;
   color: #fff;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+.background-black .highlight a.button,
+.background-black a.button.highlight,
+.background-plainblack .highlight a.button,
+.background-plainblack a.button.highlight {
+  background-color: #dc3b17;
+  border-color: #dc3b17;
 }
 
 .blocklink {
