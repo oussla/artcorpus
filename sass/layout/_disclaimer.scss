@@ -1,3 +1,6 @@
+/**
+ * Images disclaimer
+ */
 .disclaimer {
 	color: #FFF;
 	width: 100%;
@@ -37,4 +40,26 @@
 	    background: url(./img/artcorpus-logo.png) transparent no-repeat;
 	    background-size: 150px 127px;
 	}
+}
+
+
+
+/**
+ * Cookies Disclaimer 
+ */
+.cookies-disclaimer {
+    color: #FFF;
+    background: #000;
+    padding: 2em;
+    text-align: left;
+    @include font-size(0.75);
+    width: 100%;
+    // position: fixed;
+    z-index: 1200;
+    display: none;
+
+    .cookies-disclaimer-content {
+    	max-width: $post-max-width;
+    	margin: 0 auto;
+    }
 }

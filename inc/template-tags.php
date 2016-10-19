@@ -419,6 +419,27 @@ endif;
 
 
 
+if ( ! function_exists( 'artcorpus_cookies_disclaimer' ) ) :
+/**
+ * Returns the Cookies Disclamier 
+ * @return [type] [description]
+ */
+function artcorpus_cookies_disclaimer() {
+	?>
+	<div class="cookies-disclaimer" id="cookies-disclaimer">
+		<div class="cookies-disclaimer-content background-plainblack">
+			<?php 
+				dynamic_sidebar('cookies-disclaimer');
+			?>
+			<a href="#" class="button" id="cookies-accept">OK</a>
+		</div>
+	</div>
+	<?php
+}
+endif;
+
+
+
 /**
  * Returns the formatted Facebook post
  * @param  Array $post 		The Facebook post details

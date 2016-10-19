@@ -140,7 +140,7 @@ $(document).ready(function(){
 	}
 
 	/**
-	 * Disclaimer
+	 * Images Disclaimer
 	 */
 	
 	var disclaimerCookieName = "disclaimer";
@@ -153,6 +153,22 @@ $(document).ready(function(){
 		$('#disclaimer').hide();
 		// Set cookie to "1" for one day
 		setCookie(disclaimerCookieName, "1", 1);
+	});
+
+
+	/**
+	 * Cookies Disclaimer
+	 */
+	var cookiesDisclaimerCookieName = "cookiesdisclaimer";
+	if(getCookie(cookiesDisclaimerCookieName) == "") {
+		// Disclaimer is hidden by default. Show only if disclaimer cookie is not found. 
+		$('#cookies-disclaimer').show();
+	}
+	$('#cookies-disclaimer #cookies-accept').click(function(event) {
+		event.preventDefault();
+		$('#cookies-disclaimer').hide();
+		// Set cookie to "1" for one day
+		setCookie(cookiesDisclaimerCookieName, "1", 396); // Set cookie for 13 months
 	});
 
 });
