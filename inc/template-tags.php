@@ -258,7 +258,7 @@ function artcorpus_artists_grid($type = ARTISTS_GRID_ALL, $background = 'black')
 					<h3 class="artist-name-button"><?php echo $name; ?></h3>
 					<?php
 
-					the_post_thumbnail('artist_grid'); 
+					the_post_thumbnail(($type == ARTISTS_GRID_ARTISTS ? 'artist_grid' : 'artist_grid_small')); 
 
 					?>
 					</a>
