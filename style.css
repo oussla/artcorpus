@@ -1029,8 +1029,8 @@ a:hover, a:active {
   overflow: auto;
   max-width: 800px;
   margin: 0 auto;
-  text-align: left;
-  padding-bottom: 4em;
+  text-align: center;
+  padding: 0 5% 4em 5%;
 }
 .footer-menu li {
   width: 33%;
@@ -1109,6 +1109,9 @@ a:hover, a:active {
     width: 100%;
   }
 
+  .footer-menu {
+    text-align: left;
+  }
   .footer-menu li {
     width: 50%;
   }
@@ -2074,6 +2077,9 @@ table.availability td.availability-special {
   .artist .entry-content {
     text-align: left;
   }
+  .artist .gallery .grid-item {
+    width: 50%;
+  }
 
   .artist-availability {
     text-align: center;
@@ -2088,10 +2094,6 @@ table.availability td.availability-special {
 
   .weekday-end {
     display: none;
-  }
-
-  .gallery .grid-item {
-    width: 50%;
   }
 
   .artist-name-button {
