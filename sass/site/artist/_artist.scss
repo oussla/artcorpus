@@ -316,6 +316,14 @@ table.availability {
 			text-align: left;
 		}
 
+		.gallery {
+
+			.grid-item {
+				width: 50%;
+			}
+
+		}
+		
 	}
 
 
@@ -340,13 +348,6 @@ table.availability {
 		display: none;
 	}
 
-	.gallery {
-
-		.grid-item {
-			width: 50%;
-		}
-
-	}
 
 	.artist-name-button {
 	    @include font-size(0.875); // 15px font size
