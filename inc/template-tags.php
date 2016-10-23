@@ -455,7 +455,7 @@ function artcorpus_format_facebook_post($post) {
 			$img = '<img src="'.$post['image'].'" alt="'.$post['title'].'" />';
 		
 			if($post['type'] == 'video') {
-				$img = '<a href="" class="facebook-video">' . $img . '</a>';
+				$img = '<a target="_blank" href="'.$post['url'].'" class="facebook-video">' . $img . '</a>';
 			}
 
 			echo $img;
