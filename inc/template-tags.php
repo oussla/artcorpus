@@ -451,11 +451,15 @@ function artcorpus_format_facebook_post($post) {
 	<article class="facebook-post">
 
 		<?php 
-		if(isset($post['image']) && $post['image'] != ""):
-		?>
-			<img src="<?php echo $post['image']; ?>" alt="<?php echo $post['title']; ?>" />
-		<?php
-		endif;
+		if(isset($post['image']) && $post['image'] != "") {
+			$img = '<img src="'.$post['image'].'" alt="'.$post['title'].'" />';
+		
+			if($post['type'] == 'video') {
+				$img = '<a href="" class="facebook-video">' . $img . '</a>';
+			}
+
+			echo $img;
+		}
 		?>
 
 		<header class="entry-header">
@@ -474,7 +478,10 @@ function artcorpus_format_facebook_post($post) {
 
 			<?php
 				echo preg_replace('/#(\w+)/', ' <a target="_blank" href="http://www.facebook.com/hashtag/$1">#$1</a>', $post['content']);
+
+			 	/* <p><a href="<?php echo $post['url']; ?>" class="button"><?php echo esc_html__('voir sur facebook', 'artcorpus'); ?></a></p> */
 			 ?>
+
 
 		</div><!-- .entry-content -->
 
