@@ -62,58 +62,12 @@
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
-                    "width": 50,
+                    "width": 100,
                     "class": "",
                     "id": ""
                 },
                 "message": "Cet artiste est un guest.",
                 "default_value": 0
-            },
-            {
-                "key": "field_57ead60a16a52",
-                "label": "Classement",
-                "name": "rank",
-                "type": "select",
-                "instructions": "D\u00e9finit l'ordre d'apparition, notamment dans les grilles d'artistes et sur le calendrier.",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": 50,
-                    "class": "",
-                    "id": ""
-                },
-                "choices": {
-                    "1": 1,
-                    "2": 2,
-                    "3": 3,
-                    "4": 4,
-                    "5": 5,
-                    "6": 6,
-                    "7": 7,
-                    "8": 8,
-                    "9": 9,
-                    "10": 10,
-                    "11": 11,
-                    "12": 12,
-                    "13": 13,
-                    "14": 14,
-                    "15": 15,
-                    "16": 16,
-                    "17": 17,
-                    "18": 18,
-                    "19": 19,
-                    "20": 20
-                },
-                "default_value": [
-                    
-                ],
-                "allow_null": 0,
-                "multiple": 0,
-                "ui": 0,
-                "ajax": 0,
-                "placeholder": "",
-                "disabled": 0,
-                "readonly": 0
             },
             {
                 "key": "field_579a5c5368e67",
@@ -166,6 +120,50 @@
                 "first_day": 1
             },
             {
+                "key": "field_57ead60a16a52",
+                "label": "Classement",
+                "name": "rank",
+                "type": "select",
+                "instructions": "D\u00e9finit l'ordre d'apparition, notamment dans les grilles d'artistes et sur le calendrier.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": 50,
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "1": 1,
+                    "2": 2,
+                    "3": 3,
+                    "4": 4,
+                    "5": 5,
+                    "6": 6,
+                    "7": 7,
+                    "8": 8,
+                    "9": 9,
+                    "10": 10,
+                    "11": 11,
+                    "12": 12,
+                    "13": 13,
+                    "14": 14,
+                    "15": 15,
+                    "16": 16,
+                    "17": 17,
+                    "18": 18,
+                    "19": 19,
+                    "20": 20
+                },
+                "default_value": [],
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": "",
+                "disabled": 0,
+                "readonly": 0
+            },
+            {
                 "key": "field_56c0eb5a3ecd7",
                 "label": "Dispos",
                 "name": "availability",
@@ -187,9 +185,7 @@
                     "weekday6": "Samedi",
                     "weekday7": "Dimanche"
                 },
-                "default_value": [
-                    
-                ],
+                "default_value": [],
                 "layout": "horizontal",
                 "toggle": 0
             },
