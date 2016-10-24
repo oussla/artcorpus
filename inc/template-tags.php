@@ -106,7 +106,8 @@ function artcorpus_time_ago($date = null) {
 		$output = '0 ' . __( 'seconds', 'artcorpus' );
 	}
  
-	$output .= __(' ago', 'artcorpus');
+	// $output .= __(' ago', 'artcorpus');
+	$output = sprintf(esc_html__('%1$s ago', 'artcorpus'), $output);
  
 	return $output;
 }
