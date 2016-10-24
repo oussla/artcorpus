@@ -14,6 +14,22 @@ object {
 	max-width: 100%;
 }
 
+
+/**
+ * Unveil elements - jQuery Unveil
+ */
+img.unveil {
+	opacity: 0;
+	@include transition(opacity 1s ease-out);
+
+	&.unveil-loaded {
+		opacity: 1;
+	}
+}
+
+
+
+
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
