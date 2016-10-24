@@ -2295,9 +2295,9 @@ object {
 }
 
 /**
- * Unveil elements - jQuery Unveil
+ * Lazyload images
  */
-img.unveil {
+img.lazyload {
   opacity: 0;
   -webkit-transition: opacity 1s ease-out;
   -moz-transition: opacity 1s ease-out;
@@ -2305,7 +2305,7 @@ img.unveil {
   -o-transition: opacity 1s ease-out;
   transition: opacity 1s ease-out;
 }
-img.unveil.unveil-loaded {
+img.lazyload.lazyload-loaded {
   opacity: 1;
 }
 

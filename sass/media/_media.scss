@@ -16,13 +16,13 @@ object {
 
 
 /**
- * Unveil elements - jQuery Unveil
+ * Lazyload images
  */
-img.unveil {
+img.lazyload {
 	opacity: 0;
 	@include transition(opacity 1s ease-out);
 
-	&.unveil-loaded {
+	&.lazyload-loaded {
 		opacity: 1;
 	}
 }

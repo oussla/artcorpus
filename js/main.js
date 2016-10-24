@@ -55,8 +55,8 @@ $(document).ready(function(){
 	/**
 	 * Unveil; lazy loading images
 	 */
-	$('.unveil').unveil(200, function() {
-		$(this).addClass("unveil-loaded");
+	$('.lazyload').unveil(200, function() {
+		$(this).addClass("lazyload-loaded");
 	});
 	
 
