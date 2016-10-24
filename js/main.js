@@ -50,6 +50,12 @@ $(document).ready(function(){
 		'download': false,
 		'selector': 'a'
 	});
+
+
+	/**
+	 * Unveil; lazy loading images
+	 */
+	$('.unveil').unveil(200);
 	
 
 	/**

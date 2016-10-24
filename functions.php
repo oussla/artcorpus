@@ -178,6 +178,7 @@ function artcorpus_scripts() {
 	  
 	  wp_deregister_script('jquery');
 	  wp_enqueue_script('jquery', get_template_directory_uri() . "/vendors/jquery-2.2.2.min.js", array(), "2.2.2", true);
+	  wp_enqueue_script('unveil', get_template_directory_uri() . "/vendors/jquery.unveil.min.js", array('jquery'), "4.0.0", true);
 	  wp_enqueue_script('masonry', get_template_directory_uri() . "/vendors/masonry.pkdg.min.js", array('jquery'), "4.0.0", true);
 
 	  $GoogleMapsAPIKey = get_option('artcorpus_googleapikey');

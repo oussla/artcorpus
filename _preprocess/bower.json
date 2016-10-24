@@ -3,7 +3,8 @@
   "dependencies": {
     "masonry": "^4.0.0",
     "lightgallery": "^1.2.16",
-    "include-media": "^1.4.8"
+    "include-media": "^1.4.8",
+    "jquery-unveil": "^1.3.0"
   },
   "devDependencies": {}
 }

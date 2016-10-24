@@ -453,7 +453,9 @@ function artcorpus_format_facebook_post($post) {
 
 		<?php 
 		if(isset($post['image']) && $post['image'] != "") {
-			$img = '<img src="'.$post['image'].'" alt="'.$post['title'].'" />';
+			// $img = '<img src="'.$post['image'].'" alt="'.$post['title'].'" />';
+			$img = '<img class="unveil" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+						 data-src="'.$post['image'].'" alt="'.$post['title'].'" />';
 		
 			if($post['type'] == 'video') {
 				$img = '<a target="_blank" href="'.$post['url'].'" class="facebook-video">' . $img . '</a>';
