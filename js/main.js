@@ -96,7 +96,9 @@ $(document).ready(function(){
 		  title: 'Art Corpus'
 		});
 	}
-	google.maps.event.addDomListener(window, 'load', mapInitialize);
+	if(document.getElementById('footermap') !== null) {
+		google.maps.event.addDomListener(window, 'load', mapInitialize);
+	}
 
 
 	/**
