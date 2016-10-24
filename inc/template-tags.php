@@ -259,7 +259,7 @@ function artcorpus_artists_grid($type = ARTISTS_GRID_ALL, $background = 'black')
 					<h3 class="artist-name-button"><?php echo $name; ?></h3>
 					<?php
 
-					the_post_thumbnail(($type == ARTISTS_GRID_ARTISTS ? 'artist_grid' : 'artist_grid_small')); 
+					the_post_thumbnail(($type == ARTISTS_GRID_ARTISTS ? 'artist_grid' : 'artist_grid_small'), array('class' => 'lazyload')); 
 
 					?>
 					</a>
@@ -454,7 +454,7 @@ function artcorpus_format_facebook_post($post) {
 		<?php 
 		if(isset($post['image']) && $post['image'] != "") {
 			// $img = '<img src="'.$post['image'].'" alt="'.$post['title'].'" />';
-			$img = '<img class="unveil" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
+			$img = '<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
 						 data-src="'.$post['image'].'" alt="'.$post['title'].'" />';
 			// Add <noscript> tag for fallback and SEO 
 			$img .= '<noscript>

@@ -333,16 +333,21 @@ function portfolio_page_template( $template ) {
 
 
 /**
- * TEST FILTER 
- * for post overriding post thumbnails
+ * Overriding post thumbnails: lazyloading if asked
  */
-/*
-function artcorpus_post_thumbnail_html($html) {
-	return "YOYO".$html."OYOY";
+
+function artcorpus_post_thumbnail_html($html, $post_id, $post_thumbnail_id, $size, $attr) {
+
+	// If class contains "lazyload", change HTML markup 
+	if(isset($attr['class']) && strpos($attr['class'], 'lazyload') !== false ) {
+		$html = str_replace('src="', 'src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="', $html);
+	}
+
+	return $html;
 
 }
-add_filter( 'post_thumbnail_html', 'artcorpus_post_thumbnail_html', 11 );
-*/
+add_filter( 'post_thumbnail_html', 'artcorpus_post_thumbnail_html', 20, 5);
+
 
 /**
  * Implement the Custom Header feature.
