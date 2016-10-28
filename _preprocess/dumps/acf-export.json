@@ -120,6 +120,30 @@
                 "first_day": 1
             },
             {
+                "key": "field_5813379fe67eb",
+                "label": "Page externe du guest",
+                "name": "guest_external_page",
+                "type": "url",
+                "instructions": "Lien vers la page Facebook, Instagram ou autre",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_56b67688b97cb",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "http:\/\/..."
+            },
+            {
                 "key": "field_57ead60a16a52",
                 "label": "Classement",
                 "name": "rank",
