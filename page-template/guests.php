@@ -24,9 +24,9 @@ get_header(); ?>
 
 		</section>
 
-		<section>
+		<section class="post-single">
 
-			<div class="section-content">
+			<article>
 		
 				<?php
 
@@ -54,58 +54,63 @@ get_header(); ?>
 					if ($query->have_posts()) {
 
 						?>
-						<ul class="guests">
+						<ul class="guests guests-alternate">
 						<?php
 
 						while($query->have_posts()) {
 
 							?>
 							<li>
-							<?php
-
-							$query->the_post();
-							$name = get_field('name');
-							if($name == '') $name = get_the_title();
-
-							$thumbnail = get_the_post_thumbnail(null, 'gallery_large', array('class' => 'lazyload')); 
-							$guestExternalPage = get_field('guest_external_page');
-							if($guestExternalPage != '') {
-								$thumbnail = '<a href="'.$guestExternalPage.'" target="_blank">' . $thumbnail . '</a>';
-							}
-							echo $thumbnail;
-
-							?>
-							<h2 class=""><?php echo $name; ?></h2>
-
-							<?php
-
-							$guestStartDate = strftime('%#d %B', get_field('guest_date_start'));
-							$guestEndDate = strftime('%#d %B %Y', get_field('guest_date_end'));
-
-							if($guestStartDate != "" && $guestEndDate != "") {
-								?>
-
-								<span class="guest-dates">
-									<?php printf(esc_html__('en Guest chez Art Corpus du %s au %s', 'artcorpus'), $guestStartDate, $guestEndDate); ?>
-								</span>
-
 								<?php
-							}
 
-							the_content();
-							
-							if($guestExternalPage != '') {
+								$query->the_post();
+								$name = get_field('name');
+								if($name == '') $name = get_the_title();
+
+								$thumbnail = get_the_post_thumbnail(null, 'gallery_large', array('class' => 'lazyload')); 
+								$guestExternalPage = get_field('guest_external_page');
+								if($guestExternalPage != '') {
+									$thumbnail = '<a href="'.$guestExternalPage.'" target="_blank">' . $thumbnail . '</a>';
+								}
+								echo $thumbnail;
+
 								?>
+
+								<div class="details">
+									<h2 class=""><?php echo $name; ?></h2>
+
+									<?php
+
+									if (get_field('guest_date_start') && get_field('guest_date_end')) {
+										$guestStartDate = strftime('%#d %B', get_field('guest_date_start'));
+										$guestEndDate = strftime('%#d %B %Y', get_field('guest_date_end'));
+
+										if($guestStartDate != "" && $guestEndDate != "") {
+											?>
+
+											<span class="guest-dates">
+												<?php printf(esc_html__('du %s au %s', 'artcorpus'), $guestStartDate, $guestEndDate); ?>
+											</span>
+
+											<?php
+										}
+									}
+
+									the_content();
 									
-								<a href="<?php echo $guestExternalPage; ?>" target="_blank" class="button">
-									<?php printf(esc_html__('Contacter %s', 'artcorpus'), $name); ?>
+									if($guestExternalPage != '') {
+										?>
+											
+										<a href="<?php echo $guestExternalPage; ?>" target="_blank" class="button">
+											<?php printf(esc_html__('Contacter %s', 'artcorpus'), $name); ?>
 
-								</a>
+										</a>
 
-								<?php
-							}
+										<?php
+									}
 
-							?>
+									?>
+								</div>
 							</li>
 							<?php
 						}
@@ -120,7 +125,7 @@ get_header(); ?>
 
 				?>
 
-			</div>
+			</article>
 
 		</section>
 

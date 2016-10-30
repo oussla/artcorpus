@@ -2131,6 +2131,56 @@ table.availability td.availability-special {
     width: 100%;
   }
 }
+/**
+ * Guests page template
+ */
+.page-template-guests .post-single {
+  padding-bottom: 0;
+}
+
+.guests {
+  list-style-type: none;
+  margin-left: 0;
+  margin-bottom: 4em;
+  padding-left: 0;
+}
+.guests li {
+  overflow: auto;
+  margin-bottom: 2em;
+}
+.guests img.wp-post-image {
+  float: left;
+  width: 50%;
+}
+.guests .details {
+  width: 45%;
+  margin-left: 5%;
+  float: left;
+}
+.guests .details h2 {
+  margin: 0;
+}
+.guests .details .guest-dates {
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+
+/**
+ * Alternate version: centered posts
+ */
+.guests-alternate {
+  text-align: center;
+}
+.guests-alternate img.wp-post-image {
+  float: none;
+  width: auto;
+}
+.guests-alternate .details {
+  width: 100%;
+  margin-left: 0%;
+  float: none;
+}
+
 /*--------------------------------------------------------------
 ## Plain Black
 --------------------------------------------------------------*/
