@@ -176,10 +176,17 @@ get_header(); ?>
 
 		<?php
 
+
 			/**
-			 * Others artists grid. 
+			 * In-house artists-only grid. 
 			 */
-			artcorpus_artists_grid(ARTISTS_GRID_ALL);
+			artcorpus_artists_grid(ARTISTS_GRID_ARTISTS);
+
+
+			/**
+			 * Guests. 
+			 */
+			artcorpus_artists_grid(ARTISTS_GRID_GUESTS);
 
 		?>
 
