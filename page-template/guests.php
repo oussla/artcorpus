@@ -100,7 +100,8 @@ get_header(); ?>
 									
 									if($guestExternalPage != '') {
 										?>
-											
+										
+										<br />
 										<a href="<?php echo $guestExternalPage; ?>" target="_blank" class="button">
 											<?php printf(esc_html__('Contacter %s', 'artcorpus'), $name); ?>
 
