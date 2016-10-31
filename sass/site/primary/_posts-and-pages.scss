@@ -230,8 +230,20 @@ article.format-quote {
 .home {
 
 	.site-branding {
-		margin: 6em 0 6em 0;
+		margin: 3em 0 3em 0;
+
+		.site-title a {
+	        width: 500px;
+	        height: 426px;
+	        background-image: url(./img/artcorpus-logo-big.png);
+		}
+
+		.site-description {
+			@include font-size(1.5);
+		}
+
 	}
+
 
 	.homeslideshow-wrapper {
 		position: absolute;

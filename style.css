@@ -1600,7 +1600,16 @@ article.format-quote .entry-title {
  * Homepage customs
  */
 .home .site-branding {
-  margin: 6em 0 6em 0;
+  margin: 3em 0 3em 0;
+}
+.home .site-branding .site-title a {
+  width: 500px;
+  height: 426px;
+  background-image: url(./img/artcorpus-logo-big.png);
+}
+.home .site-branding .site-description {
+  font-size: 24px;
+  font-size: 1.5rem;
 }
 .home .homeslideshow-wrapper {
   position: absolute;
@@ -2235,6 +2244,10 @@ body {
 .site-branding {
   position: relative;
   z-index: 1102;
+  margin: 0 0 1em 0;
+}
+.site-branding .site-title {
+  margin: 0;
 }
 .site-branding .site-title a {
   display: block;
@@ -2245,6 +2258,7 @@ body {
   background: url(./img/artcorpus-logo.png) transparent no-repeat;
 }
 .site-branding .site-description {
+  margin: 0;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 15px;
