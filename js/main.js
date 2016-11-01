@@ -90,11 +90,21 @@ $(document).ready(function(){
 		    anchor: new google.maps.Point(13, 34)
 		}
 		var marker = new google.maps.Marker({
-		  position: mapCenter,
+		  // position: mapCenter,
 		  map: map,
 		  icon: markerImg,
-		  title: 'Art Corpus'
+		  title: 'Art Corpus',
+		  place: {
+		  	location: mapCenter,
+		  	placeId: 'ChIJY9mRzhlu5kcRpkh4JF-DJhg'
+		  },
+		  url: 'https://www.google.fr/maps/place/Art+Corpus/@48.8653114,2.3461049,17z/data=!3m1!4b1!4m5!3m4!1s0x47e66e19ce91d963:0x1826835f247848a6!8m2!3d48.8653114!4d2.3482989'
 		});
+
+		google.maps.event.addListener(marker, 'click', function() {
+		    window.open(this.url, '_blank');
+		});
+
 	}
 	if(document.getElementById('footermap') !== null) {
 		google.maps.event.addDomListener(window, 'load', mapInitialize);
