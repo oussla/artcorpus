@@ -2223,6 +2223,7 @@ table.availability td.availability-special {
 --------------------------------------------------------------*/
 body {
   font-size: 100%;
+  background: url(./img/background-lightwhite.jpg) #fff repeat;
 }
 
 /**
