@@ -432,7 +432,7 @@ function artcorpus_cookies_disclaimer() {
 			<?php 
 				dynamic_sidebar('cookies-disclaimer');
 			?>
-			<a href="#" class="button" id="cookies-accept"><?php esc_html__("OK merci j'ai compris", 'artcorpus'); ?></a>
+			<a href="#" class="button" id="cookies-accept"><?php _e("OK j'ai compris", 'artcorpus'); ?></a>
 		</div>
 	</div>
 	<?php
