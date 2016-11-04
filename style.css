@@ -2315,7 +2315,6 @@ body {
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .site-branding .site-title a {
     background: url(./img/2x/artcorpus-logo.png) transparent no-repeat;
-    background-size: 300px 255px;
   }
 }
 @media (max-width: 640px) {
