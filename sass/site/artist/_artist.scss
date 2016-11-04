@@ -236,6 +236,7 @@ table.availability {
 	padding: 12px;
 	color: #FFF;
 	background-color: #000;
+	z-index: 10;
 	@include font-size(1.125);
 	@include transition(all 0.3s ease-in-out);
 }
