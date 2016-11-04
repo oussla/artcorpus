@@ -30,6 +30,14 @@ class Add_Settings_Field {
 			'general'
 		);
 
+		// Guests page ID
+		register_setting( 'general', 'artcorpus_guestspage', 'esc_attr' );
+		add_settings_field(
+			'artcorpus_guestspage_id',
+			'<label for="artcorpus_guestspage_id">' . __( 'ID de la page "Guests"' , 'artcorpus_guestspage' ) . '</label>',
+			array( $this, 'artcorpus_guestspage_callback' ),
+			'general'
+		);
 
 		// Google Maps API Key
 		register_setting( 'general', 'artcorpus_googleapikey', 'esc_attr' );
@@ -39,6 +47,7 @@ class Add_Settings_Field {
 			array( $this, 'artcorpus_googleapikey_callback' ),
 			'general'
 		);
+
 	}
 
 	/**
@@ -48,6 +57,11 @@ class Add_Settings_Field {
 	public function artcorpus_bychpage_callback() {
 		$value = get_option( 'artcorpus_bychpage', '' );
 		echo '<input type="text" id="artcorpus_bychpage_id" name="artcorpus_bychpage" value="' . esc_attr( $value ) . '" />';
+	}
+
+	public function artcorpus_guestspage_callback() {
+		$value = get_option( 'artcorpus_guestspage', '' );
+		echo '<input type="text" id="artcorpus_guestspage_id" name="artcorpus_guestspage" value="' . esc_attr( $value ) . '" />';
 	}
 
 	public function artcorpus_googleapikey_callback() {

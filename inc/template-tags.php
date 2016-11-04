@@ -230,8 +230,9 @@ function artcorpus_artists_grid($type = ARTISTS_GRID_ALL, $background = 'black')
 		'ignore_sticky_posts' => 1
 	);
 
-
 	$query = new WP_Query( $args );
+
+	$guestsPageID = get_option('artcorpus_guestspage');
 
 	if ($query->have_posts()) {
 		?>
@@ -254,8 +255,16 @@ function artcorpus_artists_grid($type = ARTISTS_GRID_ALL, $background = 'black')
 					$name = get_field('name');
 					if($name == '') $name = get_the_title();
 
+					// Is this artist a guest ? 
+					$isGuest = get_field('guest') == 1;
+					if($isGuest) {
+						$permalink = get_permalink($guestsPageID)."#".get_post_field('post_name');
+					} else {
+						$permalink = get_permalink();
+					}
+
 					?>
-					<a href="<?php echo get_permalink(); ?>" class="grid-item">
+					<a href="<?php echo $permalink; ?>" class="grid-item">
 					<h3 class="artist-name-button"><?php echo $name; ?></h3>
 					<?php
 

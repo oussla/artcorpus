@@ -59,11 +59,12 @@ get_header(); ?>
 
 						while($query->have_posts()) {
 
+							$query->the_post();
+
 							?>
-							<li>
+							<li id="<?php echo get_post_field('post_name'); ?>">
 								<?php
 
-								$query->the_post();
 								$name = get_field('name');
 								if($name == '') $name = get_the_title();
 
