@@ -1853,7 +1853,8 @@ aside {
 ## Artist
 --------------------------------------------------------------*/
 .artist.hentry {
-  margin: 4em 0 0 0;
+  margin: 0 0 0 0;
+  padding-top: 4em;
 }
 .artist .entry-header {
   text-align: center;
@@ -2082,6 +2083,9 @@ table.availability td.availability-special {
 }
 .artists-grid a:hover .artist-name-button {
   background-color: #dc3b17;
+}
+.artists-grid.guests-only a {
+  padding: 1.5%;
 }
 
 .grid-big a {

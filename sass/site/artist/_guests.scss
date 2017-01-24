@@ -1,0 +1,58 @@
+/**
+ * Guests page template
+ */
+
+.page-template-guests .post-single {
+    padding-bottom: 0;
+}
+
+.guests {
+    list-style-type: none;
+    margin-left: 0;
+    margin-bottom: 4em;
+    padding-left: 0;
+
+    li {
+        overflow: auto;
+        margin-bottom: 2em;
+    }
+
+    img.wp-post-image {
+        float: left;
+        width: 50%;
+    }
+
+    .details {
+        width: 45%;
+        margin-left: 5%;
+        float: left;
+
+        h2 {
+            margin: 0;
+        }
+
+        .guest-dates {
+            @include font-size(1.125);
+        }
+
+    }
+}
+
+/**
+ * Alternate version: centered posts
+ */
+.guests-alternate {
+    text-align: center;
+
+    img.wp-post-image {
+        float: none;
+        width: auto;
+    }
+
+    .details {
+        width: 100%;
+        margin-left: 0%;
+        float: none;
+    }
+
+}
