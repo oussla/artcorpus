@@ -32,11 +32,13 @@ header( "Retry-After: 3600" );
 <meta property="fb:admins" content=""/>
 <meta property="og:url" content="http://www.artcorpus.fr"/>
 <meta property="og:title" content="Art Corpus &#8211; Tattoo &amp; Piercing"/>
-<meta property="og:site_name" content="Art Corpus &#8211; Tattoo &amp; Piercing"/>
-<meta property="og:description" content="Art Corpus &#8211; Tattoo &amp; Piercing"/>
-<meta property="og:type" content="author"/>
-<meta property="og:image" content="http://www.artcorpus.fr"/>
-<meta property="og:locale" content="en_us"/>
+<meta property="og:site_name" content="Art Corpus"/>
+<meta property="og:description" content="Tattoo &amp; Piercing, 49 rue Greneta, 75002 Paris"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="http://www.artcorpus.fr/maintenance/poster.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale" content="fr_fr"/>
 
 <style type="text/css">
 
