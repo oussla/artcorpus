@@ -456,12 +456,15 @@ endif;
  * @return void
  */
 function artcorpus_format_facebook_post($post) {
+
+	$hasPostImage = isset($post['image']) && $post['image'] != "";
+
 	?>
 
-	<article class="facebook-post">
+	<article class="facebook-post <?php echo (!$hasPostImage ? ' facebook-post-noimage' : ''); ?>">
 
 		<?php 
-		if(isset($post['image']) && $post['image'] != "") {
+		if($hasPostImage) {
 			// $img = '<img src="'.$post['image'].'" alt="'.$post['title'].'" />';
 			$img = '<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" 
 						 data-src="'.$post['image'].'" alt="'.$post['title'].'" />';

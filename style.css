@@ -1670,6 +1670,13 @@ article.format-quote .entry-title {
   left: 0;
   background: url(img/svg/play.svg) no-repeat center center;
 }
+.facebook-post.facebook-post-noimage .entry-header, .facebook-post.facebook-post-noimage .entry-content {
+  float: none;
+  margin-left: auto;
+  text-align: center;
+  margin-right: auto;
+  width: 75%;
+}
 
 /**
  * Figures & captions
