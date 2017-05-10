@@ -39,7 +39,9 @@ get_header(); ?>
 			// get the artist background 
 			$background = "";
 			$backgroundImage = get_field('background');
-			if($backgroundImage != '') $background = 'style="background: url('.$backgroundImage['url'].') no-repeat top right;"';
+			$backgroundRepeat = get_field('background-repeat') ? 'repeat' : 'no-repeat';
+
+			if($backgroundImage != '') $background = 'style="background: url('.$backgroundImage['url'].') '.$backgroundRepeat.' top right;"';
 
 			?>
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?><?php echo $background; ?>>
