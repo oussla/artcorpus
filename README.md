@@ -4,9 +4,30 @@ Art Corpus
 Custom Wordpress theme for Art Corpus Tattoo Shop, Paris.  
 Testing stuffs.
 
-###Deployment
+## Deployment
 Continuous integration with [Travis CI](https://travis-ci.org).  
+
 [![Build Status](https://travis-ci.org/oussla/artcorpus.svg?branch=master)](https://travis-ci.org/oussla/artcorpus)
+
+## Installation
+#### Install dependancies
+```
+npm install 
+bower install
+```
+Further refactoring should remove Bower dependancy for simplification... 
+
+#### Build 
+```
+gulp build
+```
+Build task is not implemented yet. 
+
+#### Watch 
+```
+gulp watch
+```
+
 
 ---
 * Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
