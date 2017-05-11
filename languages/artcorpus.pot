@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2016-10-16 20:32+0000\n"
+"POT-Creation-Date: 2017-05-11 19:58+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -58,28 +58,32 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer-contact.php:33 footer.php:58
+#: footer-contact.php:42 footer.php:59
 msgid "Toutes les images copyright Art Corpus, sauf mention contraire."
 msgstr ""
 
-#: footer-contact.php:35 footer.php:60
+#: footer-contact.php:44 footer.php:61
 #, php-format
-msgid "Theme %1$s by %2$s."
+msgid "Theme %1$s par %2$s."
 msgstr ""
 
-#: functions.php:58
-msgid "Primary"
+#: footer.php:36
+msgid "sur instagram"
 msgstr ""
 
 #: functions.php:59
-msgid "Subhead Menu"
+msgid "Primary"
 msgstr ""
 
 #: functions.php:60
+msgid "Subhead Menu"
+msgstr ""
+
+#: functions.php:61
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:123
+#: functions.php:124
 msgid "Footer Identity"
 msgstr ""
 
@@ -91,11 +95,15 @@ msgstr ""
 msgid "Disclaimer"
 msgstr ""
 
-#: header.php:40
+#: functions.php:154
+msgid "Cookies Disclaimer"
+msgstr ""
+
+#: header.php:69
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:87
+#: header.php:117
 msgid "Menu"
 msgstr ""
 
@@ -104,18 +112,18 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: single-artist.php:71
+#: single-artist.php:73
 #, php-format
 msgid "en Guest chez Art Corpus du %s au %s"
 msgstr ""
 
-#: single-artist.php:112 template-parts/content-excerpt.php:52 
-#: template-parts/content-page.php:22 template-parts/content.php:59
+#: single-artist.php:114 template-parts/content-excerpt.php:52
+#: template-parts/content-page.php:22 template-parts/content.php:76
 msgid "Pages:"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:35 inc/template-tags.php:124 inc/template-tags.php:130
+#: inc/template-tags.php:35 inc/template-tags.php:125 inc/template-tags.php:131
 msgid ", "
 msgstr ""
 
@@ -179,48 +187,80 @@ msgstr ""
 msgid "sometime"
 msgstr ""
 
-#: inc/template-tags.php:109
-msgid " ago"
+#: inc/template-tags.php:110
+#, php-format
+msgid "%1$s ago"
 msgstr ""
 
-#: inc/template-tags.php:126
+#: inc/template-tags.php:127
 #, php-format
 msgid "Posted in %1$s"
 msgstr ""
 
-#: inc/template-tags.php:132
+#: inc/template-tags.php:133
 #, php-format
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/template-tags.php:138
+#: inc/template-tags.php:139
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:138
+#: inc/template-tags.php:139
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:138
-#, php-format
+#: inc/template-tags.php:139
 msgid "% Comments"
 msgstr ""
 
 #. translators: %s: Name of current post
-#: inc/template-tags.php:145 template-parts/content-page.php:33
+#: inc/template-tags.php:146 template-parts/content-page.php:33
 #, php-format
 msgid "Edit %s"
 msgstr ""
 
-#: inc/template-tags.php:387
+#: inc/template-tags.php:306 template-parts/artist-availability.php:28
+msgid "lundi"
+msgstr ""
+
+#: inc/template-tags.php:307 template-parts/artist-availability.php:29
+msgid "mardi"
+msgstr ""
+
+#: inc/template-tags.php:308 template-parts/artist-availability.php:30
+msgid "mercredi"
+msgstr ""
+
+#: inc/template-tags.php:309 template-parts/artist-availability.php:31
+msgid "jeudi"
+msgstr ""
+
+#: inc/template-tags.php:310 template-parts/artist-availability.php:32
+msgid "vendredi"
+msgstr ""
+
+#: inc/template-tags.php:311 template-parts/artist-availability.php:33
+msgid "samedi"
+msgstr ""
+
+#: inc/template-tags.php:312 template-parts/artist-availability.php:34
+msgid "dimanche"
+msgstr ""
+
+#: inc/template-tags.php:407
 msgid "lire la suite"
 msgstr ""
 
-#: inc/template-tags.php:444
+#: inc/template-tags.php:454
+msgid "OK j'ai compris"
+msgstr ""
+
+#: inc/template-tags.php:498
 msgid "sur facebook"
 msgstr ""
 
-#: inc/template-tags.php:447
+#: inc/template-tags.php:501
 #, php-format
 msgid "like%s"
 msgstr ""
@@ -231,6 +271,20 @@ msgstr ""
 
 #: page-template/contact.php:50
 msgid "Est-ce que mon tatoueur/pierceur est là aujourd'hui&nbsp;?"
+msgstr ""
+
+#. Name of the template
+msgid "Guests"
+msgstr ""
+
+#: page-template/guests.php:93
+#, php-format
+msgid "du %s au %s"
+msgstr ""
+
+#: page-template/guests.php:107
+#, php-format
+msgid "Contacter %s"
 msgstr ""
 
 #. Name of the template
@@ -250,7 +304,7 @@ msgstr ""
 msgid "les news du shop"
 msgstr ""
 
-#: page-template/homepage.php:125
+#: page-template/homepage.php:127
 msgid "toutes les news"
 msgstr ""
 
@@ -258,20 +312,20 @@ msgstr ""
 msgid "PlainBlack"
 msgstr ""
 
-#: template-parts/artist-availability.php:38
+#: template-parts/artist-availability.php:50
 #, php-format
 msgid "Est-ce que %s est à la boutique le %s&nbsp;?"
 msgstr ""
 
-#: template-parts/artist-availability.php:43
+#: template-parts/artist-availability.php:55
 msgid "Oui."
 msgstr ""
 
-#: template-parts/artist-availability.php:43
+#: template-parts/artist-availability.php:55
 msgid "(si tout va bien)"
 msgstr ""
 
-#: template-parts/artist-availability.php:45
+#: template-parts/artist-availability.php:57
 msgid "Aaah... non."
 msgstr ""
 
@@ -295,6 +349,10 @@ msgstr ""
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
+msgstr ""
+
+#: template-parts/content.php:53
+msgid "Tags&nbsp;: "
 msgstr ""
 
 #. Description of the theme
