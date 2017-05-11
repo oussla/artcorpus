@@ -302,6 +302,15 @@ function artcorpus_artists_grid($type = ARTISTS_GRID_ALL, $background = 'black')
  */
 function artcorpus_artists_availability_table($avails, $availSpecial = '', $args = array()) {
 
+	$daysNames = array(
+		esc_html__( 'lundi', 'artcorpus' ),
+		esc_html__( 'mardi', 'artcorpus' ),
+		esc_html__( 'mercredi', 'artcorpus' ),
+		esc_html__( 'jeudi', 'artcorpus' ),
+		esc_html__( 'vendredi', 'artcorpus' ),
+		esc_html__( 'samedi', 'artcorpus' ),
+		esc_html__( 'dimanche', 'artcorpus' )
+	);
 	// Default params
 	$args = array_merge(array(
 		'displayWeekDays' => false, 
@@ -337,7 +346,8 @@ function artcorpus_artists_availability_table($avails, $availSpecial = '', $args
 
 	for ($i = 0; $i < 7; $i++) {
 
-	    $currentDayName = strtolower(strftime('%A', $timestamp));
+	    // $currentDayName = strtolower(strftime('%A', $timestamp));
+	    $currentDayName = $daysNames[$i];
 	    $currentDayNameStart = substr($currentDayName, 0, 3);
 	    $currentDayNameEnd = substr($currentDayName, 3);
 	    $currentDayName = $currentDayNameStart.'<span class="weekday-end">'.$currentDayNameEnd.'</span>';

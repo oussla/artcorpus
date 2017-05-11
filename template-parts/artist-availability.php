@@ -22,7 +22,19 @@
 
 		$avails = get_field('availability');
 		$availSpecial = get_field('availability_special');
-		$today = strtolower(strftime("%A"));
+		// $today = strtolower(strftime("%A"));
+
+		$daysNames = array(
+						esc_html__( 'lundi', 'artcorpus' ),
+						esc_html__( 'mardi', 'artcorpus' ),
+						esc_html__( 'mercredi', 'artcorpus' ),
+						esc_html__( 'jeudi', 'artcorpus' ),
+						esc_html__( 'vendredi', 'artcorpus' ),
+						esc_html__( 'samedi', 'artcorpus' ),
+						esc_html__( 'dimanche', 'artcorpus' )
+					);
+
+		$today = $daysNames[date('w') - 1];
 
 	?>
 
