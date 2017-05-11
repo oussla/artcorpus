@@ -923,7 +923,7 @@ a:hover, a:active {
 
 .main-navigation.toggled ul {
   opacity: 1;
-  max-height: 500px;
+  max-height: 650px;
 }
 
 @media (min-width: 641px) {

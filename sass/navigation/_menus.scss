@@ -127,7 +127,7 @@
 
 .main-navigation.toggled ul {
 	opacity: 1;
-	max-height: 500px;	// higher than it will ever be: allow the css transition on height
+	max-height: 650px;	// higher than it will ever be: allow the css transition on height
 }
 
 @include media(">phone") {
