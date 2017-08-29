@@ -82,9 +82,9 @@ gulp.task('watchmore', function() {
  */
 gulp.task('deploy', function() {
 
-	var remotePath = '/www/wip/artcrp/www/wp-content/themes/artcorpus/_preprocess/';
+	var remotePath = args.path;
 	var conn = ftp.create({
-		host: 'ftp.nicolaslagarde.com',
+		host: args.host,
 		user: args.user,
 		password: args.password,
 		parallel: 10,
