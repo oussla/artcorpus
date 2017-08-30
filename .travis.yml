@@ -9,6 +9,8 @@ script:
 env:
 -
 after_success:
-- if [ $TRAVIS_BRANCH == "develop" ]; then
+- if [ $TRAVIS_BRANCH == "master" ]; then
+  gulp deploy --host $PRD_FTP_HOST --user $PRD_FTP_USER --password $PRD_FTP_PASSWORD --path $PRD_FTP_PATH;
+  else 
   gulp deploy --host $TEST_FTP_HOST --user $TEST_FTP_USER --password $TEST_FTP_PASSWORD --path $TEST_FTP_PATH;
   fi
