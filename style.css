@@ -1576,11 +1576,17 @@ article.format-quote .entry-title {
   margin: 0;
 }
 .sticky article {
+  position: relative;
   max-width: 100%;
 }
 .sticky article .post-thumbnail-wrapper {
-  float: right;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%);
   width: 48%;
+  max-height: 100%;
+  overflow: hidden;
 }
 .sticky article .post-thumbnail-wrapper img {
   max-width: 100%;
@@ -1603,9 +1609,11 @@ article.format-quote .entry-title {
   margin: 3em 0 3em 0;
 }
 .home .site-branding .site-title a {
-  width: 500px;
-  height: 426px;
-  background-image: url(./img/artcorpus-logo-big.png);
+  width: 90%;
+  height: auto;
+  padding-top: 76.67%;
+  background-image: url(./img/artcorpus-logo-biggest.png);
+  background-size: 100% auto;
 }
 .home .site-branding .site-description {
   font-size: 24px;
@@ -1623,6 +1631,10 @@ article.format-quote .entry-title {
   overflow: hidden;
   position: absolute;
   top: 0;
+}
+.home .homepage-main-content img {
+  max-width: none;
+  width: 100%;
 }
 
 /**
@@ -1705,25 +1717,7 @@ figure.alignright {
   text-align: center;
 }
 
-@media (max-width: 640px) {
-  section.first {
-    padding-top: 2em;
-  }
-
-  .posts-list,
-  .post-single {
-    padding: 0 5% 2em 5%;
-  }
-  .posts-list article,
-  .post-single article {
-    max-width: 100%;
-  }
-
-  .post-single article .entry-title {
-    font-size: 34px;
-    font-size: 2.125rem;
-  }
-
+@media (max-width: 940px) {
   .sticky .sticky-title {
     width: 100%;
     float: none;
@@ -1745,8 +1739,12 @@ figure.alignright {
     max-width: 100%;
   }
   .sticky article .post-thumbnail-wrapper {
-    float: none;
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: translateY(0);
     width: 100%;
+    overflow: auto;
   }
   .sticky article .post-thumbnail-wrapper img {
     max-width: none;
@@ -1761,6 +1759,25 @@ figure.alignright {
   .sticky .hentry {
     margin-bottom: 0;
   }
+}
+@media (max-width: 640px) {
+  section.first {
+    padding-top: 2em;
+  }
+
+  .posts-list,
+  .post-single {
+    padding: 0 5% 2em 5%;
+  }
+  .posts-list article,
+  .post-single article {
+    max-width: 100%;
+  }
+
+  .post-single article .entry-title {
+    font-size: 34px;
+    font-size: 2.125rem;
+  }
 
   .home .site-branding {
     margin: 2em 0 2em 0;
@@ -1769,6 +1786,7 @@ figure.alignright {
     background-size: 300px 256px;
     width: 300px;
     height: 256px;
+    padding-top: 0;
   }
   .home .homeslideshow-wrapper {
     display: none;
