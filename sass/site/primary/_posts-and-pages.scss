@@ -194,11 +194,17 @@ article.format-quote {
 	}
 
 	article {
+		position: relative;
     	max-width: 100%;
 
     	.post-thumbnail-wrapper {
-    		float: right;
+    		position: absolute;
+    		left: 50%;
+    		top: 50%;
+    		transform: translateY(-50%);
     		width: 48%;
+			max-height: 100%;
+			overflow: hidden;
 
 	    	img {    
 	    		max-width: 100%;
@@ -372,28 +378,7 @@ figure.alignright {
 }
 
 
-
-@include media("<=phone") {
-
-	section.first {
-		padding-top: 2em;
-	}
-	
-	.posts-list,
-	.post-single {
-		padding: 0 5% 2em 5%;
-
-	    article {
-	    	max-width: 100%;
-	    }
-
-	}
-
-	.post-single {
-		article .entry-title {
-			@include font-size(2.125);
-		}
-	}
+@include media("<=desktopsmall") {
 
 	.sticky {
 
@@ -419,8 +404,12 @@ figure.alignright {
 	    	max-width: 100%;
 
 	    	.post-thumbnail-wrapper {
-	    		float: none;
+	    		position: relative;
+	    		left: 0;
+	    		top: 0;
+	    		transform: translateY(0);
 	    		width: 100%;
+				overflow: auto;
 
 	    		img {
 	    			max-width: none;
@@ -443,6 +432,30 @@ figure.alignright {
 
 	}
 
+}
+
+
+@include media("<=phone") {
+
+	section.first {
+		padding-top: 2em;
+	}
+	
+	.posts-list,
+	.post-single {
+		padding: 0 5% 2em 5%;
+
+	    article {
+	    	max-width: 100%;
+	    }
+
+	}
+
+	.post-single {
+		article .entry-title {
+			@include font-size(2.125);
+		}
+	}
 
 
 	.home {
