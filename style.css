@@ -1632,6 +1632,10 @@ article.format-quote .entry-title {
   position: absolute;
   top: 0;
 }
+.home .homepage-main-content img {
+  max-width: none;
+  width: 100%;
+}
 
 /**
  * Archives
