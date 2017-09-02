@@ -1609,9 +1609,11 @@ article.format-quote .entry-title {
   margin: 3em 0 3em 0;
 }
 .home .site-branding .site-title a {
-  width: 500px;
-  height: 426px;
-  background-image: url(./img/artcorpus-logo-big.png);
+  width: 90%;
+  height: auto;
+  padding-top: 76.67%;
+  background-image: url(./img/artcorpus-logo-biggest.png);
+  background-size: 100% auto;
 }
 .home .site-branding .site-description {
   font-size: 24px;
@@ -1780,6 +1782,7 @@ figure.alignright {
     background-size: 300px 256px;
     width: 300px;
     height: 256px;
+    padding-top: 0;
   }
   .home .homeslideshow-wrapper {
     display: none;
