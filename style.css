@@ -2092,9 +2092,11 @@ table.availability td.availability-special {
   padding: 0 10% 6em 10%;
   overflow: auto;
 }
+.artists-grid .section-content {
+  font-size: 0;
+}
 .artists-grid a {
-  display: block;
-  float: left;
+  display: inline-block;
   width: 33.3%;
   position: relative;
 }
