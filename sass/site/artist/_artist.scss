@@ -259,9 +259,12 @@ table.availability {
 	padding: 0 10% 6em 10%;
 	overflow: auto;
 
+	.section-content {
+		font-size: 0;
+	}
+
 	a {
-		display: block;
-		float: left;
+		display: inline-block;
 		width: 33.3%;
 		position: relative;
 
