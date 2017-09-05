@@ -107,7 +107,14 @@ setlocale(LC_TIME , get_locale().'.utf-8', $alternateLocale);
 			if ( $description || is_customize_preview() ) : ?>
 				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 			<?php
-			endif; ?>
+			endif;
+			if ( is_front_page() ): ?>
+				<p class="site-address"><?php echo get_option('artcorpus_postaladdress'); ?></p>
+			<?php
+			endif;
+
+
+			 ?>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">

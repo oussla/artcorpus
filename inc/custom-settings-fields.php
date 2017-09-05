@@ -48,6 +48,15 @@ class Add_Settings_Field {
 			'general'
 		);
 
+		// Shop postal address
+		register_setting( 'general', 'artcorpus_postaladdress', 'esc_attr' );
+		add_settings_field(
+			'artcorpus_postaladdress_id',
+			'<label for="artcorpus_postaladdress_id">' . __( 'Adresse de la boutique' , 'artcorpus_postaladdress' ) . '</label>',
+			array( $this, 'artcorpus_postaladdress_callback' ),
+			'general'
+		);
+
 	}
 
 	/**
@@ -67,6 +76,11 @@ class Add_Settings_Field {
 	public function artcorpus_googleapikey_callback() {
 		$value = get_option( 'artcorpus_googleapikey', '' );
 		echo '<input type="text" id="artcorpus_googleapikey_id" name="artcorpus_googleapikey" value="' . esc_attr( $value ) . '" />';
+	}
+
+	public function artcorpus_postaladdress_callback() {
+		$value = get_option( 'artcorpus_postaladdress', '' );
+		echo '<input type="text" id="artcorpus_postaladdress_id" name="artcorpus_postaladdress" value="' . esc_attr( $value ) . '" />';
 	}
 
 }
