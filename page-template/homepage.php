@@ -12,48 +12,50 @@ get_header(); ?>
 
 	<main id="main" class="site-main" role="main">
 
-		<section class="first posts-list sticky highlight white background-white">
-			<div class="section-content">
-				<div class="sticky-title">
-					<h3><?php _e('En ce moment chez', 'artcorpus'); ?></h3>
-					<h2><?php _e('Art Corpus', 'artcorpus'); ?></h2>
-				</div>
-				<?php
-
-					/**
-					 *	Add sticky post
-					 */
-					$sticky = get_option( 'sticky_posts' );
-					$args = array(
-						'posts_per_page' => 1,
-						'post__in'  => $sticky,
-						'ignore_sticky_posts' => 1
-					);
-					$sticky_query = new WP_Query( $args );
-
-
-					while ( $sticky_query->have_posts() ) : $sticky_query->the_post(); ?>
-
-			            <?php
-			                get_template_part( 'template-parts/content', 'excerpt' );
-			            ?>
-
-			        <?php endwhile;
-
-					wp_reset_postdata();
-
-				?>
-			</div>
-		</section>
-
 		<?php
 
+		/**
+		 *	Add sticky post,
+		 *	Only if we explicitely have set some post sticky
+		 */
+		$sticky = get_option( 'sticky_posts' );
+		$args = array(
+			'posts_per_page' => 1,
+			'post__in'  => $sticky,
+			'ignore_sticky_posts' => 1
+		);
+		$sticky_query = new WP_Query( $args );
+		if( isset($sticky[0]) ):
+			?>
 
-			/**
-			 *	Add BYCH: Before You Come Here
-			 */
-			get_template_part( 'template-parts/bych');
+			<section class="first posts-list sticky highlight white background-white">
+				<div class="section-content">
+					<div class="sticky-title">
+						<h3><?php _e('En ce moment chez', 'artcorpus'); ?></h3>
+						<h2><?php _e('Art Corpus', 'artcorpus'); ?></h2>
+					</div>
+					<?php
 
+						while ( $sticky_query->have_posts() ) : $sticky_query->the_post(); ?>
+
+				            <?php
+				                get_template_part( 'template-parts/content', 'excerpt' );
+				            ?>
+
+				        <?php endwhile;
+
+						wp_reset_postdata();
+
+					?>
+				</div>
+			</section>
+	
+			<?php
+		endif;
+
+		?>
+
+		<?php
 
 			/**
 			 * In-house artists-only grid. 
@@ -65,6 +67,12 @@ get_header(); ?>
 			 * Guests. 
 			 */
 			artcorpus_artists_grid(ARTISTS_GRID_GUESTS, 'white');
+
+
+			/**
+			 *	Add BYCH: Before You Come Here
+			 */
+			get_template_part( 'template-parts/bych');
 
 		?>
 
