@@ -68,12 +68,6 @@ get_header(); ?>
 			 */
 			artcorpus_artists_grid(ARTISTS_GRID_GUESTS, 'white');
 
-
-			/**
-			 *	Add BYCH: Before You Come Here
-			 */
-			get_template_part( 'template-parts/bych');
-
 		?>
 
 		<section class="homepage-main-content">
@@ -112,6 +106,15 @@ get_header(); ?>
 			?>
 
 		</section>
+
+		<?php
+
+			/**
+			 *	Add BYCH: Before You Come Here
+			 */
+			get_template_part( 'template-parts/bych');
+
+		?>
 
 		<section class="posts-list white">
 
