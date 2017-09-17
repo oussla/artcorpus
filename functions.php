@@ -349,6 +349,19 @@ function artcorpus_post_thumbnail_html($html, $post_id, $post_thumbnail_id, $siz
 add_filter( 'post_thumbnail_html', 'artcorpus_post_thumbnail_html', 20, 5);
 
 
+
+/**
+ * Remove Yoast JSON structured data
+ */
+function artcorpus_remove_yoast_json($data){
+	$data = array();
+	return $data;
+}
+add_filter('wpseo_json_ld_output', 'artcorpus_remove_yoast_json', 10, 1);
+
+
+
+
 /**
  * Implement the Custom Header feature.
  */
