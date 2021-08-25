@@ -99,10 +99,8 @@ get_header(); ?>
 					</div>
 
 				</header><!-- .entry-header -->
-
-				<div class="dot"></div>
 			
-				<div class="entry-content">
+				<div class="entry-content mb-2">
 					<?php
 
 						/**
@@ -117,17 +115,6 @@ get_header(); ?>
 
 					?>
 				</div><!-- .entry-content -->
-
-
-				<?php
-
-					/**
-	 				 * Artist's availability. 
-	 				 */
-					get_template_part( 'template-parts/artist', 'availability' );
-
-				?>
-
 
 				<section class="gallery background-black">
 

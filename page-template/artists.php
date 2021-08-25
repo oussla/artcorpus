@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Guests
+ * Template Name: Artists
  *
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
@@ -11,7 +11,7 @@
 get_header(); ?>
 
 	<main id="main" class="site-main" role="main">
-
+        
 		<section class="first post-single">
 
 			<?php
@@ -30,16 +30,22 @@ get_header(); ?>
 		
 				<?php
 
-					// Get all guests 
+					// Get all artists, 
+                    // remove guests and artists with disclaimer
 					$args = array(
 						'post_type' => 'artist',
 						'posts_per_page' => 48,
 						'meta_query' => array(
 							array(
 								'key'     => 'guest',
-								'value'   => 1,
+								'value'   => 0,
 								'compare' => '='
-							)
+                            ),
+                            array(
+                                'key'     => 'disclaimer',
+								'value'   => 0,
+								'compare' => '='
+                            )
 						),
 						'order' => 'ASC',
 						'orderby' => 'meta_value_num',
@@ -68,10 +74,13 @@ get_header(); ?>
 								$name = get_field('name');
 								if($name == '') $name = get_the_title();
 
+								$portrait = get_field('portrait');
+
 								$thumbnail = get_the_post_thumbnail(null, 'gallery_large', array('class' => 'lazyload')); 
-								$externalePage = get_field('guest_external_page');
-								if($externalePage != '') {
-									$thumbnail = '<a href="'.$externalePage.'" target="_blank">' . $thumbnail . '</a>';
+								$externalPage = get_field('guest_external_page');
+                                $permalink = get_the_permalink();
+								if($permalink != '') {
+									$thumbnail = '<a href="'.$permalink.'">' . $thumbnail . '</a>';
 								}
 								echo $thumbnail;
 
@@ -80,32 +89,17 @@ get_header(); ?>
 								<div class="details">
 									<h2 class=""><?php echo $name; ?></h2>
 
-									<?php
+									<a href="<?php echo $permalink; ?>" target="_blank" class="button mb-05">
+										<?php printf(esc_html__('Galerie de %s', 'artcorpus'), $name); ?>
+									</a>
 
-									if (get_field('guest_date_start') && get_field('guest_date_end')) {
-										$guestStartDate = strftime('%#d %B', get_field('guest_date_start'));
-										$guestEndDate = strftime('%#d %B %Y', get_field('guest_date_end'));
-
-										if($guestStartDate != "" && $guestEndDate != "") {
-											?>
-
-											<span class="guest-dates">
-												<?php printf(esc_html__('du %s au %s', 'artcorpus'), $guestStartDate, $guestEndDate); ?>
-											</span>
-
-											<?php
-										}
-									}
-
-									the_content();
+                                    <?php
 									
-									if($externalePage != '') {
+									if($externalPage != '') {
 										?>
-										
-										<br />
-										<a href="<?php echo $externalePage; ?>" target="_blank" class="button">
-											<?php printf(esc_html__('Contacter %s', 'artcorpus'), $name); ?>
 
+										<a href="<?php echo $externalPage; ?>" class="block" target="_blank">
+											<?php printf(esc_html__('Contacter %s', 'artcorpus'), $name); ?>
 										</a>
 
 										<?php

@@ -1,12 +1,12 @@
 /**
- * Guests page template
+ * Guests & Artists list page template
  */
 
 .page-template-guests .post-single {
     padding-bottom: 0;
 }
 
-.guests {
+.guests, .artists {
     list-style-type: none;
     margin-left: 0;
     margin-bottom: 4em;
@@ -41,7 +41,7 @@
 /**
  * Alternate version: centered posts
  */
-.guests-alternate {
+.guests-alternate, .artists-alternate {
     text-align: center;
 
     img.wp-post-image {

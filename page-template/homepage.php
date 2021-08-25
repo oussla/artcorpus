@@ -55,6 +55,16 @@ get_header(); ?>
 
 		?>
 
+        <?php
+        /**
+         * Instagram feed plugin
+         */
+        ?>
+        <section class="footer-instagram background-black">
+            <h3 class="title-checkmarks"><span><?php echo __( 'sur instagram', 'artcorpus' ); ?></span></h3>
+            <?php echo do_shortcode('[instagram-feed]'); ?>
+        </section>
+
 		<?php
 
 			/**
@@ -115,69 +125,6 @@ get_header(); ?>
 			get_template_part( 'template-parts/bych');
 
 		?>
-
-		<section class="posts-list white">
-
-			<div class="section-content">
-
-				<h2 class="title-checkmarks"><span><?php echo esc_html__('les news du shop', 'artcorpus'); ?></span></h2>
-
-				<?php
-
-					/**
-					 * Get latest Facebook posts
-					 */
-					$fb_posts = array();
-					if(function_exists('recent_facebook_posts')) {
-						// Get raw posts, through RFBP singleton instance, for future custom templating
-						$fb_posts = RFBP_Public::instance()->get_posts();
-					}
-
-					/**
-					 *	Add N latest news
-					 */
-					$sticky = get_option( 'sticky_posts' );
-					$args = array(
-						'posts_per_page' => 5,
-						'post_type' => 'post',
-						'post__not_in' => $sticky,
-						'ignore_sticky_posts' => 1
-					);
-					$latest_query = new WP_Query( $args );
-
-
-					// Merge arrays
-					$global_posts = array_merge($latest_query->get_posts(), $fb_posts);
-
-					// Sort by post date (keep in mind that we have different post types here)
-					usort($global_posts, 'artcorpus_compare_posts_dates');
-
-					// Limit to X posts, after sorting
-					$global_posts = array_slice($global_posts, 0, 10);
-
-					foreach ($global_posts as $post) {
-						if(isset($post) && is_object($post)) {
-							// This is a Wordpress post, so continue with the loop. 
-							$latest_query->the_post();
-							get_template_part( 'template-parts/content', 'excerpt' );
-						} elseif (is_array($post)) {
-							// This is a Facebook post, so display a custom template.
-							artcorpus_format_facebook_post($post);
-						} else {
-							// WTF could this be!?
-						}
-					}
-
-					wp_reset_postdata();
-
-				?>
-
-				<a class="button highlight" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>"><?php _e('toutes les news', 'artcorpus'); ?></a>
-
-			</div>
-			
-		</section>
-
 	
 	</main><!-- #main -->
 
