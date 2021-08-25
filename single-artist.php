@@ -99,8 +99,6 @@ get_header(); ?>
 					</div>
 
 				</header><!-- .entry-header -->
-
-				<div class="dot"></div>
 			
 				<div class="entry-content">
 					<?php
