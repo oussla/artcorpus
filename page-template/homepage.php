@@ -55,6 +55,16 @@ get_header(); ?>
 
 		?>
 
+        <?php
+        /**
+         * Instagram feed plugin
+         */
+        ?>
+        <section class="footer-instagram background-black">
+            <h3 class="title-checkmarks"><span><?php echo __( 'sur instagram', 'artcorpus' ); ?></span></h3>
+            <?php echo do_shortcode('[instagram-feed]'); ?>
+        </section>
+
 		<?php
 
 			/**
