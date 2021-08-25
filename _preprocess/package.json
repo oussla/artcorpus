@@ -19,7 +19,7 @@
   "homepage": "https://github.com/oussla/artcorpus",
   "dependencies": {},
   "devDependencies": {
-    "bower": "^1.7.7",
+    "bower": "^1.8.9",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-filter": "^4.0.0",
