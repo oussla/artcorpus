@@ -80,7 +80,7 @@ get_header(); ?>
 								$externalPage = get_field('guest_external_page');
                                 $permalink = get_the_permalink();
 								if($permalink != '') {
-									$thumbnail = '<a href="'.$permalink.'" target="_blank">' . $thumbnail . '</a>';
+									$thumbnail = '<a href="'.$permalink.'">' . $thumbnail . '</a>';
 								}
 								echo $thumbnail;
 
@@ -89,7 +89,7 @@ get_header(); ?>
 								<div class="details">
 									<h2 class=""><?php echo $name; ?></h2>
 
-									<a href="<?php echo $permalink; ?>" target="_blank" class="button">
+									<a href="<?php echo $permalink; ?>" target="_blank" class="button mb-05">
 										<?php printf(esc_html__('Galerie de %s', 'artcorpus'), $name); ?>
 									</a>
 
@@ -98,7 +98,7 @@ get_header(); ?>
 									if($externalPage != '') {
 										?>
 
-										<a href="<?php echo $externalPage; ?>" target="_blank" class="button">
+										<a href="<?php echo $externalPage; ?>" class="block" target="_blank">
 											<?php printf(esc_html__('Contacter %s', 'artcorpus'), $name); ?>
 										</a>
 

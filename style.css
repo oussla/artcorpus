@@ -617,6 +617,31 @@ a.button:hover {
   text-align: center;
 }
 
+/**
+ *
+ *
+ *
+ */
+.block {
+  display: block;
+}
+
+.mt-1 {
+  margin-top: 1em;
+}
+
+.mt-05 {
+  margin-top: 0.5em;
+}
+
+.mb-1 {
+  margin-bottom: 1em;
+}
+
+.mb-05 {
+  margin-bottom: 0.5em;
+}
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -2172,35 +2197,35 @@ table.availability td.availability-special {
   }
 }
 /**
- * Guests page template
+ * Guests & Artists list page template
  */
 .page-template-guests .post-single {
   padding-bottom: 0;
 }
 
-.guests {
+.guests, .artists {
   list-style-type: none;
   margin-left: 0;
   margin-bottom: 4em;
   padding-left: 0;
 }
-.guests li {
+.guests li, .artists li {
   overflow: auto;
   margin-bottom: 2em;
 }
-.guests img.wp-post-image {
+.guests img.wp-post-image, .artists img.wp-post-image {
   float: left;
   width: 50%;
 }
-.guests .details {
+.guests .details, .artists .details {
   width: 45%;
   margin-left: 5%;
   float: left;
 }
-.guests .details h2 {
+.guests .details h2, .artists .details h2 {
   margin: 0;
 }
-.guests .details .guest-dates {
+.guests .details .guest-dates, .artists .details .guest-dates {
   font-size: 18px;
   font-size: 1.125rem;
 }
@@ -2208,14 +2233,14 @@ table.availability td.availability-special {
 /**
  * Alternate version: centered posts
  */
-.guests-alternate {
+.guests-alternate, .artists-alternate {
   text-align: center;
 }
-.guests-alternate img.wp-post-image {
+.guests-alternate img.wp-post-image, .artists-alternate img.wp-post-image {
   float: none;
   width: auto;
 }
-.guests-alternate .details {
+.guests-alternate .details, .artists-alternate .details {
   width: 100%;
   margin-left: 0%;
   float: none;
